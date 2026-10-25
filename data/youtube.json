@@ -1,5 +1,16 @@
 [
   {
+    "id": "the-white-witch",
+    "name": "The White Witch™",
+    "handle": "TheWhiteWitchTM",
+    "url": "https://www.youtube.com/@TheWhiteWitchTM",
+    "blurb": "Keeps this directory. Politics and social events, facts first.",
+    "tags": ["host"],
+    "language": "en",
+    "added": "2026-10-25",
+    "pin": true
+  },
+  {
     "id": "aclu",
     "name": "ACLU",
     "handle": "ACLU",

@@ -53,7 +53,7 @@ A listing is a pointer to a public site or profile. It is not a claim that every
 
 ## Theme, type, analytics
 
-Dark is the default, in the same family as LibreSky: near-black ground, `#1d9bf0` blue, `#f5c451` gold, Inter for the UI. The lyric is set in Cormorant Garamond. Light is the other half of that pair.
+Dark is the default, in the same family as The White Witch site: near-black ground and lavender `#c9a6ff`. Inter for the UI. The lyric is set in Cormorant Garamond. Light is the other half of that pair.
 
 Visits are counted with the same Google tag as LibreSky, `G-13S6Z9KCX9`.
 

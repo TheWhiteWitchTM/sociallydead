@@ -2,6 +2,13 @@
 
 import { GlobeIcon, PlayIcon, SearchIcon, SkyIcon, XIcon } from "@/components/icons";
 import {
+  DIRECTORY_FILTER,
+  DIRECTORY_KIND,
+  isKind,
+  type DirectoryFilterDetail,
+  type DirectoryKind,
+} from "@/lib/directory-filter";
+import {
   CATALOGS,
   CATALOG_LABEL,
   type Catalog,
@@ -10,8 +17,9 @@ import {
 } from "@/lib/types";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-type Kind = "all" | Catalog;
+type Kind = DirectoryKind;
 type SortMode = "az" | "new";
+type Row = { catalog: Catalog; entry: Entry };
 
 const KIND_LABEL: Record<Kind, string> = {
   all: "All",
@@ -64,12 +72,57 @@ function topTags(entries: Entry[], selected: string | null): string[] {
   return top;
 }
 
+function hostGroups(rows: Row[]): Row[][] {
+  const groups: Row[][] = [];
+  const index = new Map<string, Row[]>();
+  for (const row of rows) {
+    if (!row.entry.pin) continue;
+    const key = row.entry.name;
+    let group = index.get(key);
+    if (!group) {
+      group = [];
+      index.set(key, group);
+      groups.push(group);
+    }
+    group.push(row);
+  }
+  for (const group of groups) {
+    group.sort((a, b) => CATALOGS.indexOf(a.catalog) - CATALOGS.indexOf(b.catalog));
+  }
+  return groups;
+}
+
+function HostShelf({ group }: { group: Row[] }) {
+  const blurb = (group.find((row) => row.catalog === "websites") ?? group[0]).entry.blurb;
+  return (
+    <aside className="host-shelf" aria-label={group[0].entry.name}>
+      <p className="kicker">Kept by</p>
+      <h3 className="host-name">{group[0].entry.name}</h3>
+      <p className="host-blurb">{blurb}</p>
+      <div className="host-links">
+        {group.map(({ catalog, entry }) => (
+          <a key={catalog} className="host-link" href={entry.url} target="_blank" rel="noopener noreferrer">
+            <span className={`glyph ${catalog}`}>
+              <Glyph kind={catalog} />
+            </span>
+            <span className="min-w-0">
+              <span className="host-link-kind">{CATALOG_LABEL[catalog]}</span>
+              <span className="host-link-handle">{labelFor(catalog, entry)}</span>
+            </span>
+            <span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        ))}
+      </div>
+    </aside>
+  );
+}
+
 export function Directory({ data }: { data: DirectoryData }) {
   const [kind, setKind] = useState<Kind>("all");
   const [query, setQuery] = useState("");
   const [tag, setTag] = useState<string | null>(null);
   const [sort, setSort] = useState<SortMode>("az");
-
+  const searchRef = useRef<HTMLInputElement>(null);
   const hydrated = useRef(false);
 
   useEffect(() => {
@@ -77,9 +130,7 @@ export function Directory({ data }: { data: DirectoryData }) {
       hydrated.current = true;
       const params = new URLSearchParams(window.location.search);
       const requested = params.get("kind");
-      if (requested === "all" || (CATALOGS as readonly string[]).includes(requested ?? "")) {
-        setKind(requested as Kind);
-      }
+      if (isKind(requested)) setKind(requested);
       const q = params.get("q");
       if (q) setQuery(q);
       const requestedTag = params.get("tag");
@@ -99,6 +150,38 @@ export function Directory({ data }: { data: DirectoryData }) {
     const url = `${window.location.pathname}${next ? `?${next}` : ""}${window.location.hash}`;
     window.history.replaceState(null, "", url);
   }, [kind, query, tag, sort]);
+
+  useEffect(() => {
+    window.dispatchEvent(new CustomEvent(DIRECTORY_KIND, { detail: kind }));
+  }, [kind]);
+
+  useEffect(() => {
+    function onFilter(event: Event) {
+      const detail = (event as CustomEvent<DirectoryFilterDetail>).detail ?? {};
+      if (detail.reset) {
+        setKind("all");
+        setQuery("");
+        setTag(null);
+        setSort("az");
+        return;
+      }
+      if (detail.kind) setKind(detail.kind);
+    }
+    window.addEventListener(DIRECTORY_FILTER, onFilter);
+    return () => window.removeEventListener(DIRECTORY_FILTER, onFilter);
+  }, []);
+
+  useEffect(() => {
+    function onKey(event: KeyboardEvent) {
+      if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) return;
+      const target = event.target;
+      if (target instanceof HTMLElement && (target.tagName === "INPUT" || target.tagName === "TEXTAREA")) return;
+      event.preventDefault();
+      searchRef.current?.focus();
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   const counts = useMemo(() => {
     const result: Record<Kind, number> = {
@@ -131,38 +214,41 @@ export function Directory({ data }: { data: DirectoryData }) {
     tag,
   );
   const filtering = Boolean(query.trim() || tag || kind !== "all");
+  const hosts = hostGroups(matched);
+  const rest = matched.filter((row) => !row.entry.pin);
 
   return (
-    <section id="directory" className="mx-auto max-w-[1120px] px-5 pt-6 pb-4">
-      <div className="rule mb-6" aria-hidden="true">
-        <span>resist</span>
+    <section id="directory" className="mx-auto max-w-[1180px] px-5 pt-2 pb-8">
+      <h2 className="sr-only">Directory</h2>
+      <div className="rule mb-5" aria-hidden="true">
+        <span>the desks</span>
       </div>
       <div className="toolbar">
+        <label className="search-wrap">
+          <span className="sr-only">Search the directory</span>
+          <SearchIcon />
+          <input
+            ref={searchRef}
+            className="search"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search names, handles, tags"
+            type="search"
+            autoComplete="off"
+          />
+          {query ? (
+            <button type="button" className="search-clear" onClick={() => setQuery("")} aria-label="Clear search">
+              ×
+            </button>
+          ) : null}
+        </label>
         <div className="catalogs" role="toolbar" aria-label="Catalogs">
           {(["all", ...CATALOGS] as Kind[]).map((item) => (
-            <button
-              key={item}
-              type="button"
-              aria-pressed={kind === item}
-              onClick={() => setKind(item)}
-            >
+            <button key={item} type="button" aria-pressed={kind === item} onClick={() => setKind(item)}>
               {KIND_LABEL[item]}
               <span className="count">{counts[item]}</span>
             </button>
           ))}
-        </div>
-        <div className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center">
-          <label className="search-wrap min-w-0 flex-1">
-            <span className="sr-only">Search the directory</span>
-            <SearchIcon />
-            <input
-              className="search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search names, handles, places, tags"
-              type="search"
-            />
-          </label>
           <button
             type="button"
             className="sort"
@@ -173,7 +259,7 @@ export function Directory({ data }: { data: DirectoryData }) {
           </button>
         </div>
         {tags.length > 0 ? (
-          <div className="flex flex-wrap gap-2 pb-4">
+          <div className="tag-row">
             {tags.map((item) => (
               <button
                 key={item}
@@ -188,7 +274,7 @@ export function Directory({ data }: { data: DirectoryData }) {
             {filtering ? (
               <button
                 type="button"
-                className="linkish ml-1 text-sm"
+                className="linkish"
                 onClick={() => {
                   setKind("all");
                   setQuery("");
@@ -202,83 +288,68 @@ export function Directory({ data }: { data: DirectoryData }) {
         ) : null}
       </div>
 
-      <p className="mt-2 mb-4 text-sm text-muted" aria-live="polite">
+      <p className="result-line" aria-live="polite">
         {matched.length} {matched.length === 1 ? "listing" : "listings"}
         {tag ? ` tagged ${tag}` : ""}
         {query.trim() ? ` matching “${query.trim()}”` : ""}
       </p>
 
-      {matched.length === 0 ? (
-        <div className="panel px-6 py-10 text-center">
-          <p className="m-0 font-display text-3xl italic">Nothing under that name yet.</p>
-          <p className="mt-2 mb-0 text-muted">Try another word, or clear the filters.</p>
+      {hosts.length === 0 && rest.length === 0 ? (
+        <div className="panel empty-state">
+          <p className="empty-title">Nothing under that name yet.</p>
+          <p className="empty-hint">Try another word, or clear the filters.</p>
         </div>
       ) : (
-        <ul className="m-0 grid list-none gap-4 p-0 sm:grid-cols-2">
-          {matched.map(({ catalog, entry }) => (
-            <li key={`${catalog}-${entry.id}`}>
-              <a
-                className="card px-4 py-4"
-                href={entry.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="flex items-start gap-3">
-                  <span className={`glyph ${catalog}`}>
-                    <Glyph kind={catalog} />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="flex items-start justify-between gap-3">
-                      <span className="text-[15px] leading-snug font-extrabold tracking-tight">{entry.name}</span>
-                      <span className="out" aria-hidden="true">
-                        ↗
-                      </span>
-                    </span>
-                    <span className="mt-0.5 block truncate text-sm">
-                      <span className="handle">{labelFor(catalog, entry)}</span>
-                      <span className="text-muted">
-                        {" · "}
-                        {CATALOG_LABEL[catalog]}
-                        {entry.region ? ` · ${entry.region}` : ""}
-                      </span>
-                    </span>
-                    <span className="mt-2 block text-[15px] leading-relaxed">{entry.blurb}</span>
-                    {entry.tags.length > 0 || entry.pin ? (
-                      <span className="mt-3 flex flex-wrap gap-1.5">
-                        {entry.pin ? <span className="chip static host">Host</span> : null}
-                        {entry.tags
-                          .filter((item) => item !== "host")
-                          .map((item) => (
-                            <span key={item} className="chip static">
-                              {item}
-                            </span>
-                          ))}
-                      </span>
-                    ) : null}
-                    <span className="sr-only"> (opens in a new tab)</span>
-                  </span>
-                </span>
-              </a>
-            </li>
+        <>
+          {hosts.map((group) => (
+            <HostShelf key={group[0].entry.name} group={group} />
           ))}
-        </ul>
+          {rest.length > 0 ? (
+            <ul className="listing-grid">
+              {rest.map(({ catalog, entry }) => (
+                <li key={`${catalog}-${entry.id}`}>
+                  <a className="card" href={entry.url} target="_blank" rel="noopener noreferrer">
+                    <span className="card-row">
+                      <span className={`glyph ${catalog}`}>
+                        <Glyph kind={catalog} />
+                      </span>
+                      <span className="card-body">
+                        <span className="card-title-row">
+                          <span className="card-title">{entry.name}</span>
+                          <span className="out" aria-hidden="true">
+                            ↗
+                          </span>
+                        </span>
+                        <span className="card-meta">
+                          <span className="handle">{labelFor(catalog, entry)}</span>
+                          <span className="text-muted">
+                            {" · "}
+                            {CATALOG_LABEL[catalog]}
+                            {entry.region ? ` · ${entry.region}` : ""}
+                          </span>
+                        </span>
+                        <span className="card-blurb">{entry.blurb}</span>
+                        {entry.tags.length > 0 ? (
+                          <span className="card-tags">
+                            {entry.tags
+                              .filter((item) => item !== "host")
+                              .map((item) => (
+                                <span key={item} className="chip static">
+                                  {item}
+                                </span>
+                              ))}
+                          </span>
+                        ) : null}
+                        <span className="sr-only"> (opens in a new tab)</span>
+                      </span>
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </>
       )}
-
-      <div className="panel mt-8 px-5 py-5 sm:px-6">
-        <h2 className="m-0 text-base font-extrabold tracking-tight">Add a desk</h2>
-        <p className="mt-2 mb-0 max-w-3xl leading-relaxed text-muted">
-          The lists are JSON: <code>data/websites.json</code>, <code>data/youtube.json</code>,{" "}
-          <code>data/x.json</code>, and <code>data/bluesky.json</code>. Edit them with{" "}
-          <code>tools/edit-directory.sh</code>, then open a pull request. A listing is a pointer to a
-          public site or profile. It is not a claim that every post from that account matches this
-          directory.
-        </p>
-        <p className="mt-3 mb-0">
-          <a className="font-extrabold text-blue" href="https://github.com/TheWhiteWitchTM/sociallydead">
-            github.com/TheWhiteWitchTM/sociallydead
-          </a>
-        </p>
-      </div>
     </section>
   );
 }

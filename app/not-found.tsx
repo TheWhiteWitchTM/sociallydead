@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <section className="mx-auto max-w-[720px] px-5 py-20">
+    <section className="mast-copy py-16">
       <p className="kicker">404</p>
       <h1 className="lyric">
         what hatred breeds
@@ -20,7 +20,7 @@ export default function NotFound() {
       </p>
       <p className="lede">This page is not in the directory.</p>
       <p className="mt-6">
-        <Link href="/" className="font-extrabold text-blue">
+        <Link href="/" className="back-link">
           Back to the directory
         </Link>
       </p>

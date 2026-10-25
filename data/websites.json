@@ -1,5 +1,15 @@
 [
   {
+    "id": "the-white-witch",
+    "name": "The White Witch™",
+    "url": "https://thewhitewitchtm.github.io/whitewitch/",
+    "blurb": "Keeps this directory. Politics and social events, facts first.",
+    "tags": ["host"],
+    "language": "en",
+    "added": "2026-10-25",
+    "pin": true
+  },
+  {
     "id": "aclu",
     "name": "American Civil Liberties Union",
     "url": "https://www.aclu.org/",
