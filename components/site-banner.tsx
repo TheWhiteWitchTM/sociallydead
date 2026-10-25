@@ -1,7 +1,7 @@
 "use client";
 
 import { asset } from "@/lib/asset";
-import { prefersReducedMotion } from "@/lib/directory-filter";
+import { HOME_MAST, prefersReducedMotion } from "@/lib/directory-filter";
 import { useEffect, useLayoutEffect, useState } from "react";
 
 const READ_MS = 16000;
@@ -14,9 +14,27 @@ export function SiteBanner() {
   const [folding, setFolding] = useState(false);
 
   useLayoutEffect(() => {
-    if (sessionStorage.getItem(STORAGE_KEY) === "collapsed") setOpen(false);
+    const directory = window.location.hash === "#directory";
+    if (directory) document.documentElement.classList.add("mast-off");
+    else document.documentElement.classList.remove("mast-off");
+    if (directory || sessionStorage.getItem(STORAGE_KEY) === "collapsed") {
+      setOpen(false);
+      if (directory) remember(false);
+    }
     const frame = requestAnimationFrame(() => setLive(true));
     return () => cancelAnimationFrame(frame);
+  }, []);
+
+  useEffect(() => {
+    function onMast(event: Event) {
+      if ((event as CustomEvent<string>).detail !== "hide") return;
+      setTiming(false);
+      setFolding(false);
+      setOpen(false);
+      remember(false);
+    }
+    window.addEventListener(HOME_MAST, onMast);
+    return () => window.removeEventListener(HOME_MAST, onMast);
   }, []);
 
   useEffect(() => {

@@ -7,8 +7,10 @@ import {
   DIRECTORY_KIND,
   DIRECTORY_QUERY,
   kindFromLocation,
+  hideHomeMast,
   prefersReducedMotion,
   requestDirectoryFilter,
+  showHomeMast,
   type DirectoryKind,
 } from "@/lib/directory-filter";
 import { CATEGORIES, SHELF_LABEL } from "@/lib/categories";
@@ -125,13 +127,16 @@ export function SiteHeader() {
     if (!document.getElementById("directory")) return;
     event.preventDefault();
     requestDirectoryFilter({ reset: true });
+    showHomeMast();
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
   }
 
   function onDirectory(event: ReactMouseEvent<HTMLAnchorElement>) {
     close();
-    if (!scrollToDirectory()) return;
+    if (!document.getElementById("directory")) return;
     event.preventDefault();
+    hideHomeMast();
+    scrollToDirectory();
   }
 
   function onSearchChange(value: string) {
@@ -147,6 +152,7 @@ export function SiteHeader() {
       window.location.assign(q ? `${home}?q=${encodeURIComponent(q)}#directory` : `${home}#directory`);
       return;
     }
+    hideHomeMast();
     scrollToDirectory();
   }
 
@@ -157,6 +163,7 @@ export function SiteHeader() {
       window.location.assign(kind === "all" ? home : `${home}?kind=${kind}#directory`);
       return;
     }
+    hideHomeMast();
     requestDirectoryFilter({ kind });
     scrollToDirectory();
   }

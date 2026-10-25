@@ -1,11 +1,11 @@
 import { Directory } from "@/components/directory";
 import { Hero } from "@/components/hero";
 import thumbFiles from "@/data/thumbs.json";
-import { SHELF_BLURB, SHELF_LABEL, SHELF_NOUN } from "@/lib/categories";
+import { SHELF_BLURB, SHELF_LABEL } from "@/lib/categories";
 import { loadDirectory } from "@/lib/directory";
 import { groupDirectory, type OrgGroup } from "@/lib/groups";
 import { SITE_ORIGIN, SITE_URL } from "@/lib/site";
-import { UKRAINE_BLURB, UKRAINE_LABEL, UKRAINE_NOUN, supportsUkraine, type DirectoryShelf } from "@/lib/ukraine";
+import { UKRAINE_BLURB, UKRAINE_LABEL, supportsUkraine, type DirectoryShelf } from "@/lib/ukraine";
 
 const thumbs = thumbFiles as Record<string, string>;
 
@@ -67,11 +67,11 @@ export function ShelfPage({ shelf }: { shelf: DirectoryShelf }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Hero
-        banner={shelf === "all"}
-        total={visible.length}
-        noun={shelf === "all" ? "public listings" : shelf === "ukraine" ? UKRAINE_NOUN : SHELF_NOUN[shelf]}
-      />
+      {shelf === "all" ? (
+        <Hero total={visible.length} noun="public listings" />
+      ) : (
+        <h1 className="sr-only">{shelf === "ukraine" ? UKRAINE_LABEL : SHELF_LABEL[shelf]}</h1>
+      )}
       <Directory groups={groups} shelf={shelf} />
     </>
   );

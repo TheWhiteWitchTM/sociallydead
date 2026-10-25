@@ -22,7 +22,7 @@ const display = Cormorant_Garamond({
 });
 
 const themeBoot = `(function(){try{var q=new URLSearchParams(location.search).get("theme");var t=(q==="light"||q==="dark")?q:localStorage.getItem("sd-theme");if(t!=="light"&&t!=="dark")t="dark";if(q==="light"||q==="dark")localStorage.setItem("sd-theme",q);document.documentElement.setAttribute("data-theme",t);}catch(e){document.documentElement.setAttribute("data-theme","dark");}})();`;
-const bannerBoot = `(function(){try{if(sessionStorage.getItem("sd-banner")==="collapsed")document.documentElement.classList.add("banner-collapsed");}catch(e){}})();`;
+const bannerBoot = `(function(){try{if(sessionStorage.getItem("sd-banner")==="collapsed")document.documentElement.classList.add("banner-collapsed");if(location.hash==="#directory")document.documentElement.classList.add("mast-off");}catch(e){}})();`;
 
 const description =
   "A directory of people, shows, news desks, and organizations pushing back on MAGA, the AfD, and the far right. Websites, YouTube, X, and Bluesky.";
