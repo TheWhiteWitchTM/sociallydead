@@ -11,6 +11,17 @@
     "pin": true
   },
   {
+    "id": "aaron-rupar",
+    "name": "Aaron Rupar",
+    "url": "https://www.publicnotice.co/",
+    "blurb": "Independent journalist. He publishes Public Notice and posts clips of political figures.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25",
+    "featured": true
+  },
+  {
     "id": "aclu",
     "name": "American Civil Liberties Union",
     "url": "https://www.aclu.org/",
@@ -71,6 +82,16 @@
     "added": "2026-10-25"
   },
   {
+    "id": "brian-tyler-cohen",
+    "name": "Brian Tyler Cohen",
+    "url": "https://www.briantylercohen.com/",
+    "blurb": "Journalist and host of No Lie. Interviews and daily reporting on U.S. politics.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
     "id": "brennan-center",
     "name": "Brennan Center for Justice",
     "url": "https://www.brennancenter.org/",
@@ -121,6 +142,16 @@
     "added": "2026-10-25"
   },
   {
+    "id": "heather-cox-richardson",
+    "name": "Heather Cox Richardson",
+    "url": "https://heathercoxrichardson.substack.com/",
+    "blurb": "Historian. Letters from an American is her daily letter on U.S. politics.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
     "id": "hope-not-hate",
     "name": "HOPE not hate",
     "url": "https://hopenothate.org.uk/",
@@ -161,6 +192,16 @@
     "added": "2026-10-25"
   },
   {
+    "id": "meidas-touch",
+    "name": "MeidasTouch",
+    "url": "https://www.meidastouch.com/",
+    "blurb": "Independent news network covering U.S. politics and the law. Ron Filipkowski is editor-in-chief.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
     "id": "politifact",
     "name": "PolitiFact",
     "url": "https://www.politifact.com/",
@@ -196,6 +237,16 @@
     "url": "https://www.splcenter.org/",
     "blurb": "Tracks hate and extremist groups in the United States and publishes Hatewatch.",
     "tags": ["watchdog", "extremism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "the-bulwark",
+    "name": "The Bulwark",
+    "url": "https://www.thebulwark.com/",
+    "blurb": "Political reporting and analysis from conservatives who oppose Trump. Based in Washington.",
+    "tags": ["journalism", "united-states"],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"

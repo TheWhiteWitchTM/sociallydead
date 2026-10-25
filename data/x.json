@@ -12,6 +12,18 @@
     "pin": true
   },
   {
+    "id": "aaron-rupar",
+    "name": "Aaron Rupar",
+    "handle": "atrupar",
+    "url": "https://x.com/atrupar",
+    "blurb": "Independent journalist. Clips of political figures, alongside the Public Notice newsletter.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25",
+    "featured": true
+  },
+  {
     "id": "aclu",
     "name": "ACLU",
     "handle": "ACLU",
@@ -67,12 +79,34 @@
     "added": "2026-10-25"
   },
   {
+    "id": "brian-tyler-cohen",
+    "name": "Brian Tyler Cohen",
+    "handle": "briantylercohen",
+    "url": "https://x.com/briantylercohen",
+    "blurb": "Journalist and host of No Lie. Interviews and daily reporting on U.S. politics.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
     "id": "eji",
     "name": "Equal Justice Initiative",
     "handle": "eji_org",
     "url": "https://x.com/eji_org",
     "blurb": "Official account. Racial injustice, punishment, and public memory.",
     "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "heather-cox-richardson",
+    "name": "Heather Cox Richardson",
+    "handle": "HC_Richardson",
+    "url": "https://x.com/HC_Richardson",
+    "blurb": "Historian. Author of the daily newsletter Letters from an American.",
+    "tags": ["journalism", "united-states"],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -122,6 +156,17 @@
     "added": "2026-10-25"
   },
   {
+    "id": "meidas-touch",
+    "name": "MeidasTouch",
+    "handle": "MeidasTouch",
+    "url": "https://x.com/MeidasTouch",
+    "blurb": "Official account of the MeidasTouch news network.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
     "id": "propublica",
     "name": "ProPublica",
     "handle": "propublica",
@@ -139,6 +184,28 @@
     "url": "https://x.com/splcenter",
     "blurb": "Official account. The center has said it no longer posts actively on X.",
     "tags": ["watchdog", "extremism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "ron-filipkowski",
+    "name": "Ron Filipkowski",
+    "handle": "RonFilipkowski",
+    "url": "https://x.com/RonFilipkowski",
+    "blurb": "Editor-in-chief of MeidasTouch. Former federal prosecutor who tracks the right in public.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "the-bulwark",
+    "name": "The Bulwark",
+    "handle": "BulwarkOnline",
+    "url": "https://x.com/BulwarkOnline",
+    "blurb": "Official account. Political reporting from conservatives who oppose Trump.",
+    "tags": ["journalism", "united-states"],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"

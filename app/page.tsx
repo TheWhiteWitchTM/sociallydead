@@ -1,10 +1,20 @@
 import { Directory } from "@/components/directory";
 import { Hero } from "@/components/hero";
+import thumbFiles from "@/data/thumbs.json";
 import { loadDirectory } from "@/lib/directory";
-import { groupDirectory } from "@/lib/groups";
+import { groupDirectory, type OrgGroup } from "@/lib/groups";
+
+const thumbs = thumbFiles as Record<string, string>;
+
+function withThumbs(groups: OrgGroup[]): OrgGroup[] {
+  return groups.map((group) => {
+    const file = thumbs[group.id];
+    return file ? { ...group, thumb: `/thumbs/${file}` } : group;
+  });
+}
 
 export default function HomePage() {
-  const groups = groupDirectory(loadDirectory());
+  const groups = withThumbs(groupDirectory(loadDirectory()));
   const total = groups.length;
   const jsonLd = {
     "@context": "https://schema.org",

@@ -8,6 +8,7 @@
     "prebuild": "node tools/edit-directory.mjs validate",
     "build": "next build",
     "directory": "node tools/edit-directory.mjs",
+    "thumbs": "node tools/fetch-thumbs.mjs",
     "check": "node tools/edit-directory.mjs validate && tsc --noEmit"
   },
   "engines": {

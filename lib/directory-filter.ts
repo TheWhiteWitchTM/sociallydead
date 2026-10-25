@@ -1,17 +1,19 @@
 import { CATALOGS, type Catalog } from "@/lib/types";
 
-export type DirectoryKind = "all" | Catalog;
+export type DirectoryKind = "all" | "featured" | Catalog;
 
 export const DIRECTORY_FILTER = "sd-directory-filter";
 export const DIRECTORY_KIND = "sd-directory-kind";
+export const DIRECTORY_QUERY = "sd-directory-query";
 
 export type DirectoryFilterDetail = {
   kind?: DirectoryKind;
+  query?: string;
   reset?: boolean;
 };
 
 export function isKind(value: string | null): value is DirectoryKind {
-  return value === "all" || (CATALOGS as readonly string[]).includes(value ?? "");
+  return value === "all" || value === "featured" || (CATALOGS as readonly string[]).includes(value ?? "");
 }
 
 export function kindFromLocation(): DirectoryKind {

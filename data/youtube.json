@@ -12,6 +12,17 @@
     "pin": true
   },
   {
+    "id": "brian-tyler-cohen",
+    "name": "Brian Tyler Cohen",
+    "handle": "briantylercohen",
+    "url": "https://www.youtube.com/@briantylercohen",
+    "blurb": "Journalist and host of No Lie. Interviews and daily reporting on U.S. politics.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
     "id": "aclu",
     "name": "ACLU",
     "handle": "ACLU",
@@ -67,6 +78,17 @@
     "added": "2026-10-25"
   },
   {
+    "id": "heather-cox-richardson",
+    "name": "Heather Cox Richardson",
+    "handle": "heathercoxrichardson",
+    "url": "https://www.youtube.com/@heathercoxrichardson",
+    "blurb": "Historian. Letters from an American, read and discussed on her channel.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
     "id": "hope-not-hate",
     "name": "HOPE not hate",
     "handle": "hopenothate",
@@ -100,6 +122,17 @@
     "added": "2026-10-25"
   },
   {
+    "id": "meidas-touch",
+    "name": "MeidasTouch",
+    "handle": "MeidasTouch",
+    "url": "https://www.youtube.com/@MeidasTouch",
+    "blurb": "Independent news network. Politics, law, and breaking news.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
     "id": "propublica",
     "name": "ProPublica",
     "handle": "propublica",
@@ -117,6 +150,17 @@
     "url": "https://www.youtube.com/@splcenter",
     "blurb": "Official channel. Hatewatch, explainers, and reporting on extremist groups.",
     "tags": ["watchdog", "extremism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "the-bulwark",
+    "name": "The Bulwark",
+    "handle": "thebulwark",
+    "url": "https://www.youtube.com/@thebulwark",
+    "blurb": "Political reporting and analysis from conservatives who oppose Trump.",
+    "tags": ["journalism", "united-states"],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"

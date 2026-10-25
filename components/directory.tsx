@@ -1,9 +1,11 @@
 "use client";
 
 import { GlobeIcon, PlayIcon, SearchIcon, SkyIcon, XIcon } from "@/components/icons";
+import { asset } from "@/lib/asset";
 import {
   DIRECTORY_FILTER,
   DIRECTORY_KIND,
+  DIRECTORY_QUERY,
   isKind,
   type DirectoryFilterDetail,
   type DirectoryKind,
@@ -17,8 +19,11 @@ type SortMode = "az" | "new";
 
 const KIND_LABEL: Record<Kind, string> = {
   all: "All",
+  featured: "Featured",
   ...CATALOG_LABEL,
 };
+
+const KIND_ORDER: Kind[] = ["featured", "all", ...CATALOGS];
 
 function haystack(group: OrgGroup): string {
   const parts: Array<string | undefined> = [group.name, group.blurb, group.region, group.tags.join(" ")];
@@ -55,7 +60,7 @@ function Glyph({ kind }: { kind: Catalog }) {
 }
 
 function primaryOf(group: OrgGroup, kind: Kind): Presence {
-  if (kind !== "all") {
+  if (kind !== "all" && kind !== "featured") {
     const picked = group.presences.find((item) => item.catalog === kind);
     if (picked) return picked;
   }
@@ -63,7 +68,7 @@ function primaryOf(group: OrgGroup, kind: Kind): Presence {
 }
 
 function blurbFor(group: OrgGroup, kind: Kind): string {
-  if (kind !== "all") {
+  if (kind !== "all" && kind !== "featured") {
     const picked = group.presences.find((item) => item.catalog === kind);
     if (picked) return picked.entry.blurb;
   }
@@ -110,12 +115,17 @@ function OrgCard({ group, kind }: { group: OrgGroup; kind: Kind }) {
       onFocusCapture={placePop}
     >
       <a className="hover-card-main" href={primary.entry.url} target="_blank" rel="noopener noreferrer">
-        <span className="card-title">{group.name}</span>
-        <span className="card-meta">
-          <span className="handle">{labelFor(primary.entry)}</span>
-          {group.region ? <span className="text-muted"> · {group.region}</span> : null}
+        {group.thumb ? (
+          <img className="card-thumb" src={asset(group.thumb)} alt="" width={80} height={80} loading="lazy" />
+        ) : null}
+        <span className="card-copy">
+          <span className="card-title">{group.name}</span>
+          <span className="card-meta">
+            <span className="handle">{labelFor(primary.entry)}</span>
+            {group.region ? <span className="text-muted"> · {group.region}</span> : null}
+          </span>
+          <span className="card-blurb">{blurb}</span>
         </span>
-        <span className="card-blurb">{blurb}</span>
         <span className="sr-only"> (opens in a new tab)</span>
       </a>
       <span className="platform-row">
@@ -133,12 +143,17 @@ function OrgCard({ group, kind }: { group: OrgGroup; kind: Kind }) {
         ))}
       </span>
       <div className="hover-card-pop" aria-hidden="true">
-        <span className="pop-kicker">
-          {group.featured ? "Featured · " : ""}
-          {group.presences.map((item) => CATALOG_LABEL[item.catalog]).join(" · ")}
-          {group.region ? ` · ${group.region}` : ""}
+        <span className="pop-head">
+          {group.thumb ? <img className="pop-thumb" src={asset(group.thumb)} alt="" width={112} height={112} /> : null}
+          <span className="pop-head-copy">
+            <span className="pop-kicker">
+              {group.featured ? "Featured · " : ""}
+              {group.presences.map((item) => CATALOG_LABEL[item.catalog]).join(" · ")}
+              {group.region ? ` · ${group.region}` : ""}
+            </span>
+            <span className="pop-title">{group.name}</span>
+          </span>
         </span>
-        <span className="pop-title">{group.name}</span>
         <span className="pop-blurb">{blurb}</span>
         <span className="pop-links">
           {group.presences.map(({ catalog, entry }) => (
@@ -174,6 +189,8 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
   const [sort, setSort] = useState<SortMode>("az");
   const searchRef = useRef<HTMLInputElement>(null);
   const hydrated = useRef(false);
+  const queryReady = useRef(false);
+  const queryFromHeader = useRef(false);
 
   useEffect(() => {
     if (!hydrated.current) {
@@ -216,32 +233,42 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
         return;
       }
       if (detail.kind) setKind(detail.kind);
+      if (typeof detail.query === "string") {
+        const next = detail.query;
+        setQuery((current) => {
+          if (current === next) return current;
+          queryFromHeader.current = true;
+          return next;
+        });
+      }
     }
     window.addEventListener(DIRECTORY_FILTER, onFilter);
     return () => window.removeEventListener(DIRECTORY_FILTER, onFilter);
   }, []);
 
   useEffect(() => {
-    function onKey(event: KeyboardEvent) {
-      if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) return;
-      const target = event.target;
-      if (target instanceof HTMLElement && (target.tagName === "INPUT" || target.tagName === "TEXTAREA")) return;
-      event.preventDefault();
-      searchRef.current?.focus();
+    if (!queryReady.current) {
+      queryReady.current = true;
+      return;
     }
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
+    if (queryFromHeader.current) {
+      queryFromHeader.current = false;
+      return;
+    }
+    window.dispatchEvent(new CustomEvent(DIRECTORY_QUERY, { detail: query }));
+  }, [query]);
 
   const counts = useMemo(() => {
-    const result = {
+    const result: Record<Kind, number> = {
       all: groups.length,
+      featured: 0,
       websites: 0,
       youtube: 0,
       x: 0,
       bluesky: 0,
     };
     for (const group of groups) {
+      if (group.featured) result.featured += 1;
       for (const { catalog } of group.presences) result[catalog] += 1;
     }
     return result;
@@ -249,6 +276,7 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
 
   const pool = useMemo(() => {
     if (kind === "all") return groups;
+    if (kind === "featured") return groups.filter((group) => group.featured);
     return groups.filter((group) => group.presences.some((item) => item.catalog === kind));
   }, [groups, kind]);
 
@@ -292,7 +320,7 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
           ) : null}
         </label>
         <div className="catalogs" role="toolbar" aria-label="Catalogs">
-          {(["all", ...CATALOGS] as Kind[]).map((item) => (
+          {KIND_ORDER.map((item) => (
             <button key={item} type="button" aria-pressed={kind === item} onClick={() => setKind(item)}>
               {KIND_LABEL[item]}
               <span className="count">{counts[item]}</span>
@@ -350,7 +378,7 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
         </div>
       ) : (
         <>
-          {featured.length > 0 ? (
+          {kind !== "featured" && featured.length > 0 ? (
             <div className="featured-block">
               <h3 className="featured-label">Featured</h3>
               <ul className="listing-grid">
@@ -362,9 +390,9 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
               </ul>
             </div>
           ) : null}
-          {rest.length > 0 ? (
+          {(kind === "featured" ? matched : rest).length > 0 ? (
             <ul className="listing-grid">
-              {rest.map((group) => (
+              {(kind === "featured" ? matched : rest).map((group) => (
                 <li key={group.id}>
                   <OrgCard group={group} kind={kind} />
                 </li>

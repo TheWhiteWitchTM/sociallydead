@@ -1,9 +1,11 @@
 "use client";
 
+import { SearchIcon } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { asset } from "@/lib/asset";
 import {
   DIRECTORY_KIND,
+  DIRECTORY_QUERY,
   kindFromLocation,
   prefersReducedMotion,
   requestDirectoryFilter,
@@ -12,7 +14,7 @@ import {
 import { CATALOG_LABEL, CATALOGS, type Catalog } from "@/lib/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type MouseEvent as ReactMouseEvent } from "react";
 
 const DESKS: { kind: DirectoryKind; title: string }[] = [
   { kind: "all", title: "All desks" },
@@ -31,12 +33,19 @@ export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [desksOpen, setDesksOpen] = useState(false);
   const [active, setActive] = useState<DirectoryKind>("all");
+  const [query, setQuery] = useState("");
+  const deskOn = active !== "all" && active !== "featured";
 
   useEffect(() => {
     setActive(kindFromLocation());
+    const initial = new URLSearchParams(window.location.search).get("q");
+    if (initial) setQuery(initial);
     function onKind(event: Event) {
       const next = (event as CustomEvent<DirectoryKind>).detail;
       if (next) setActive(next);
+    }
+    function onQuery(event: Event) {
+      setQuery((event as CustomEvent<string>).detail ?? "");
     }
     function onPointer(event: MouseEvent) {
       if (!navRef.current?.contains(event.target as Node)) {
@@ -48,13 +57,27 @@ export function SiteHeader() {
       if (event.key === "Escape") {
         setMenuOpen(false);
         setDesksOpen(false);
+        return;
       }
+      if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) return;
+      const target = event.target;
+      if (
+        target instanceof HTMLElement &&
+        (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)
+      ) {
+        return;
+      }
+      event.preventDefault();
+      setMenuOpen(true);
+      window.setTimeout(() => document.getElementById("nav-search")?.focus(), 0);
     }
     window.addEventListener(DIRECTORY_KIND, onKind);
+    window.addEventListener(DIRECTORY_QUERY, onQuery);
     document.addEventListener("click", onPointer);
     document.addEventListener("keydown", onKey);
     return () => {
       window.removeEventListener(DIRECTORY_KIND, onKind);
+      window.removeEventListener(DIRECTORY_QUERY, onQuery);
       document.removeEventListener("click", onPointer);
       document.removeEventListener("keydown", onKey);
     };
@@ -86,6 +109,22 @@ export function SiteHeader() {
     event.preventDefault();
   }
 
+  function onSearchChange(value: string) {
+    setQuery(value);
+    if (document.getElementById("directory")) requestDirectoryFilter({ query: value });
+  }
+
+  function onSearchKey(event: ReactKeyboardEvent<HTMLInputElement>) {
+    if (event.key !== "Enter") return;
+    const q = query.trim();
+    if (!document.getElementById("directory")) {
+      const home = asset("/");
+      window.location.assign(q ? `${home}?q=${encodeURIComponent(q)}#directory` : `${home}#directory`);
+      return;
+    }
+    scrollToDirectory();
+  }
+
   function choose(kind: DirectoryKind) {
     close();
     if (!document.getElementById("directory")) {
@@ -113,7 +152,7 @@ export function SiteHeader() {
         <ul id="site-menu" className={menuOpen ? "open" : undefined}>
           <li>
             <Link href="/" className="brand" onClick={onHome}>
-              Socially<span className="brand-d">D</span>ead
+              SociallyDead
             </Link>
           </li>
           <li>
@@ -121,19 +160,10 @@ export function SiteHeader() {
               Directory
             </Link>
           </li>
-          <li>
-            <Link
-              href="/woozle-effect"
-              className={here(pathname, "/woozle-effect") ? "is-current" : undefined}
-              onClick={close}
-            >
-              Woozle effect
-            </Link>
-          </li>
           <li className="dropdown">
             <button
               type="button"
-              className={`dropdown-toggle${active !== "all" ? " is-active" : ""}`}
+              className={`dropdown-toggle${deskOn ? " is-active" : ""}`}
               aria-expanded={desksOpen}
               aria-haspopup="true"
               onClick={() => setDesksOpen((open) => !open)}
@@ -151,14 +181,34 @@ export function SiteHeader() {
             </ul>
           </li>
           <li>
-            <a href="https://thewhitewitchtm.github.io/whitewitch/" target="_blank" rel="noopener noreferrer">
-              The White Witch™
-            </a>
+            <Link
+              href="/woozle-effect"
+              className={here(pathname, "/woozle-effect") ? "is-current" : undefined}
+              onClick={close}
+            >
+              Woozle effect
+            </Link>
           </li>
           <li>
             <a href="https://thewhitewitchtm.github.io/LibreSky/" target="_blank" rel="noopener noreferrer">
               LibreSky
             </a>
+          </li>
+          <li>
+            <label className="nav-search">
+              <span className="sr-only">Search the directory</span>
+              <SearchIcon />
+              <input
+                id="nav-search"
+                value={query}
+                onChange={(event) => onSearchChange(event.target.value)}
+                onKeyDown={onSearchKey}
+                placeholder="Search"
+                type="search"
+                autoComplete="off"
+                enterKeyHint="search"
+              />
+            </label>
           </li>
         </ul>
         <a

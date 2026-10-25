@@ -1,11 +1,29 @@
 [
   {
+    "id": "aaron-rupar",
+    "name": "Aaron Rupar",
+    "handle": "atrupar.com",
+    "url": "https://bsky.app/profile/atrupar.com",
+    "blurb": "Independent journalist. Clips of political figures, alongside the Public Notice newsletter.",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25",
+    "featured": true
+  },
+  {
     "id": "aclu",
     "name": "ACLU",
     "handle": "aclu.org",
     "url": "https://bsky.app/profile/aclu.org",
     "blurb": "Official account of the American Civil Liberties Union.",
-    "tags": ["legal", "united-states"],
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -16,7 +34,10 @@
     "handle": "amadeuantonio.bsky.social",
     "url": "https://bsky.app/profile/amadeuantonio.bsky.social",
     "blurb": "Official account. Work against right-wing extremism, racism, and antisemitism in Germany.",
-    "tags": ["extremism", "germany"],
+    "tags": [
+      "extremism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -27,7 +48,11 @@
     "handle": "bellingcat.com",
     "url": "https://bsky.app/profile/bellingcat.com",
     "blurb": "Official account of the open-source investigative collective.",
-    "tags": ["journalism", "research", "international"],
+    "tags": [
+      "journalism",
+      "research",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -38,7 +63,10 @@
     "handle": "belltower.news",
     "url": "https://bsky.app/profile/belltower.news",
     "blurb": "Journalism on the far right, racism, and antisemitism.",
-    "tags": ["journalism", "germany"],
+    "tags": [
+      "journalism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -49,7 +77,24 @@
     "handle": "brennancenter.org",
     "url": "https://bsky.app/profile/brennancenter.org",
     "blurb": "Official account. Democracy, voting, and the rule of law.",
-    "tags": ["legal", "united-states"],
+    "tags": [
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "brian-tyler-cohen",
+    "name": "Brian Tyler Cohen",
+    "handle": "briantylercohen.bsky.social",
+    "url": "https://bsky.app/profile/briantylercohen.bsky.social",
+    "blurb": "Journalist and host of No Lie. Interviews and daily reporting on U.S. politics.",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -60,7 +105,10 @@
     "handle": "correctiv.org",
     "url": "https://bsky.app/profile/correctiv.org",
     "blurb": "Official account of the German investigative newsroom.",
-    "tags": ["journalism", "germany"],
+    "tags": [
+      "journalism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -71,7 +119,10 @@
     "handle": "eji.org",
     "url": "https://bsky.app/profile/eji.org",
     "blurb": "Official account. Racial injustice, punishment, and public memory.",
-    "tags": ["legal", "united-states"],
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -82,7 +133,24 @@
     "handle": "factcheck.org",
     "url": "https://bsky.app/profile/factcheck.org",
     "blurb": "Official account of the Annenberg fact-checking project.",
-    "tags": ["fact-check", "united-states"],
+    "tags": [
+      "fact-check",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "heather-cox-richardson",
+    "name": "Heather Cox Richardson",
+    "handle": "hcrichardson.bsky.social",
+    "url": "https://bsky.app/profile/hcrichardson.bsky.social",
+    "blurb": "Historian. Author of the daily newsletter Letters from an American.",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -93,7 +161,11 @@
     "handle": "hopenothate.org.uk",
     "url": "https://bsky.app/profile/hopenothate.org.uk",
     "blurb": "Official account of the UK campaign against the far right.",
-    "tags": ["organizing", "extremism", "united-kingdom"],
+    "tags": [
+      "organizing",
+      "extremism",
+      "united-kingdom"
+    ],
     "region": "United Kingdom",
     "language": "en",
     "added": "2026-10-25"
@@ -104,7 +176,10 @@
     "handle": "hrw.org",
     "url": "https://bsky.app/profile/hrw.org",
     "blurb": "Official account. Human rights investigations worldwide.",
-    "tags": ["journalism", "international"],
+    "tags": [
+      "journalism",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -115,7 +190,24 @@
     "handle": "indivisible.org",
     "url": "https://bsky.app/profile/indivisible.org",
     "blurb": "Official account of the volunteer organizing network.",
-    "tags": ["organizing", "united-states"],
+    "tags": [
+      "organizing",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "meidas-touch",
+    "name": "MeidasTouch",
+    "handle": "meidastouch.com",
+    "url": "https://bsky.app/profile/meidastouch.com",
+    "blurb": "Official account of the MeidasTouch news network.",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -126,7 +218,24 @@
     "handle": "propublica.org",
     "url": "https://bsky.app/profile/propublica.org",
     "blurb": "Official account of the investigative newsroom.",
-    "tags": ["journalism", "united-states"],
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "ron-filipkowski",
+    "name": "Ron Filipkowski",
+    "handle": "ronfilipkowski.bsky.social",
+    "url": "https://bsky.app/profile/ronfilipkowski.bsky.social",
+    "blurb": "Editor-in-chief of MeidasTouch. Former federal prosecutor who tracks the right in public.",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -137,7 +246,25 @@
     "handle": "splcenter.org",
     "url": "https://bsky.app/profile/splcenter.org",
     "blurb": "Official account. Hate and extremist-group tracking in the United States.",
-    "tags": ["watchdog", "extremism", "united-states"],
+    "tags": [
+      "watchdog",
+      "extremism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "the-bulwark",
+    "name": "The Bulwark",
+    "handle": "thebulwark.com",
+    "url": "https://bsky.app/profile/thebulwark.com",
+    "blurb": "Official account. Political reporting from conservatives who oppose Trump.",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -148,7 +275,9 @@
     "handle": "thewhitewitchtm.sociallydead.me",
     "url": "https://bsky.app/profile/thewhitewitchtm.sociallydead.me",
     "blurb": "Keeps this directory. Politics and social events, facts first.",
-    "tags": ["host"],
+    "tags": [
+      "host"
+    ],
     "language": "en",
     "added": "2026-10-25",
     "featured": true,

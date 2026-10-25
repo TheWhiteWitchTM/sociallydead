@@ -15,6 +15,7 @@ export type OrgGroup = {
   featured: boolean;
   pin: boolean;
   presences: Presence[];
+  thumb?: string;
 };
 
 export function groupDirectory(data: DirectoryData): OrgGroup[] {
