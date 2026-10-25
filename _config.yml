@@ -1,0 +1,10 @@
+# GitHub Pages is still set to "Deploy from a branch". That starts a second
+# workflow, "pages build and deployment", which runs Jekyll on this repo and
+# publishes README.md. It races the Next.js workflow and replaces the site.
+#
+# The line below is invalid YAML on purpose. Jekyll stops before deploy, so
+# only .github/workflows/pages.yml can publish.
+#
+# To remove this file: Settings → Pages → Build and deployment → Source:
+# GitHub Actions. That turns the Jekyll workflow off.
+not: valid: yaml: [

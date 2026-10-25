@@ -61,7 +61,9 @@ Visits are counted with the same Google tag as LibreSky, `G-13S6Z9KCX9`.
 
 `basepath.txt` is `/sociallydead`, so the test site matches `https://thewhitewitchtm.github.io/sociallydead/`.
 
-In the repository settings, set Pages to **GitHub Actions**. Pushes to `main` run `.github/workflows/pages.yml`.
+Pushes to `main` run `.github/workflows/pages.yml`, which builds `out/` and deploys it.
+
+The repository Pages source is still **Deploy from a branch**. GitHub then also runs Jekyll and publishes this README, which replaces the built site. `_config.yml` is invalid on purpose so that Jekyll build stops before it can deploy. In the repository settings, set Pages to **GitHub Actions**. After that, delete `_config.yml`.
 
 When `sociallydead.me` is ready:
 
