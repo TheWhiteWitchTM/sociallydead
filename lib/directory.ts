@@ -61,6 +61,7 @@ export function parseCatalog(raw: unknown, catalog: string): Entry[] {
     if (region) entry.region = region;
     if (language) entry.language = language;
     if (added) entry.added = added;
+    if (record.featured === true) entry.featured = true;
     if (record.pin === true) entry.pin = true;
     return entry;
   });

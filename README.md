@@ -30,7 +30,7 @@ The pages render four JSON files:
 - `data/x.json`
 - `data/bluesky.json`
 
-Each entry has `id`, `name`, `url`, `blurb`, and `tags`. Optional fields are `handle`, `region`, `language`, `added` (`YYYY-MM-DD`), and `pin`.
+Each entry has `id`, `name`, `url`, `blurb`, and `tags`. Optional fields are `handle`, `region`, `language`, `added` (`YYYY-MM-DD`), `featured`, and `pin`. `featured` lifts a listing into the featured row.
 
 ```bash
 tools/edit-directory.sh list

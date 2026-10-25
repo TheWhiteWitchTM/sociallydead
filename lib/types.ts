@@ -19,6 +19,7 @@ export type Entry = {
   region?: string;
   language?: string;
   added?: string;
+  featured?: boolean;
   pin?: boolean;
 };
 

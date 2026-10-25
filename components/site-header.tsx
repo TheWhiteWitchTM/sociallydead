@@ -144,6 +144,14 @@ export function SiteHeader() {
             </a>
           </li>
         </ul>
+        <a
+          className="coffee"
+          href="https://www.paypal.com/ncp/payment/4P85EQRES3RGU"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          ☕ Buy me a coffee
+        </a>
         <ThemeToggle />
       </nav>
     </header>

@@ -15,7 +15,7 @@ import {
   type DirectoryData,
   type Entry,
 } from "@/lib/types";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type SyntheticEvent } from "react";
 
 type Kind = DirectoryKind;
 type SortMode = "az" | "new";
@@ -72,48 +72,68 @@ function topTags(entries: Entry[], selected: string | null): string[] {
   return top;
 }
 
-function hostGroups(rows: Row[]): Row[][] {
-  const groups: Row[][] = [];
-  const index = new Map<string, Row[]>();
-  for (const row of rows) {
-    if (!row.entry.pin) continue;
-    const key = row.entry.name;
-    let group = index.get(key);
-    if (!group) {
-      group = [];
-      index.set(key, group);
-      groups.push(group);
-    }
-    group.push(row);
-  }
-  for (const group of groups) {
-    group.sort((a, b) => CATALOGS.indexOf(a.catalog) - CATALOGS.indexOf(b.catalog));
-  }
-  return groups;
+function placePop(event: SyntheticEvent<HTMLAnchorElement>) {
+  const card = event.currentTarget;
+  const pop = card.querySelector(".hover-card-pop");
+  if (!(pop instanceof HTMLElement)) return;
+  const rect = card.getBoundingClientRect();
+  const width = Math.min(320, window.innerWidth - 24);
+  const overflowRight = rect.left + width > window.innerWidth - 12;
+  pop.style.left = overflowRight ? "auto" : "0px";
+  pop.style.right = overflowRight ? "0px" : "auto";
+  const below = window.innerHeight - rect.bottom;
+  pop.classList.toggle("above", below < 170 && rect.top > 200);
 }
 
-function HostShelf({ group }: { group: Row[] }) {
-  const blurb = (group.find((row) => row.catalog === "websites") ?? group[0]).entry.blurb;
+function ListingCard({ catalog, entry, featured }: { catalog: Catalog; entry: Entry; featured?: boolean }) {
+  const tags = entry.tags.filter((item) => item !== "host");
   return (
-    <aside className="host-shelf" aria-label={group[0].entry.name}>
-      <p className="kicker">Kept by</p>
-      <h3 className="host-name">{group[0].entry.name}</h3>
-      <p className="host-blurb">{blurb}</p>
-      <div className="host-links">
-        {group.map(({ catalog, entry }) => (
-          <a key={catalog} className="host-link" href={entry.url} target="_blank" rel="noopener noreferrer">
-            <span className={`glyph ${catalog}`}>
-              <Glyph kind={catalog} />
-            </span>
-            <span className="min-w-0">
-              <span className="host-link-kind">{CATALOG_LABEL[catalog]}</span>
-              <span className="host-link-handle">{labelFor(catalog, entry)}</span>
-            </span>
-            <span className="sr-only"> (opens in a new tab)</span>
-          </a>
-        ))}
-      </div>
-    </aside>
+    <a
+      className={featured ? "hover-card is-featured" : "hover-card"}
+      href={entry.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      onMouseEnter={placePop}
+      onFocus={placePop}
+    >
+      <span className={`glyph ${catalog}`}>
+        <Glyph kind={catalog} />
+      </span>
+      <span className="hover-card-main">
+        <span className="card-title">{entry.name}</span>
+        <span className="card-meta">
+          <span className="handle">{labelFor(catalog, entry)}</span>
+          <span className="text-muted">
+            {" · "}
+            {CATALOG_LABEL[catalog]}
+            {entry.region ? ` · ${entry.region}` : ""}
+          </span>
+        </span>
+        <span className="hover-tease" aria-hidden="true">
+          {entry.blurb}
+        </span>
+      </span>
+      <span className="hover-card-pop">
+        <span className="pop-kicker">
+          {featured ? "Featured · " : ""}
+          {CATALOG_LABEL[catalog]}
+          {entry.region ? ` · ${entry.region}` : ""}
+        </span>
+        <span className="pop-title">{entry.name}</span>
+        <span className="pop-handle">{labelFor(catalog, entry)}</span>
+        <span className="pop-blurb">{entry.blurb}</span>
+        {tags.length > 0 ? (
+          <span className="card-tags">
+            {tags.map((item) => (
+              <span key={item} className="chip static">
+                {item}
+              </span>
+            ))}
+          </span>
+        ) : null}
+      </span>
+      <span className="sr-only"> (opens in a new tab)</span>
+    </a>
   );
 }
 
@@ -214,8 +234,8 @@ export function Directory({ data }: { data: DirectoryData }) {
     tag,
   );
   const filtering = Boolean(query.trim() || tag || kind !== "all");
-  const hosts = hostGroups(matched);
-  const rest = matched.filter((row) => !row.entry.pin);
+  const featured = matched.filter((row) => row.entry.featured);
+  const rest = matched.filter((row) => !row.entry.featured);
 
   return (
     <section id="directory" className="mx-auto max-w-[1180px] px-5 pt-2 pb-8">
@@ -294,56 +314,30 @@ export function Directory({ data }: { data: DirectoryData }) {
         {query.trim() ? ` matching “${query.trim()}”` : ""}
       </p>
 
-      {hosts.length === 0 && rest.length === 0 ? (
+      {featured.length === 0 && rest.length === 0 ? (
         <div className="panel empty-state">
           <p className="empty-title">Nothing under that name yet.</p>
           <p className="empty-hint">Try another word, or clear the filters.</p>
         </div>
       ) : (
         <>
-          {hosts.map((group) => (
-            <HostShelf key={group[0].entry.name} group={group} />
-          ))}
+          {featured.length > 0 ? (
+            <div className="featured-block">
+              <h3 className="featured-label">Featured</h3>
+              <ul className="listing-grid">
+                {featured.map(({ catalog, entry }) => (
+                  <li key={`featured-${catalog}-${entry.id}`}>
+                    <ListingCard catalog={catalog} entry={entry} featured />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
           {rest.length > 0 ? (
             <ul className="listing-grid">
               {rest.map(({ catalog, entry }) => (
                 <li key={`${catalog}-${entry.id}`}>
-                  <a className="card" href={entry.url} target="_blank" rel="noopener noreferrer">
-                    <span className="card-row">
-                      <span className={`glyph ${catalog}`}>
-                        <Glyph kind={catalog} />
-                      </span>
-                      <span className="card-body">
-                        <span className="card-title-row">
-                          <span className="card-title">{entry.name}</span>
-                          <span className="out" aria-hidden="true">
-                            ↗
-                          </span>
-                        </span>
-                        <span className="card-meta">
-                          <span className="handle">{labelFor(catalog, entry)}</span>
-                          <span className="text-muted">
-                            {" · "}
-                            {CATALOG_LABEL[catalog]}
-                            {entry.region ? ` · ${entry.region}` : ""}
-                          </span>
-                        </span>
-                        <span className="card-blurb">{entry.blurb}</span>
-                        {entry.tags.length > 0 ? (
-                          <span className="card-tags">
-                            {entry.tags
-                              .filter((item) => item !== "host")
-                              .map((item) => (
-                                <span key={item} className="chip static">
-                                  {item}
-                                </span>
-                              ))}
-                          </span>
-                        ) : null}
-                        <span className="sr-only"> (opens in a new tab)</span>
-                      </span>
-                    </span>
-                  </a>
+                  <ListingCard catalog={catalog} entry={entry} />
                 </li>
               ))}
             </ul>

@@ -24,7 +24,7 @@ const ALIASES = {
   bsky: "bluesky",
   bluesky: "bluesky",
 };
-const ORDER = ["id", "name", "handle", "url", "blurb", "tags", "region", "language", "added", "pin"];
+const ORDER = ["id", "name", "handle", "url", "blurb", "tags", "region", "language", "added", "featured", "pin"];
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DAY = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -71,7 +71,7 @@ function orderEntry(entry) {
   const out = {};
   for (const key of ORDER) {
     if (entry[key] === undefined || entry[key] === "") continue;
-    if (key === "pin" && entry.pin !== true) continue;
+    if ((key === "pin" || key === "featured") && entry[key] !== true) continue;
     out[key] = entry[key];
   }
   return out;
@@ -142,6 +142,9 @@ function problemsFor(catalog, entries) {
     }
     if (entry.added !== undefined && (typeof entry.added !== "string" || !DAY.test(entry.added))) {
       problems.push(`${where} added must be YYYY-MM-DD`);
+    }
+    if (entry.featured !== undefined && entry.featured !== true) {
+      problems.push(`${where} featured must be true or omitted`);
     }
     if (entry.pin !== undefined && entry.pin !== true) {
       problems.push(`${where} pin must be true or omitted`);
@@ -236,6 +239,8 @@ function applyFields(entry, flags, { creating }) {
   if (region !== undefined) entry.region = region.trim();
   if (language !== undefined) entry.language = language.trim().toLowerCase();
   if (added !== undefined) entry.added = added.trim();
+  if (flags.featured === true) entry.featured = true;
+  if (flags.unfeature === true) delete entry.featured;
   if (flags.pin === true) entry.pin = true;
   if (flags.unpin === true) delete entry.pin;
   if (creating && !entry.added) entry.added = today();
@@ -273,6 +278,8 @@ Options
   --language    Language code, such as en or de
   --id          Slug. Add builds one from the name when this is omitted
   --added       Date YYYY-MM-DD. Add uses today
+  --featured    Show this listing in the featured row
+  --unfeature   Remove the featured flag
   --pin         Keep this listing at the top of its catalog
   --unpin       Remove the pin
   --yes         Remove without asking
@@ -289,8 +296,8 @@ function printList(catalog, entries) {
   }
   const width = Math.max(...entries.map((entry) => entry.id.length));
   for (const entry of entries) {
-    const pin = entry.pin ? " *" : "  ";
-    console.log(`${pin}${entry.id.padEnd(width)}  ${entry.name}  ${entry.url}`);
+    const mark = entry.featured ? "★ " : entry.pin ? "* " : "  ";
+    console.log(`${mark}${entry.id.padEnd(width)}  ${entry.name}  ${entry.url}`);
   }
   console.log(`${entries.length} in ${catalog}`);
 }
@@ -432,6 +439,9 @@ GPL-2.0-only. There is no warranty. See LICENSE.
           if (!value) continue;
           flags[key] = value === "-" ? "" : value;
         }
+        const featured = (await ask(rl, "Featured? [y/n/blank]")).toLowerCase();
+        if (featured === "y" || featured === "yes") flags.featured = true;
+        if (featured === "n" || featured === "no") flags.unfeature = true;
         const pin = (await ask(rl, "Pin? [y/n/blank]")).toLowerCase();
         if (pin === "y" || pin === "yes") flags.pin = true;
         if (pin === "n" || pin === "no") flags.unpin = true;

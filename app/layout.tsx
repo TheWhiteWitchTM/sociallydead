@@ -52,7 +52,7 @@ export const metadata: Metadata = {
       {
         url: "/banner.jpeg",
         width: 1024,
-        height: 572,
+        height: 360,
         alt: "SociallyDead.me directory of the resistance",
       },
     ],
