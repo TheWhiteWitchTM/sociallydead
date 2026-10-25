@@ -100,6 +100,7 @@
     "category": "people",
     "tags": [
       "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -160,6 +161,7 @@
     "category": "people",
     "tags": [
       "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -314,6 +316,7 @@
     "tags": [
       "journalism",
       "legal",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -329,6 +332,7 @@
     "category": "people",
     "tags": [
       "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -606,6 +610,53 @@
     "tags": [
       "late-night",
       "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "malcolm-nance",
+    "name": "Malcolm Nance",
+    "handle": "malcolmnance.bsky.social",
+    "url": "https://bsky.app/profile/malcolmnance.bsky.social",
+    "blurb": "Former naval intelligence officer and author. He served in Ukraine's International Legion.",
+    "category": "people",
+    "tags": [
+      "extremism",
+      "ukraine",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "adam-kinzinger",
+    "name": "Adam Kinzinger",
+    "handle": "adamkinzinger.substack.com",
+    "url": "https://bsky.app/profile/adamkinzinger.substack.com",
+    "blurb": "Former Republican congressman. He voted to impeach Trump, and he argues for aid to Ukraine.",
+    "category": "people",
+    "tags": [
+      "ukraine",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "bill-kristol",
+    "name": "Bill Kristol",
+    "handle": "billkristolbulwark.bsky.social",
+    "url": "https://bsky.app/profile/billkristolbulwark.bsky.social",
+    "blurb": "Editor at large of The Bulwark. He argues for military aid to Ukraine.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",

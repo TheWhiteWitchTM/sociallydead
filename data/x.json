@@ -117,6 +117,7 @@
     "category": "people",
     "tags": [
       "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -147,6 +148,7 @@
     "category": "people",
     "tags": [
       "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -316,6 +318,7 @@
     "category": "people",
     "tags": [
       "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -362,6 +365,7 @@
     "category": "people",
     "tags": [
       "research",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -548,6 +552,53 @@
     "tags": [
       "late-night",
       "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "malcolm-nance",
+    "name": "Malcolm Nance",
+    "handle": "MalcolmNance",
+    "url": "https://x.com/MalcolmNance",
+    "blurb": "Former naval intelligence officer and author. He served in Ukraine's International Legion.",
+    "category": "people",
+    "tags": [
+      "extremism",
+      "ukraine",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "adam-kinzinger",
+    "name": "Adam Kinzinger",
+    "handle": "AdamKinzinger",
+    "url": "https://x.com/AdamKinzinger",
+    "blurb": "Former Republican congressman. He voted to impeach Trump, and he argues for aid to Ukraine.",
+    "category": "people",
+    "tags": [
+      "ukraine",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "bill-kristol",
+    "name": "Bill Kristol",
+    "handle": "BillKristol",
+    "url": "https://x.com/BillKristol",
+    "blurb": "Editor at large of The Bulwark. He argues for military aid to Ukraine.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",

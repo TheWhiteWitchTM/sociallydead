@@ -24,6 +24,7 @@
     "category": "people",
     "tags": [
       "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -115,6 +116,7 @@
     "category": "people",
     "tags": [
       "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -254,6 +256,7 @@
     "category": "people",
     "tags": [
       "journalism",
+      "ukraine",
       "united-states"
     ],
     "region": "United States",
@@ -569,5 +572,36 @@
     "language": "en",
     "added": "2026-10-25",
     "featured": true
+  },
+  {
+    "id": "malcolm-nance",
+    "name": "Malcolm Nance",
+    "handle": "MalcolmNanceMedia",
+    "url": "https://www.youtube.com/@MalcolmNanceMedia",
+    "blurb": "Former naval intelligence officer and author. He served in Ukraine's International Legion.",
+    "category": "people",
+    "tags": [
+      "extremism",
+      "ukraine",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "adam-kinzinger",
+    "name": "Adam Kinzinger",
+    "handle": "AdamKinzinger",
+    "url": "https://www.youtube.com/@AdamKinzinger",
+    "blurb": "Former Republican congressman. He voted to impeach Trump, and he argues for aid to Ukraine.",
+    "category": "people",
+    "tags": [
+      "ukraine",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
   }
 ]

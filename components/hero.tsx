@@ -1,15 +1,17 @@
-import { asset } from "@/lib/asset";
+import { SiteBanner } from "@/components/site-banner";
 
-export function Hero({ total, noun = "public listings" }: { total: number; noun?: string }) {
+export function Hero({
+  total,
+  noun = "public listings",
+  banner = false,
+}: {
+  total: number;
+  noun?: string;
+  banner?: boolean;
+}) {
   return (
-    <section className="mast">
-      <img
-        className="site-banner"
-        src={asset("/banner.jpeg")}
-        alt="SociallyDead.me. Directory of the resistance. Curated resources opposing MAGA, the AfD, and far-right extremism."
-        width={1712}
-        height={592}
-      />
+    <section className={banner ? "mast" : "mast mast-plain"}>
+      {banner ? <SiteBanner /> : null}
       <div className="mast-copy">
         <p className="kicker">Directory of the resistance</p>
         <h1 className="lyric">

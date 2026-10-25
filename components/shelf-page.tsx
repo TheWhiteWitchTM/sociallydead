@@ -68,6 +68,7 @@ export function ShelfPage({ shelf }: { shelf: DirectoryShelf }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero
+        banner={shelf === "all"}
         total={visible.length}
         noun={shelf === "all" ? "public listings" : shelf === "ukraine" ? UKRAINE_NOUN : SHELF_NOUN[shelf]}
       />
