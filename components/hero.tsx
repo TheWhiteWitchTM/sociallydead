@@ -7,8 +7,8 @@ export function Hero({ total }: { total: number }) {
         className="site-banner"
         src={asset("/banner.jpeg")}
         alt="SociallyDead.me. Directory of the resistance. Curated resources opposing MAGA, the AfD, and far-right extremism."
-        width={1024}
-        height={360}
+        width={1712}
+        height={592}
       />
       <div className="mast-copy">
         <p className="kicker">Directory of the resistance</p>

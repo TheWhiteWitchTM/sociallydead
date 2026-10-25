@@ -8,33 +8,28 @@ import {
   type DirectoryFilterDetail,
   type DirectoryKind,
 } from "@/lib/directory-filter";
-import {
-  CATALOGS,
-  CATALOG_LABEL,
-  type Catalog,
-  type DirectoryData,
-  type Entry,
-} from "@/lib/types";
+import { type OrgGroup, type Presence } from "@/lib/groups";
+import { CATALOGS, CATALOG_LABEL, type Catalog } from "@/lib/types";
 import { useEffect, useMemo, useRef, useState, type SyntheticEvent } from "react";
 
 type Kind = DirectoryKind;
 type SortMode = "az" | "new";
-type Row = { catalog: Catalog; entry: Entry };
 
 const KIND_LABEL: Record<Kind, string> = {
   all: "All",
   ...CATALOG_LABEL,
 };
 
-function haystack(entry: Entry): string {
-  return [entry.name, entry.handle, entry.blurb, entry.region, entry.language, entry.tags.join(" "), entry.url]
-    .filter(Boolean)
-    .join(" ")
-    .toLowerCase();
+function haystack(group: OrgGroup): string {
+  const parts: Array<string | undefined> = [group.name, group.blurb, group.region, group.tags.join(" ")];
+  for (const { entry } of group.presences) {
+    parts.push(entry.name, entry.handle, entry.blurb, entry.url, entry.language, entry.region);
+  }
+  return parts.filter(Boolean).join(" ").toLowerCase();
 }
 
-function compare(a: Entry, b: Entry, mode: SortMode): number {
-  const pin = Number(Boolean(b.pin)) - Number(Boolean(a.pin));
+function compareGroups(a: OrgGroup, b: OrgGroup, mode: SortMode): number {
+  const pin = Number(b.pin) - Number(a.pin);
   if (pin) return pin;
   if (mode === "new") {
     const byDate = (b.added ?? "").localeCompare(a.added ?? "");
@@ -43,12 +38,12 @@ function compare(a: Entry, b: Entry, mode: SortMode): number {
   return a.name.localeCompare(b.name, "en");
 }
 
-function labelFor(kind: Catalog, entry: Entry): string {
+function labelFor(entry: Presence["entry"]): string {
   if (entry.handle) return `@${entry.handle.replace(/^@/, "")}`;
   try {
     return new URL(entry.url).host.replace(/^www\./, "");
   } catch {
-    return kind;
+    return entry.url;
   }
 }
 
@@ -59,10 +54,29 @@ function Glyph({ kind }: { kind: Catalog }) {
   return <SkyIcon />;
 }
 
-function topTags(entries: Entry[], selected: string | null): string[] {
+function primaryOf(group: OrgGroup, kind: Kind): Presence {
+  if (kind !== "all") {
+    const picked = group.presences.find((item) => item.catalog === kind);
+    if (picked) return picked;
+  }
+  return group.presences.find((item) => item.catalog === "websites") ?? group.presences[0];
+}
+
+function blurbFor(group: OrgGroup, kind: Kind): string {
+  if (kind !== "all") {
+    const picked = group.presences.find((item) => item.catalog === kind);
+    if (picked) return picked.entry.blurb;
+  }
+  return group.blurb;
+}
+
+function topTags(groups: OrgGroup[], selected: string | null): string[] {
   const counts = new Map<string, number>();
-  for (const entry of entries) {
-    for (const tag of entry.tags) counts.set(tag, (counts.get(tag) ?? 0) + 1);
+  for (const group of groups) {
+    for (const tag of group.tags) {
+      if (tag === "host") continue;
+      counts.set(tag, (counts.get(tag) ?? 0) + 1);
+    }
   }
   const tags = [...counts.keys()].sort(
     (a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0) || a.localeCompare(b),
@@ -72,56 +86,73 @@ function topTags(entries: Entry[], selected: string | null): string[] {
   return top;
 }
 
-function placePop(event: SyntheticEvent<HTMLAnchorElement>) {
+function placePop(event: SyntheticEvent<HTMLElement>) {
   const card = event.currentTarget;
   const pop = card.querySelector(".hover-card-pop");
   if (!(pop instanceof HTMLElement)) return;
   const rect = card.getBoundingClientRect();
-  const width = Math.min(320, window.innerWidth - 24);
+  const width = Math.min(340, window.innerWidth - 24);
   const overflowRight = rect.left + width > window.innerWidth - 12;
   pop.style.left = overflowRight ? "auto" : "0px";
   pop.style.right = overflowRight ? "0px" : "auto";
   const below = window.innerHeight - rect.bottom;
-  pop.classList.toggle("above", below < 170 && rect.top > 200);
+  pop.classList.toggle("above", below < 220 && rect.top > 240);
 }
 
-function ListingCard({ catalog, entry, featured }: { catalog: Catalog; entry: Entry; featured?: boolean }) {
-  const tags = entry.tags.filter((item) => item !== "host");
+function OrgCard({ group, kind }: { group: OrgGroup; kind: Kind }) {
+  const primary = primaryOf(group, kind);
+  const blurb = blurbFor(group, kind);
+  const tags = group.tags.filter((item) => item !== "host");
   return (
-    <a
-      className={featured ? "hover-card is-featured" : "hover-card"}
-      href={entry.url}
-      target="_blank"
-      rel="noopener noreferrer"
+    <article
+      className={group.featured ? "hover-card is-featured" : "hover-card"}
       onMouseEnter={placePop}
-      onFocus={placePop}
+      onFocusCapture={placePop}
     >
-      <span className={`glyph ${catalog}`}>
-        <Glyph kind={catalog} />
-      </span>
-      <span className="hover-card-main">
-        <span className="card-title">{entry.name}</span>
+      <a className="hover-card-main" href={primary.entry.url} target="_blank" rel="noopener noreferrer">
+        <span className="card-title">{group.name}</span>
         <span className="card-meta">
-          <span className="handle">{labelFor(catalog, entry)}</span>
-          <span className="text-muted">
-            {" · "}
-            {CATALOG_LABEL[catalog]}
-            {entry.region ? ` · ${entry.region}` : ""}
-          </span>
+          <span className="handle">{labelFor(primary.entry)}</span>
+          {group.region ? <span className="text-muted"> · {group.region}</span> : null}
         </span>
-        <span className="hover-tease" aria-hidden="true">
-          {entry.blurb}
-        </span>
+        <span className="card-blurb">{blurb}</span>
+        <span className="sr-only"> (opens in a new tab)</span>
+      </a>
+      <span className="platform-row">
+        {group.presences.map(({ catalog, entry }) => (
+          <a
+            key={catalog}
+            className={`glyph ${catalog}${catalog === primary.catalog ? " is-primary" : ""}`}
+            href={entry.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${group.name} on ${CATALOG_LABEL[catalog]}, ${labelFor(entry)}`}
+          >
+            <Glyph kind={catalog} />
+          </a>
+        ))}
       </span>
-      <span className="hover-card-pop">
+      <div className="hover-card-pop" aria-hidden="true">
         <span className="pop-kicker">
-          {featured ? "Featured · " : ""}
-          {CATALOG_LABEL[catalog]}
-          {entry.region ? ` · ${entry.region}` : ""}
+          {group.featured ? "Featured · " : ""}
+          {group.presences.map((item) => CATALOG_LABEL[item.catalog]).join(" · ")}
+          {group.region ? ` · ${group.region}` : ""}
         </span>
-        <span className="pop-title">{entry.name}</span>
-        <span className="pop-handle">{labelFor(catalog, entry)}</span>
-        <span className="pop-blurb">{entry.blurb}</span>
+        <span className="pop-title">{group.name}</span>
+        <span className="pop-blurb">{blurb}</span>
+        <span className="pop-links">
+          {group.presences.map(({ catalog, entry }) => (
+            <span key={catalog} className="pop-link">
+              <span className={`glyph ${catalog}`}>
+                <Glyph kind={catalog} />
+              </span>
+              <span>
+                <span className="pop-link-name">{CATALOG_LABEL[catalog]}</span>
+                <span className="pop-link-handle">{labelFor(entry)}</span>
+              </span>
+            </span>
+          ))}
+        </span>
         {tags.length > 0 ? (
           <span className="card-tags">
             {tags.map((item) => (
@@ -131,13 +162,12 @@ function ListingCard({ catalog, entry, featured }: { catalog: Catalog; entry: En
             ))}
           </span>
         ) : null}
-      </span>
-      <span className="sr-only"> (opens in a new tab)</span>
-    </a>
+      </div>
+    </article>
   );
 }
 
-export function Directory({ data }: { data: DirectoryData }) {
+export function Directory({ groups }: { groups: OrgGroup[] }) {
   const [kind, setKind] = useState<Kind>("all");
   const [query, setQuery] = useState("");
   const [tag, setTag] = useState<string | null>(null);
@@ -204,38 +234,37 @@ export function Directory({ data }: { data: DirectoryData }) {
   }, []);
 
   const counts = useMemo(() => {
-    const result: Record<Kind, number> = {
-      all: 0,
-      websites: data.websites.length,
-      youtube: data.youtube.length,
-      x: data.x.length,
-      bluesky: data.bluesky.length,
+    const result = {
+      all: groups.length,
+      websites: 0,
+      youtube: 0,
+      x: 0,
+      bluesky: 0,
     };
-    result.all = CATALOGS.reduce((sum, catalog) => sum + result[catalog], 0);
+    for (const group of groups) {
+      for (const { catalog } of group.presences) result[catalog] += 1;
+    }
     return result;
-  }, [data]);
+  }, [groups]);
 
   const pool = useMemo(() => {
-    const catalogs = kind === "all" ? CATALOGS : [kind];
-    return catalogs.flatMap((catalog) => data[catalog].map((entry) => ({ catalog, entry })));
-  }, [data, kind]);
+    if (kind === "all") return groups;
+    return groups.filter((group) => group.presences.some((item) => item.catalog === kind));
+  }, [groups, kind]);
 
   const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
-  const matched = pool.filter(({ entry }) => {
-    if (tag && !entry.tags.includes(tag)) return false;
+  const matched = pool.filter((group) => {
+    if (tag && !group.tags.includes(tag)) return false;
     if (terms.length === 0) return true;
-    const hay = haystack(entry);
+    const hay = haystack(group);
     return terms.every((term) => hay.includes(term));
   });
-  matched.sort((a, b) => compare(a.entry, b.entry, sort) || a.catalog.localeCompare(b.catalog));
+  matched.sort((a, b) => compareGroups(a, b, sort));
 
-  const tags = topTags(
-    pool.map((item) => item.entry),
-    tag,
-  );
+  const tags = topTags(pool, tag);
   const filtering = Boolean(query.trim() || tag || kind !== "all");
-  const featured = matched.filter((row) => row.entry.featured);
-  const rest = matched.filter((row) => !row.entry.featured);
+  const featured = matched.filter((group) => group.featured);
+  const rest = matched.filter((group) => !group.featured);
 
   return (
     <section id="directory" className="mx-auto max-w-[1180px] px-5 pt-2 pb-8">
@@ -325,9 +354,9 @@ export function Directory({ data }: { data: DirectoryData }) {
             <div className="featured-block">
               <h3 className="featured-label">Featured</h3>
               <ul className="listing-grid">
-                {featured.map(({ catalog, entry }) => (
-                  <li key={`featured-${catalog}-${entry.id}`}>
-                    <ListingCard catalog={catalog} entry={entry} featured />
+                {featured.map((group) => (
+                  <li key={`featured-${group.id}`}>
+                    <OrgCard group={group} kind={kind} />
                   </li>
                 ))}
               </ul>
@@ -335,9 +364,9 @@ export function Directory({ data }: { data: DirectoryData }) {
           ) : null}
           {rest.length > 0 ? (
             <ul className="listing-grid">
-              {rest.map(({ catalog, entry }) => (
-                <li key={`${catalog}-${entry.id}`}>
-                  <ListingCard catalog={catalog} entry={entry} />
+              {rest.map((group) => (
+                <li key={group.id}>
+                  <OrgCard group={group} kind={kind} />
                 </li>
               ))}
             </ul>

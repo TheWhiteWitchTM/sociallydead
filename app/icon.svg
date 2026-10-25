@@ -2,6 +2,6 @@
   <rect width="64" height="64" rx="14" fill="#0a0a0a"/>
   <circle cx="32" cy="32" r="26" fill="none" stroke="#c9a6ff" stroke-width="1.4"/>
   <text x="32" y="40" text-anchor="middle" font-family="Georgia, serif" font-size="22" font-weight="700">
-    <tspan fill="#f3f5f7">S</tspan><tspan fill="#c9a6ff">D</tspan>
+    <tspan fill="#f3f5f7">S</tspan><tspan fill="#d3122a" font-style="italic">D</tspan>
   </text>
 </svg>

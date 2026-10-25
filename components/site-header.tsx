@@ -11,6 +11,7 @@ import {
 } from "@/lib/directory-filter";
 import { CATALOG_LABEL, CATALOGS, type Catalog } from "@/lib/types";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 
 const DESKS: { kind: DirectoryKind; title: string }[] = [
@@ -18,7 +19,14 @@ const DESKS: { kind: DirectoryKind; title: string }[] = [
   ...CATALOGS.map((kind) => ({ kind, title: CATALOG_LABEL[kind as Catalog] })),
 ];
 
+function here(pathname: string, href: string) {
+  const current = pathname.replace(/\/$/, "") || "/";
+  const target = href.replace(/\/$/, "") || "/";
+  return current === target;
+}
+
 export function SiteHeader() {
+  const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [desksOpen, setDesksOpen] = useState(false);
@@ -105,12 +113,21 @@ export function SiteHeader() {
         <ul id="site-menu" className={menuOpen ? "open" : undefined}>
           <li>
             <Link href="/" className="brand" onClick={onHome}>
-              SociallyDead
+              Socially<span className="brand-d">D</span>ead
             </Link>
           </li>
           <li>
             <Link href="/#directory" onClick={onDirectory}>
               Directory
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/woozle-effect"
+              className={here(pathname, "/woozle-effect") ? "is-current" : undefined}
+              onClick={close}
+            >
+              Woozle effect
             </Link>
           </li>
           <li className="dropdown">
@@ -145,12 +162,12 @@ export function SiteHeader() {
           </li>
         </ul>
         <a
-          className="coffee"
+          className="contribute"
           href="https://www.paypal.com/ncp/payment/4P85EQRES3RGU"
           target="_blank"
           rel="noopener noreferrer"
         >
-          ☕ Buy me a coffee
+          Contribute
         </a>
         <ThemeToggle />
       </nav>

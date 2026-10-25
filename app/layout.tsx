@@ -51,8 +51,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/banner.jpeg",
-        width: 1024,
-        height: 360,
+        width: 1712,
+        height: 592,
         alt: "SociallyDead.me directory of the resistance",
       },
     ],
@@ -82,11 +82,11 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-13S6Z9KCX9');`}
         </Script>
-        <a className="skip" href="#directory">
-          Skip to the directory
+        <a className="skip" href="#content">
+          Skip to content
         </a>
         <SiteHeader />
-        <main>{children}</main>
+        <main id="content">{children}</main>
         <SiteFooter />
       </body>
     </html>

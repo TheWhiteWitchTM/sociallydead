@@ -1,10 +1,11 @@
 import { Directory } from "@/components/directory";
 import { Hero } from "@/components/hero";
 import { loadDirectory } from "@/lib/directory";
+import { groupDirectory } from "@/lib/groups";
 
 export default function HomePage() {
-  const data = loadDirectory();
-  const total = Object.values(data).reduce((sum, list) => sum + list.length, 0);
+  const groups = groupDirectory(loadDirectory());
+  const total = groups.length;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -18,7 +19,7 @@ export default function HomePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Hero total={total} />
-      <Directory data={data} />
+      <Directory groups={groups} />
     </>
   );
 }
