@@ -1,3 +1,5 @@
+import { type Shelf } from "@/lib/categories";
+
 export const CATALOGS = ["websites", "youtube", "x", "bluesky"] as const;
 
 export type Catalog = (typeof CATALOGS)[number];
@@ -15,6 +17,7 @@ export type Entry = {
   url: string;
   handle?: string;
   blurb: string;
+  category: Shelf;
   tags: string[];
   region?: string;
   language?: string;

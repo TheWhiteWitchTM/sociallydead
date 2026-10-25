@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 export function SiteFooter() {
   return (
     <footer className="site-footer" id="colophon">
@@ -23,6 +25,8 @@ export function SiteFooter() {
         <a href="https://github.com/TheWhiteWitchTM" target="_blank" rel="noopener noreferrer">
           🐙 GitHub
         </a>
+        <span aria-hidden="true">•</span>
+        <a href={asset("/rss.xml")}>📡 RSS</a>
         <span aria-hidden="true">•</span>
         <span className="footer-cheer">
           <span className="ua-blue">🇺🇦 Ukraine is my friend.</span> <span className="ua-gold">Slava Ukraini!</span>

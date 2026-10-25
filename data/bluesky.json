@@ -5,6 +5,7 @@
     "handle": "atrupar.com",
     "url": "https://bsky.app/profile/atrupar.com",
     "blurb": "Independent journalist. Clips of political figures, alongside the Public Notice newsletter.",
+    "category": "people",
     "tags": [
       "journalism",
       "united-states"
@@ -20,6 +21,7 @@
     "handle": "aclu.org",
     "url": "https://bsky.app/profile/aclu.org",
     "blurb": "Official account of the American Civil Liberties Union.",
+    "category": "organizations",
     "tags": [
       "legal",
       "united-states"
@@ -34,6 +36,7 @@
     "handle": "amadeuantonio.bsky.social",
     "url": "https://bsky.app/profile/amadeuantonio.bsky.social",
     "blurb": "Official account. Work against right-wing extremism, racism, and antisemitism in Germany.",
+    "category": "organizations",
     "tags": [
       "extremism",
       "germany"
@@ -48,6 +51,7 @@
     "handle": "bellingcat.com",
     "url": "https://bsky.app/profile/bellingcat.com",
     "blurb": "Official account of the open-source investigative collective.",
+    "category": "news",
     "tags": [
       "journalism",
       "research",
@@ -63,6 +67,7 @@
     "handle": "belltower.news",
     "url": "https://bsky.app/profile/belltower.news",
     "blurb": "Journalism on the far right, racism, and antisemitism.",
+    "category": "news",
     "tags": [
       "journalism",
       "germany"
@@ -77,6 +82,7 @@
     "handle": "brennancenter.org",
     "url": "https://bsky.app/profile/brennancenter.org",
     "blurb": "Official account. Democracy, voting, and the rule of law.",
+    "category": "organizations",
     "tags": [
       "legal",
       "united-states"
@@ -91,6 +97,7 @@
     "handle": "briantylercohen.bsky.social",
     "url": "https://bsky.app/profile/briantylercohen.bsky.social",
     "blurb": "Journalist and host of No Lie. Interviews and daily reporting on U.S. politics.",
+    "category": "people",
     "tags": [
       "journalism",
       "united-states"
@@ -105,6 +112,7 @@
     "handle": "correctiv.org",
     "url": "https://bsky.app/profile/correctiv.org",
     "blurb": "Official account of the German investigative newsroom.",
+    "category": "news",
     "tags": [
       "journalism",
       "germany"
@@ -119,6 +127,7 @@
     "handle": "eji.org",
     "url": "https://bsky.app/profile/eji.org",
     "blurb": "Official account. Racial injustice, punishment, and public memory.",
+    "category": "organizations",
     "tags": [
       "legal",
       "united-states"
@@ -133,6 +142,7 @@
     "handle": "factcheck.org",
     "url": "https://bsky.app/profile/factcheck.org",
     "blurb": "Official account of the Annenberg fact-checking project.",
+    "category": "news",
     "tags": [
       "fact-check",
       "united-states"
@@ -147,6 +157,7 @@
     "handle": "hcrichardson.bsky.social",
     "url": "https://bsky.app/profile/hcrichardson.bsky.social",
     "blurb": "Historian. Author of the daily newsletter Letters from an American.",
+    "category": "people",
     "tags": [
       "journalism",
       "united-states"
@@ -161,6 +172,7 @@
     "handle": "hopenothate.org.uk",
     "url": "https://bsky.app/profile/hopenothate.org.uk",
     "blurb": "Official account of the UK campaign against the far right.",
+    "category": "organizations",
     "tags": [
       "organizing",
       "extremism",
@@ -176,6 +188,7 @@
     "handle": "hrw.org",
     "url": "https://bsky.app/profile/hrw.org",
     "blurb": "Official account. Human rights investigations worldwide.",
+    "category": "organizations",
     "tags": [
       "journalism",
       "international"
@@ -190,6 +203,7 @@
     "handle": "indivisible.org",
     "url": "https://bsky.app/profile/indivisible.org",
     "blurb": "Official account of the volunteer organizing network.",
+    "category": "organizations",
     "tags": [
       "organizing",
       "united-states"
@@ -204,6 +218,7 @@
     "handle": "meidastouch.com",
     "url": "https://bsky.app/profile/meidastouch.com",
     "blurb": "Official account of the MeidasTouch news network.",
+    "category": "news",
     "tags": [
       "journalism",
       "united-states"
@@ -218,6 +233,7 @@
     "handle": "propublica.org",
     "url": "https://bsky.app/profile/propublica.org",
     "blurb": "Official account of the investigative newsroom.",
+    "category": "news",
     "tags": [
       "journalism",
       "united-states"
@@ -232,6 +248,7 @@
     "handle": "ronfilipkowski.bsky.social",
     "url": "https://bsky.app/profile/ronfilipkowski.bsky.social",
     "blurb": "Editor-in-chief of MeidasTouch. Former federal prosecutor who tracks the right in public.",
+    "category": "people",
     "tags": [
       "journalism",
       "united-states"
@@ -246,6 +263,7 @@
     "handle": "splcenter.org",
     "url": "https://bsky.app/profile/splcenter.org",
     "blurb": "Official account. Hate and extremist-group tracking in the United States.",
+    "category": "organizations",
     "tags": [
       "watchdog",
       "extremism",
@@ -261,6 +279,7 @@
     "handle": "thebulwark.com",
     "url": "https://bsky.app/profile/thebulwark.com",
     "blurb": "Official account. Political reporting from conservatives who oppose Trump.",
+    "category": "news",
     "tags": [
       "journalism",
       "united-states"
@@ -275,6 +294,7 @@
     "handle": "thewhitewitchtm.sociallydead.me",
     "url": "https://bsky.app/profile/thewhitewitchtm.sociallydead.me",
     "blurb": "Keeps this directory. Politics and social events, facts first.",
+    "category": "people",
     "tags": [
       "host"
     ],
@@ -282,5 +302,251 @@
     "added": "2026-10-25",
     "featured": true,
     "pin": true
+  },
+  {
+    "id": "joyce-vance",
+    "name": "Joyce Vance",
+    "handle": "joycevance.bsky.social",
+    "url": "https://bsky.app/profile/joycevance.bsky.social",
+    "blurb": "Former U.S. Attorney. Civil Discourse is her newsletter on law and democracy.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mehdi-hasan",
+    "name": "Mehdi Hasan",
+    "handle": "mehdirhasan.bsky.social",
+    "url": "https://bsky.app/profile/mehdirhasan.bsky.social",
+    "blurb": "Journalist. Editor-in-chief of Zeteo.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "judd-legum",
+    "name": "Popular Information",
+    "handle": "popular.info",
+    "url": "https://bsky.app/profile/popular.info",
+    "blurb": "The Popular Information newsletter, written by Judd Legum.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "allison-gill",
+    "name": "Allison Gill",
+    "handle": "muellershewrote.com",
+    "url": "https://bsky.app/profile/muellershewrote.com",
+    "blurb": "Writes Mueller, She Wrote.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "the-daily-show",
+    "name": "The Daily Show",
+    "handle": "thedailyshow.com",
+    "url": "https://bsky.app/profile/thedailyshow.com",
+    "blurb": "Official account. Jon Stewart and the correspondents.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "crooked-media",
+    "name": "Crooked Media",
+    "handle": "crooked.com",
+    "url": "https://bsky.app/profile/crooked.com",
+    "blurb": "Official account of the podcast network.",
+    "category": "shows",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "volksverpetzer",
+    "name": "Volksverpetzer",
+    "handle": "volksverpetzer.de",
+    "url": "https://bsky.app/profile/volksverpetzer.de",
+    "blurb": "Official account. Fact-checks and reporting on the far right.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "democracy-docket",
+    "name": "Democracy Docket",
+    "handle": "democracydocket.com",
+    "url": "https://bsky.app/profile/democracydocket.com",
+    "blurb": "Official account on voting rights and election cases.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mother-jones",
+    "name": "Mother Jones",
+    "handle": "motherjones.com",
+    "url": "https://bsky.app/profile/motherjones.com",
+    "blurb": "Official account of the investigative magazine.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "snopes",
+    "name": "Snopes",
+    "handle": "snopes.com",
+    "url": "https://bsky.app/profile/snopes.com",
+    "blurb": "Official account of the fact-checking site.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mimikama",
+    "name": "Mimikama",
+    "handle": "mimikama.org",
+    "url": "https://bsky.app/profile/mimikama.org",
+    "blurb": "Official account of the Austrian fact-checking desk.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "europe"
+    ],
+    "region": "Austria",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "netzpolitik",
+    "name": "netzpolitik.org",
+    "handle": "netzpolitik.org",
+    "url": "https://bsky.app/profile/netzpolitik.org",
+    "blurb": "Official account of the digital-rights newsroom.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "frag-den-staat",
+    "name": "FragDenStaat",
+    "handle": "fragdenstaat.de",
+    "url": "https://bsky.app/profile/fragdenstaat.de",
+    "blurb": "Official account. Freedom of information in Germany.",
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "campact",
+    "name": "Campact",
+    "handle": "campact.de",
+    "url": "https://bsky.app/profile/campact.de",
+    "blurb": "Official account of the German campaign organization.",
+    "category": "organizations",
+    "tags": [
+      "organizing",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "crew",
+    "name": "CREW",
+    "handle": "citizensforethics.org",
+    "url": "https://bsky.app/profile/citizensforethics.org",
+    "blurb": "Official account. Government ethics and accountability.",
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "watchdog",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "american-oversight",
+    "name": "American Oversight",
+    "handle": "americanoversight.org",
+    "url": "https://bsky.app/profile/americanoversight.org",
+    "blurb": "Official account. Public-records investigations of government.",
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "watchdog",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
   }
 ]

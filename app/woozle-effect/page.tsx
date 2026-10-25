@@ -1,6 +1,10 @@
 import { asset } from "@/lib/asset";
+import { SITE_ORIGIN } from "@/lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
+
+const pageUrl = `${SITE_ORIGIN}/woozle-effect/`;
+const pageImage = `${SITE_ORIGIN}/woozle-banner.jpg`;
 
 const description =
   "How the right on X turns a circle of reposts into a source, and why the only way through it is to carry the real thing the same way.";
@@ -9,19 +13,20 @@ export const metadata: Metadata = {
   title: "The Woozle effect",
   description,
   keywords: ["Woozle effect", "circular reporting", "X", "misinformation", "citation", "SociallyDead"],
-  alternates: { canonical: "https://sociallydead.me/woozle-effect" },
+  alternates: { canonical: pageUrl },
   openGraph: {
     title: "The Woozle effect — they cited each other. That was the source.",
     description,
-    url: "https://sociallydead.me/woozle-effect",
+    url: pageUrl,
     siteName: "SociallyDead",
     type: "article",
     images: [
       {
-        url: "/woozle-banner.jpg",
+        url: pageImage,
         width: 1200,
         height: 630,
         alt: "The Woozle Effect. They cited each other. That was the source. A circle of footprints around a red ember.",
+        type: "image/jpeg",
       },
     ],
   },
@@ -29,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Woozle effect — they cited each other. That was the source.",
     description,
-    images: ["/woozle-banner.jpg"],
+    images: [pageImage],
   },
 };
 
@@ -39,10 +44,10 @@ export default function WoozlePage() {
     "@type": "Article",
     headline: "The Woozle effect",
     description,
-    image: "https://sociallydead.me/woozle-banner.jpg",
+    image: pageImage,
     author: { "@type": "Organization", name: "SociallyDead" },
-    publisher: { "@type": "Organization", name: "SociallyDead", url: "https://sociallydead.me" },
-    mainEntityOfPage: "https://sociallydead.me/woozle-effect",
+    publisher: { "@type": "Organization", name: "SociallyDead", url: `${SITE_ORIGIN}/` },
+    mainEntityOfPage: pageUrl,
     datePublished: "2026-10-25",
   };
 

@@ -2,6 +2,7 @@ import bluesky from "@/data/bluesky.json";
 import websites from "@/data/websites.json";
 import x from "@/data/x.json";
 import youtube from "@/data/youtube.json";
+import { isShelf } from "@/lib/categories";
 import { CATALOGS, type Catalog, type DirectoryData, type Entry } from "@/lib/types";
 
 function text(value: unknown): string {
@@ -45,12 +46,17 @@ export function parseCatalog(raw: unknown, catalog: string): Entry[] {
     if (!Array.isArray(record.tags) || record.tags.some((tag) => typeof tag !== "string")) {
       throw new Error(`${catalog} ${id}: tags must be an array of strings`);
     }
+    const category = text(record.category);
+    if (!isShelf(category)) {
+      throw new Error(`${catalog} ${id}: category must be people, shows, news, or organizations`);
+    }
 
     const entry: Entry = {
       id,
       name,
       url,
       blurb,
+      category,
       tags: record.tags.map((tag) => tag.trim()).filter(Boolean),
     };
     const handle = text(record.handle);

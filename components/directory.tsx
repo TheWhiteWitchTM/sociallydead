@@ -2,6 +2,7 @@
 
 import { GlobeIcon, PlayIcon, SearchIcon, SkyIcon, XIcon } from "@/components/icons";
 import { asset } from "@/lib/asset";
+import { CATEGORIES, labelTag, SHELF_BLURB, SHELF_LABEL, sortTags, type Shelf } from "@/lib/categories";
 import {
   DIRECTORY_FILTER,
   DIRECTORY_KIND,
@@ -12,6 +13,7 @@ import {
 } from "@/lib/directory-filter";
 import { type OrgGroup, type Presence } from "@/lib/groups";
 import { CATALOGS, CATALOG_LABEL, type Catalog } from "@/lib/types";
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState, type SyntheticEvent } from "react";
 
 type Kind = DirectoryKind;
@@ -24,9 +26,24 @@ const KIND_LABEL: Record<Kind, string> = {
 };
 
 const KIND_ORDER: Kind[] = ["featured", "all", ...CATALOGS];
+const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
+function indexLetter(name: string): string {
+  const stripped = name.replace(/^the\s+/i, "");
+  const letter = stripped.charAt(0).toUpperCase();
+  return /[A-Z]/.test(letter) ? letter : "#";
+}
 
 function haystack(group: OrgGroup): string {
-  const parts: Array<string | undefined> = [group.name, group.blurb, group.region, group.tags.join(" ")];
+  const parts: Array<string | undefined> = [
+    group.name,
+    group.blurb,
+    group.region,
+    group.category,
+    SHELF_LABEL[group.category],
+    group.tags.join(" "),
+    group.tags.map(labelTag).join(" "),
+  ];
   for (const { entry } of group.presences) {
     parts.push(entry.name, entry.handle, entry.blurb, entry.url, entry.language, entry.region);
   }
@@ -83,10 +100,8 @@ function topTags(groups: OrgGroup[], selected: string | null): string[] {
       counts.set(tag, (counts.get(tag) ?? 0) + 1);
     }
   }
-  const tags = [...counts.keys()].sort(
-    (a, b) => (counts.get(b) ?? 0) - (counts.get(a) ?? 0) || a.localeCompare(b),
-  );
-  const top = tags.slice(0, 16);
+  const tags = sortTags([...counts.keys()]);
+  const top = tags.slice(0, 18);
   if (selected && !top.includes(selected)) top.push(selected);
   return top;
 }
@@ -102,6 +117,10 @@ function placePop(event: SyntheticEvent<HTMLElement>) {
   pop.style.right = overflowRight ? "0px" : "auto";
   const below = window.innerHeight - rect.bottom;
   pop.classList.toggle("above", below < 220 && rect.top > 240);
+}
+
+function shelfHref(shelf: Shelf | "all") {
+  return shelf === "all" ? "/" : `/${shelf}/`;
 }
 
 function OrgCard({ group, kind }: { group: OrgGroup; kind: Kind }) {
@@ -121,6 +140,7 @@ function OrgCard({ group, kind }: { group: OrgGroup; kind: Kind }) {
         <span className="card-copy">
           <span className="card-title">{group.name}</span>
           <span className="card-meta">
+            <span className="shelf-name">{SHELF_LABEL[group.category]}</span>
             <span className="handle">{labelFor(primary.entry)}</span>
             {group.region ? <span className="text-muted"> · {group.region}</span> : null}
           </span>
@@ -148,6 +168,8 @@ function OrgCard({ group, kind }: { group: OrgGroup; kind: Kind }) {
           <span className="pop-head-copy">
             <span className="pop-kicker">
               {group.featured ? "Featured · " : ""}
+              {SHELF_LABEL[group.category]}
+              {" · "}
               {group.presences.map((item) => CATALOG_LABEL[item.catalog]).join(" · ")}
               {group.region ? ` · ${group.region}` : ""}
             </span>
@@ -172,7 +194,7 @@ function OrgCard({ group, kind }: { group: OrgGroup; kind: Kind }) {
           <span className="card-tags">
             {tags.map((item) => (
               <span key={item} className="chip static">
-                {item}
+                {labelTag(item)}
               </span>
             ))}
           </span>
@@ -182,10 +204,23 @@ function OrgCard({ group, kind }: { group: OrgGroup; kind: Kind }) {
   );
 }
 
-export function Directory({ groups }: { groups: OrgGroup[] }) {
+function Listing({ groups, kind }: { groups: OrgGroup[]; kind: Kind }) {
+  return (
+    <ul className="listing-grid">
+      {groups.map((group) => (
+        <li key={group.id}>
+          <OrgCard group={group} kind={kind} />
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf | "all" }) {
   const [kind, setKind] = useState<Kind>("all");
   const [query, setQuery] = useState("");
   const [tag, setTag] = useState<string | null>(null);
+  const [letter, setLetter] = useState<string | null>(null);
   const [sort, setSort] = useState<SortMode>("az");
   const searchRef = useRef<HTMLInputElement>(null);
   const hydrated = useRef(false);
@@ -202,6 +237,8 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
       if (q) setQuery(q);
       const requestedTag = params.get("tag");
       if (requestedTag) setTag(requestedTag);
+      const requestedLetter = params.get("letter")?.toUpperCase() ?? "";
+      if (LETTERS.includes(requestedLetter)) setLetter(requestedLetter);
       if (params.get("sort") === "new") setSort("new");
       return;
     }
@@ -212,11 +249,12 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
     if (kind !== "all") params.set("kind", kind);
     if (query.trim()) params.set("q", query.trim());
     if (tag) params.set("tag", tag);
+    if (letter) params.set("letter", letter);
     if (sort !== "az") params.set("sort", sort);
     const next = params.toString();
     const url = `${window.location.pathname}${next ? `?${next}` : ""}${window.location.hash}`;
     window.history.replaceState(null, "", url);
-  }, [kind, query, tag, sort]);
+  }, [kind, query, tag, letter, sort]);
 
   useEffect(() => {
     window.dispatchEvent(new CustomEvent(DIRECTORY_KIND, { detail: kind }));
@@ -229,6 +267,7 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
         setKind("all");
         setQuery("");
         setTag(null);
+        setLetter(null);
         setSort("az");
         return;
       }
@@ -258,31 +297,49 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
     window.dispatchEvent(new CustomEvent(DIRECTORY_QUERY, { detail: query }));
   }, [query]);
 
+  const onShelf = useMemo(
+    () => (shelf === "all" ? groups : groups.filter((group) => group.category === shelf)),
+    [groups, shelf],
+  );
+
+  const shelfCounts = useMemo(() => {
+    const result = { all: groups.length, people: 0, shows: 0, news: 0, organizations: 0 };
+    for (const group of groups) result[group.category] += 1;
+    return result;
+  }, [groups]);
+
   const counts = useMemo(() => {
     const result: Record<Kind, number> = {
-      all: groups.length,
+      all: onShelf.length,
       featured: 0,
       websites: 0,
       youtube: 0,
       x: 0,
       bluesky: 0,
     };
-    for (const group of groups) {
+    for (const group of onShelf) {
       if (group.featured) result.featured += 1;
       for (const { catalog } of group.presences) result[catalog] += 1;
     }
     return result;
-  }, [groups]);
+  }, [onShelf]);
 
   const pool = useMemo(() => {
-    if (kind === "all") return groups;
-    if (kind === "featured") return groups.filter((group) => group.featured);
-    return groups.filter((group) => group.presences.some((item) => item.catalog === kind));
-  }, [groups, kind]);
+    if (kind === "all") return onShelf;
+    if (kind === "featured") return onShelf.filter((group) => group.featured);
+    return onShelf.filter((group) => group.presences.some((item) => item.catalog === kind));
+  }, [onShelf, kind]);
+
+  const presentLetters = useMemo(() => {
+    const found = new Set<string>();
+    for (const group of pool) found.add(indexLetter(group.name));
+    return found;
+  }, [pool]);
 
   const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
   const matched = pool.filter((group) => {
     if (tag && !group.tags.includes(tag)) return false;
+    if (letter && indexLetter(group.name) !== letter) return false;
     if (terms.length === 0) return true;
     const hay = haystack(group);
     return terms.every((term) => hay.includes(term));
@@ -290,16 +347,25 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
   matched.sort((a, b) => compareGroups(a, b, sort));
 
   const tags = topTags(pool, tag);
-  const filtering = Boolean(query.trim() || tag || kind !== "all");
+  const filtering = Boolean(query.trim() || tag || letter || kind !== "all");
   const featured = matched.filter((group) => group.featured);
   const rest = matched.filter((group) => !group.featured);
+  const sectioned = shelf === "all" && !query.trim() && !tag && !letter && kind !== "featured";
+
+  function clearFilters() {
+    setKind("all");
+    setQuery("");
+    setTag(null);
+    setLetter(null);
+  }
 
   return (
     <section id="directory" className="mx-auto max-w-[1180px] px-5 pt-2 pb-8">
       <h2 className="sr-only">Directory</h2>
       <div className="rule mb-5" aria-hidden="true">
-        <span>the desks</span>
+        <span>{shelf === "all" ? "the desks" : SHELF_LABEL[shelf].toLowerCase()}</span>
       </div>
+      {shelf !== "all" ? <p className="shelf-intro">{SHELF_BLURB[shelf]}</p> : null}
       <div className="toolbar">
         <label className="search-wrap">
           <span className="sr-only">Search the directory</span>
@@ -309,7 +375,7 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
             className="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search names, handles, tags"
+            placeholder="Search names, hosts, shows, tags"
             type="search"
             autoComplete="off"
           />
@@ -319,21 +385,56 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
             </button>
           ) : null}
         </label>
-        <div className="catalogs" role="toolbar" aria-label="Catalogs">
-          {KIND_ORDER.map((item) => (
-            <button key={item} type="button" aria-pressed={kind === item} onClick={() => setKind(item)}>
-              {KIND_LABEL[item]}
-              <span className="count">{counts[item]}</span>
+        <div className="filter-line">
+          <span className="filter-label" id="shelf-label">
+            Browse
+          </span>
+          <div className="catalogs" role="navigation" aria-labelledby="shelf-label">
+            <Link href={shelfHref("all")} aria-current={shelf === "all" ? "page" : undefined}>
+              All
+              <span className="count">{shelfCounts.all}</span>
+            </Link>
+            {CATEGORIES.map((item) => (
+              <Link key={item} href={shelfHref(item)} aria-current={shelf === item ? "page" : undefined}>
+                {SHELF_LABEL[item]}
+                <span className="count">{shelfCounts[item]}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+        <div className="filter-line">
+          <span className="filter-label" id="where-label">
+            Where
+          </span>
+          <div className="catalogs" role="toolbar" aria-labelledby="where-label">
+            {KIND_ORDER.map((item) => (
+              <button key={item} type="button" aria-pressed={kind === item} onClick={() => setKind(item)}>
+                {KIND_LABEL[item]}
+                <span className="count">{counts[item]}</span>
+              </button>
+            ))}
+            <button
+              type="button"
+              className="sort"
+              onClick={() => setSort((current) => (current === "az" ? "new" : "az"))}
+              aria-pressed={sort === "new"}
+            >
+              {sort === "az" ? "A–Z" : "Newest"}
+            </button>
+          </div>
+        </div>
+        <div className="alpha" role="toolbar" aria-label="Jump by letter">
+          {LETTERS.map((item) => (
+            <button
+              key={item}
+              type="button"
+              aria-pressed={letter === item}
+              disabled={!presentLetters.has(item)}
+              onClick={() => setLetter((current) => (current === item ? null : item))}
+            >
+              {item}
             </button>
           ))}
-          <button
-            type="button"
-            className="sort"
-            onClick={() => setSort((current) => (current === "az" ? "new" : "az"))}
-            aria-pressed={sort === "new"}
-          >
-            {sort === "az" ? "A–Z" : "Newest"}
-          </button>
         </div>
         {tags.length > 0 ? (
           <div className="tag-row">
@@ -345,19 +446,11 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
                 aria-pressed={tag === item}
                 onClick={() => setTag((current) => (current === item ? null : item))}
               >
-                {item}
+                {labelTag(item)}
               </button>
             ))}
             {filtering ? (
-              <button
-                type="button"
-                className="linkish"
-                onClick={() => {
-                  setKind("all");
-                  setQuery("");
-                  setTag(null);
-                }}
-              >
+              <button type="button" className="linkish" onClick={clearFilters}>
                 Clear
               </button>
             ) : null}
@@ -367,7 +460,9 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
 
       <p className="result-line" aria-live="polite">
         {matched.length} {matched.length === 1 ? "listing" : "listings"}
-        {tag ? ` tagged ${tag}` : ""}
+        {shelf !== "all" ? ` in ${SHELF_LABEL[shelf]}` : ""}
+        {tag ? ` tagged ${labelTag(tag)}` : ""}
+        {letter ? ` under ${letter}` : ""}
         {query.trim() ? ` matching “${query.trim()}”` : ""}
       </p>
 
@@ -390,15 +485,23 @@ export function Directory({ groups }: { groups: OrgGroup[] }) {
               </ul>
             </div>
           ) : null}
-          {(kind === "featured" ? matched : rest).length > 0 ? (
-            <ul className="listing-grid">
-              {(kind === "featured" ? matched : rest).map((group) => (
-                <li key={group.id}>
-                  <OrgCard group={group} kind={kind} />
-                </li>
-              ))}
-            </ul>
-          ) : null}
+          {kind === "featured" ? <Listing groups={matched} kind={kind} /> : null}
+          {kind !== "featured" && sectioned
+            ? CATEGORIES.map((item) => {
+                const rows = rest.filter((group) => group.category === item);
+                if (rows.length === 0) return null;
+                return (
+                  <section key={item} className="shelf-block" aria-labelledby={`shelf-${item}`}>
+                    <div className="shelf-heading">
+                      <h3 id={`shelf-${item}`}>{SHELF_LABEL[item]}</h3>
+                      <Link href={shelfHref(item)}>Open {SHELF_LABEL[item]}</Link>
+                    </div>
+                    <Listing groups={rows} kind={kind} />
+                  </section>
+                );
+              })
+            : null}
+          {kind !== "featured" && !sectioned && rest.length > 0 ? <Listing groups={rest} kind={kind} /> : null}
         </>
       )}
     </section>

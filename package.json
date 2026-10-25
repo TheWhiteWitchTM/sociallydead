@@ -5,7 +5,7 @@
   "description": "Directory of the resistance. Websites, YouTube, X, and Bluesky.",
   "scripts": {
     "dev": "BASE_PATH= next dev",
-    "prebuild": "node tools/edit-directory.mjs validate",
+    "prebuild": "node tools/edit-directory.mjs validate && node tools/build-seo.mjs",
     "build": "next build",
     "directory": "node tools/edit-directory.mjs",
     "thumbs": "node tools/fetch-thumbs.mjs",

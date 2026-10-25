@@ -1,3 +1,4 @@
+import { type Shelf } from "@/lib/categories";
 import { CATALOGS, type Catalog, type DirectoryData, type Entry } from "@/lib/types";
 
 export type Presence = {
@@ -9,6 +10,7 @@ export type OrgGroup = {
   id: string;
   name: string;
   blurb: string;
+  category: Shelf;
   region?: string;
   tags: string[];
   added?: string;
@@ -29,6 +31,7 @@ export function groupDirectory(data: DirectoryData): OrgGroup[] {
           id: entry.id,
           name: entry.name,
           blurb: entry.blurb,
+          category: entry.category,
           tags: [],
           featured: false,
           pin: false,
@@ -52,6 +55,7 @@ export function groupDirectory(data: DirectoryData): OrgGroup[] {
     const preferred = group.presences.find((item) => item.catalog === "websites") ?? group.presences[0];
     group.name = preferred.entry.name;
     group.blurb = preferred.entry.blurb;
+    group.category = preferred.entry.category;
     if (preferred.entry.region) group.region = preferred.entry.region;
   }
 

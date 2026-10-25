@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sociallydead.me/sitemap.xml
+Sitemap: https://thewhitewitchtm.github.io/sociallydead/sitemap.xml

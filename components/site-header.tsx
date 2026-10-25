@@ -11,6 +11,7 @@ import {
   requestDirectoryFilter,
   type DirectoryKind,
 } from "@/lib/directory-filter";
+import { CATEGORIES, SHELF_LABEL, type Shelf } from "@/lib/categories";
 import { CATALOG_LABEL, CATALOGS, type Catalog } from "@/lib/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -21,10 +22,23 @@ const DESKS: { kind: DirectoryKind; title: string }[] = [
   ...CATALOGS.map((kind) => ({ kind, title: CATALOG_LABEL[kind as Catalog] })),
 ];
 
+const SHELVES: { shelf: Shelf | "all"; title: string; href: string }[] = [
+  { shelf: "all", title: "All shelves", href: "/" },
+  ...CATEGORIES.map((shelf) => ({ shelf, title: SHELF_LABEL[shelf], href: `/${shelf}/` })),
+];
+
 function here(pathname: string, href: string) {
   const current = pathname.replace(/\/$/, "") || "/";
   const target = href.replace(/\/$/, "") || "/";
   return current === target;
+}
+
+function shelfFromPath(pathname: string): Shelf | "all" {
+  const current = pathname.replace(/\/$/, "") || "/";
+  for (const shelf of CATEGORIES) {
+    if (current === `/${shelf}` || current.endsWith(`/${shelf}`)) return shelf;
+  }
+  return "all";
 }
 
 export function SiteHeader() {
@@ -32,9 +46,11 @@ export function SiteHeader() {
   const navRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const [desksOpen, setDesksOpen] = useState(false);
+  const [shelvesOpen, setShelvesOpen] = useState(false);
   const [active, setActive] = useState<DirectoryKind>("all");
   const [query, setQuery] = useState("");
   const deskOn = active !== "all" && active !== "featured";
+  const shelf = shelfFromPath(pathname);
 
   useEffect(() => {
     setActive(kindFromLocation());
@@ -51,12 +67,14 @@ export function SiteHeader() {
       if (!navRef.current?.contains(event.target as Node)) {
         setMenuOpen(false);
         setDesksOpen(false);
+        setShelvesOpen(false);
       }
     }
     function onKey(event: KeyboardEvent) {
       if (event.key === "Escape") {
         setMenuOpen(false);
         setDesksOpen(false);
+        setShelvesOpen(false);
         return;
       }
       if (event.key !== "/" || event.metaKey || event.ctrlKey || event.altKey) return;
@@ -86,6 +104,7 @@ export function SiteHeader() {
   function close() {
     setMenuOpen(false);
     setDesksOpen(false);
+    setShelvesOpen(false);
   }
 
   function scrollToDirectory() {
@@ -163,10 +182,36 @@ export function SiteHeader() {
           <li className="dropdown">
             <button
               type="button"
+              className={`dropdown-toggle${shelf !== "all" ? " is-active" : ""}`}
+              aria-expanded={shelvesOpen}
+              aria-haspopup="true"
+              onClick={() => {
+                setShelvesOpen((open) => !open);
+                setDesksOpen(false);
+              }}
+            >
+              Shelves
+            </button>
+            <ul className={`dropdown-menu${shelvesOpen ? " open" : ""}`}>
+              {SHELVES.map((item) => (
+                <li key={item.shelf}>
+                  <Link href={item.href} aria-current={shelf === item.shelf ? "page" : undefined} onClick={close}>
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="dropdown">
+            <button
+              type="button"
               className={`dropdown-toggle${deskOn ? " is-active" : ""}`}
               aria-expanded={desksOpen}
               aria-haspopup="true"
-              onClick={() => setDesksOpen((open) => !open)}
+              onClick={() => {
+                setDesksOpen((open) => !open);
+                setShelvesOpen(false);
+              }}
             >
               Desks
             </button>

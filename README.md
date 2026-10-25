@@ -30,7 +30,11 @@ The pages render four JSON files:
 - `data/x.json`
 - `data/bluesky.json`
 
-Each entry has `id`, `name`, `url`, `blurb`, and `tags`. Optional fields are `handle`, `region`, `language`, `added` (`YYYY-MM-DD`), `featured`, and `pin`. `featured` lifts a listing into the featured row.
+Each entry has `id`, `name`, `url`, `blurb`, `category`, and `tags`. `category` is one of `people`, `shows`, `news`, or `organizations`. The same id uses the same category in every catalog. Optional fields are `handle`, `region`, `language`, `added` (`YYYY-MM-DD`), `featured`, and `pin`. `featured` lifts a listing into the featured row.
+
+The shelves are real pages: `/people/`, `/shows/`, `/news/`, and `/organizations/`. Tags, letters, and the platform desks filter inside a shelf. Search matches names, handles, blurbs, and tags.
+
+`npm run build` also writes `public/rss.xml`, `public/sitemap.xml`, and `public/robots.txt`. The feed lists every desk. The share image is `public/og.jpg`, a baseline JPEG at 1200×630, because the wide banner and a progressive JPEG were coming through as alt text.
 
 ```bash
 tools/edit-directory.sh list
@@ -39,6 +43,7 @@ tools/edit-directory.sh add bluesky \
   --handle example.bsky.social \
   --url https://bsky.app/profile/example.bsky.social \
   --blurb "What this account is." \
+  --category organizations \
   --tags organizing,united-states \
   --region "United States" \
   --language en
@@ -64,6 +69,8 @@ Visits are counted with the same Google tag as LibreSky, `G-13S6Z9KCX9`.
 Pushes to `main` run `.github/workflows/pages.yml`, which builds `out/` and deploys it.
 
 The repository Pages source is still **Deploy from a branch**. GitHub then also runs Jekyll and publishes this README, which replaces the built site. `_config.yml` is invalid on purpose so that Jekyll build stops before it can deploy. In the repository settings, set Pages to **GitHub Actions**. After that, delete `_config.yml`.
+
+Link previews use the origin that actually serves the files. With `/sociallydead` in `basepath.txt`, that is `https://thewhitewitchtm.github.io/sociallydead/`. `sociallydead.me` still answers from a paused host, so a card that points there shows the alt text and no banner.
 
 When `sociallydead.me` is ready:
 

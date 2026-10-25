@@ -24,7 +24,8 @@ const ALIASES = {
   bsky: "bluesky",
   bluesky: "bluesky",
 };
-const ORDER = ["id", "name", "handle", "url", "blurb", "tags", "region", "language", "added", "featured", "pin"];
+const CATEGORIES = ["people", "shows", "news", "organizations"];
+const ORDER = ["id", "name", "handle", "url", "blurb", "category", "tags", "region", "language", "added", "featured", "pin"];
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DAY = /^\d{4}-\d{2}-\d{2}$/;
 
@@ -132,6 +133,9 @@ function problemsFor(catalog, entries) {
     if (typeof entry.blurb === "string" && entry.blurb.length > 500) {
       problems.push(`${where} blurb is longer than 500 characters`);
     }
+    if (!CATEGORIES.includes(entry.category)) {
+      problems.push(`${where} category must be one of ${CATEGORIES.join(", ")}`);
+    }
     if (!Array.isArray(entry.tags) || entry.tags.some((tag) => typeof tag !== "string" || !tag.trim())) {
       problems.push(`${where} tags must be an array of non-empty strings`);
     }
@@ -173,6 +177,23 @@ function validateAll() {
       continue;
     }
     problems.push(...problemsFor(catalog, entries));
+  }
+  const seen = new Map();
+  for (const catalog of CATALOGS) {
+    let entries;
+    try {
+      entries = load(catalog);
+    } catch {
+      continue;
+    }
+    for (const entry of entries) {
+      if (!entry || typeof entry.id !== "string") continue;
+      const previous = seen.get(entry.id);
+      if (previous && previous !== entry.category) {
+        problems.push(`${entry.id} has more than one category`);
+      }
+      if (!previous && typeof entry.category === "string") seen.set(entry.id, entry.category);
+    }
   }
   return problems;
 }
@@ -229,11 +250,13 @@ function applyFields(entry, flags, { creating }) {
   const added = flagText(flags, "added");
   const id = flagText(flags, "id");
   const tags = flagText(flags, "tags");
+  const category = flagText(flags, "category");
 
   if (name !== undefined) entry.name = name.trim();
   if (url !== undefined) entry.url = url.trim();
   if (blurb !== undefined) entry.blurb = blurb.trim();
   if (id !== undefined) entry.id = id.trim();
+  if (category !== undefined) entry.category = category.trim().toLowerCase();
   if (tags !== undefined) entry.tags = parseTags(tags);
   if (handle !== undefined) entry.handle = handle.trim().replace(/^@/, "");
   if (region !== undefined) entry.region = region.trim();
@@ -273,6 +296,7 @@ Options
   --url         https URL
   --handle      Profile handle, without @
   --blurb       One or two sentences, 500 characters at most
+  --category    people, shows, news, or organizations
   --tags        Comma-separated tags. Replaces the whole list
   --region      Place name
   --language    Language code, such as en or de
@@ -417,12 +441,14 @@ GPL-2.0-only. There is no warranty. See LICENSE.
         const url = await ask(rl, "URL");
         const handle = await ask(rl, "Handle");
         const blurb = await ask(rl, "Blurb");
+        const category = await ask(rl, "Category (people, shows, news, organizations)");
         const tags = await ask(rl, "Tags, comma separated");
         const region = await ask(rl, "Region");
         const language = await ask(rl, "Language");
         const flags = { name, url };
         if (handle) flags.handle = handle;
         if (blurb) flags.blurb = blurb;
+        if (category) flags.category = category;
         if (tags) flags.tags = tags;
         if (region) flags.region = region;
         if (language) flags.language = language;
@@ -434,7 +460,7 @@ GPL-2.0-only. There is no warranty. See LICENSE.
         const id = await ask(rl, "Id");
         console.log("Leave a field blank to keep it. Type - to clear handle, region, or language.");
         const flags = {};
-        for (const key of ["name", "url", "handle", "blurb", "tags", "region", "language"]) {
+        for (const key of ["name", "url", "handle", "blurb", "category", "tags", "region", "language"]) {
           const value = await ask(rl, key);
           if (!value) continue;
           flags[key] = value === "-" ? "" : value;

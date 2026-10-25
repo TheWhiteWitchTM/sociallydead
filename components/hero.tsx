@@ -1,6 +1,6 @@
 import { asset } from "@/lib/asset";
 
-export function Hero({ total }: { total: number }) {
+export function Hero({ total, noun = "public listings" }: { total: number; noun?: string }) {
   return (
     <section className="mast">
       <img
@@ -22,10 +22,12 @@ export function Hero({ total }: { total: number }) {
           Resist
         </p>
         <p className="lede">
-          Websites, YouTube channels, and profiles on X and Bluesky. Desks and voices pushing back on MAGA, the
-          AfD, and the far right.
+          People, shows, news, and organizations. Websites, YouTube, X, and Bluesky, pushing back on MAGA, the AfD,
+          and the far right.
         </p>
-        <p className="tally">{total} public listings</p>
+        <p className="tally">
+          {total} {noun}
+        </p>
       </div>
     </section>
   );

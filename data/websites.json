@@ -4,7 +4,10 @@
     "name": "The White Witch™",
     "url": "https://thewhitewitchtm.github.io/whitewitch/",
     "blurb": "Keeps this directory. Politics and social events, facts first.",
-    "tags": ["host"],
+    "category": "people",
+    "tags": [
+      "host"
+    ],
     "language": "en",
     "added": "2026-10-25",
     "featured": true,
@@ -15,7 +18,11 @@
     "name": "Aaron Rupar",
     "url": "https://www.publicnotice.co/",
     "blurb": "Independent journalist. He publishes Public Notice and posts clips of political figures.",
-    "tags": ["journalism", "united-states"],
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25",
@@ -26,7 +33,11 @@
     "name": "American Civil Liberties Union",
     "url": "https://www.aclu.org/",
     "blurb": "Legal organization defending civil liberties in the United States.",
-    "tags": ["legal", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -36,7 +47,13 @@
     "name": "Anti-Defamation League",
     "url": "https://www.adl.org/",
     "blurb": "Tracks antisemitism and extremism, and publishes research on hate movements.",
-    "tags": ["watchdog", "antisemitism", "extremism", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "watchdog",
+      "antisemitism",
+      "extremism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -46,7 +63,12 @@
     "name": "Amadeu Antonio Stiftung",
     "url": "https://www.amadeu-antonio-stiftung.de/",
     "blurb": "German foundation that supports work against right-wing extremism, racism, and antisemitism.",
-    "tags": ["extremism", "antisemitism", "germany"],
+    "category": "organizations",
+    "tags": [
+      "extremism",
+      "antisemitism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -56,7 +78,12 @@
     "name": "apabiz",
     "url": "https://www.apabiz.de/",
     "blurb": "Berlin research archive on the far right, antisemitism, and right-wing violence.",
-    "tags": ["research", "extremism", "germany"],
+    "category": "organizations",
+    "tags": [
+      "research",
+      "extremism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -66,7 +93,12 @@
     "name": "Bellingcat",
     "url": "https://www.bellingcat.com/",
     "blurb": "Open-source investigative collective. The method is published with the findings.",
-    "tags": ["journalism", "research", "international"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "research",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -76,7 +108,12 @@
     "name": "Belltower.News",
     "url": "https://www.belltower.news/",
     "blurb": "Journalism on the far right, racism, and antisemitism, published with the Amadeu Antonio Stiftung.",
-    "tags": ["journalism", "extremism", "germany"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "extremism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -86,7 +123,11 @@
     "name": "Brian Tyler Cohen",
     "url": "https://www.briantylercohen.com/",
     "blurb": "Journalist and host of No Lie. Interviews and daily reporting on U.S. politics.",
-    "tags": ["journalism", "united-states"],
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -96,7 +137,11 @@
     "name": "Brennan Center for Justice",
     "url": "https://www.brennancenter.org/",
     "blurb": "Law and policy institute focused on democracy, voting, and the rule of law.",
-    "tags": ["legal", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -106,7 +151,11 @@
     "name": "CORRECTIV",
     "url": "https://correctiv.org/",
     "blurb": "German nonprofit newsroom. Investigative reporting, including on the far right.",
-    "tags": ["journalism", "germany"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -116,7 +165,11 @@
     "name": "Equal Justice Initiative",
     "url": "https://eji.org/",
     "blurb": "Legal and historical work on racial injustice, excessive punishment, and mass incarceration.",
-    "tags": ["legal", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -126,7 +179,12 @@
     "name": "EU DisinfoLab",
     "url": "https://www.disinfo.eu/",
     "blurb": "European nonprofit researching disinformation campaigns and coordinated influence operations.",
-    "tags": ["research", "disinformation", "europe"],
+    "category": "organizations",
+    "tags": [
+      "research",
+      "disinformation",
+      "europe"
+    ],
     "region": "Europe",
     "language": "en",
     "added": "2026-10-25"
@@ -136,7 +194,11 @@
     "name": "FactCheck.org",
     "url": "https://www.factcheck.org/",
     "blurb": "Nonpartisan project of the Annenberg Public Policy Center. It checks claims by politicians and political groups.",
-    "tags": ["fact-check", "united-states"],
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -146,7 +208,11 @@
     "name": "Heather Cox Richardson",
     "url": "https://heathercoxrichardson.substack.com/",
     "blurb": "Historian. Letters from an American is her daily letter on U.S. politics.",
-    "tags": ["journalism", "united-states"],
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -156,7 +222,12 @@
     "name": "HOPE not hate",
     "url": "https://hopenothate.org.uk/",
     "blurb": "The United Kingdom's leading campaign against the far right.",
-    "tags": ["organizing", "extremism", "united-kingdom"],
+    "category": "organizations",
+    "tags": [
+      "organizing",
+      "extremism",
+      "united-kingdom"
+    ],
     "region": "United Kingdom",
     "language": "en",
     "added": "2026-10-25"
@@ -166,7 +237,12 @@
     "name": "Human Rights Watch",
     "url": "https://www.hrw.org/",
     "blurb": "Investigates and reports on human rights abuses worldwide.",
-    "tags": ["journalism", "research", "international"],
+    "category": "organizations",
+    "tags": [
+      "journalism",
+      "research",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -176,7 +252,11 @@
     "name": "Indivisible",
     "url": "https://indivisible.org/",
     "blurb": "Volunteer-led groups organizing locally in the United States.",
-    "tags": ["organizing", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "organizing",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -186,7 +266,13 @@
     "name": "Institute for Strategic Dialogue",
     "url": "https://www.isdglobal.org/",
     "blurb": "Research institute that detects and exposes extremism, disinformation, and authoritarianism.",
-    "tags": ["research", "extremism", "disinformation", "international"],
+    "category": "organizations",
+    "tags": [
+      "research",
+      "extremism",
+      "disinformation",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -196,7 +282,11 @@
     "name": "MeidasTouch",
     "url": "https://www.meidastouch.com/",
     "blurb": "Independent news network covering U.S. politics and the law. Ron Filipkowski is editor-in-chief.",
-    "tags": ["journalism", "united-states"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -206,7 +296,11 @@
     "name": "PolitiFact",
     "url": "https://www.politifact.com/",
     "blurb": "Fact-checking desk that rates political claims. A project of the Poynter Institute.",
-    "tags": ["fact-check", "united-states"],
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -216,7 +310,11 @@
     "name": "ProPublica",
     "url": "https://www.propublica.org/",
     "blurb": "Independent newsroom for investigative journalism in the public interest.",
-    "tags": ["journalism", "united-states"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -226,7 +324,11 @@
     "name": "Protect Democracy",
     "url": "https://protectdemocracy.org/",
     "blurb": "Nonpartisan nonprofit working against the decline of American democracy.",
-    "tags": ["legal", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -236,7 +338,12 @@
     "name": "Southern Poverty Law Center",
     "url": "https://www.splcenter.org/",
     "blurb": "Tracks hate and extremist groups in the United States and publishes Hatewatch.",
-    "tags": ["watchdog", "extremism", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "watchdog",
+      "extremism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -246,7 +353,431 @@
     "name": "The Bulwark",
     "url": "https://www.thebulwark.com/",
     "blurb": "Political reporting and analysis from conservatives who oppose Trump. Based in Washington.",
-    "tags": ["journalism", "united-states"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "jenke-von-wilmsdorff",
+    "name": "Jenke von Wilmsdorff",
+    "url": "https://www.joyn.de/serien/jenke",
+    "blurb": "German reporter. Host of JENKE. on ProSieben, and of the live talk that follows the films.",
+    "category": "people",
+    "tags": [
+      "late-night",
+      "journalism",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25",
+    "featured": true
+  },
+  {
+    "id": "joyce-vance",
+    "name": "Joyce Vance",
+    "url": "https://joycevance.substack.com/",
+    "blurb": "Former U.S. Attorney. Civil Discourse is her newsletter on law and democracy.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mehdi-hasan",
+    "name": "Mehdi Hasan",
+    "url": "https://zeteo.com/",
+    "blurb": "Journalist. Editor-in-chief of Zeteo, covering politics and the news.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "judd-legum",
+    "name": "Judd Legum",
+    "url": "https://popular.info/",
+    "blurb": "Journalist. He writes Popular Information, an accountability newsletter.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "timothy-snyder",
+    "name": "Timothy Snyder",
+    "url": "https://snyder.substack.com/",
+    "blurb": "Historian of tyranny and democracy. Author of On Tyranny.",
+    "category": "people",
+    "tags": [
+      "research",
+      "international"
+    ],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "ruth-ben-ghiat",
+    "name": "Ruth Ben-Ghiat",
+    "url": "https://lucid.substack.com/",
+    "blurb": "Historian of authoritarianism. She writes the Lucid newsletter.",
+    "category": "people",
+    "tags": [
+      "research",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "allison-gill",
+    "name": "Allison Gill",
+    "url": "https://www.muellershewrote.com/",
+    "blurb": "Writes the Mueller, She Wrote newsletter on the law and accountability.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "jay-kuo",
+    "name": "Jay Kuo",
+    "url": "https://statuskuo.substack.com/",
+    "blurb": "Writes The Status Kuo, a newsletter on U.S. law and politics.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "jimmy-kimmel-live",
+    "name": "Jimmy Kimmel Live",
+    "url": "https://abc.com/show/9bfe2f4f-41ad-4492-a6dd-0b67db180543",
+    "blurb": "Weeknight late-night talk show on ABC, hosted by Jimmy Kimmel.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "late-night-seth-meyers",
+    "name": "Late Night with Seth Meyers",
+    "url": "https://www.nbc.com/late-night-with-seth-meyers",
+    "blurb": "Weeknight late-night talk show on NBC, hosted by Seth Meyers.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "the-daily-show",
+    "name": "The Daily Show",
+    "url": "https://www.thedailyshow.com/",
+    "blurb": "Weeknight satirical news on Comedy Central. Jon Stewart hosts Mondays. Ronny Chieng, Josh Johnson, Jordan Klepper, Michael Kosta, and Desi Lydic rotate Tuesday through Thursday.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "zdf-magazin-royale",
+    "name": "ZDF Magazin Royale",
+    "url": "https://www.zdf.de/shows/zdf-magazin-royale-102",
+    "blurb": "Late-night satire on ZDF, hosted by Jan Böhmermann. The last episode is set for 18 December 2026.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "heute-show",
+    "name": "heute-show",
+    "url": "https://www.zdf.de/shows/heute-show-104",
+    "blurb": "Weekly political satire on ZDF, hosted by Oliver Welke.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "extra-3",
+    "name": "extra 3",
+    "url": "https://www.ndr.de/fernsehen/sendungen/extra_3",
+    "blurb": "Satirical news magazine from NDR, hosted by Christian Ehring.",
+    "category": "shows",
+    "tags": [
+      "satire",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "die-anstalt",
+    "name": "Die Anstalt",
+    "url": "https://www.zdf.de/shows/die-anstalt-104",
+    "blurb": "Political cabaret on ZDF with Max Uthoff, Claus von Wagner, and Maike Kühl. Each episode publishes a fact-check.",
+    "category": "shows",
+    "tags": [
+      "satire",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "crooked-media",
+    "name": "Crooked Media",
+    "url": "https://crooked.com/",
+    "blurb": "Podcast network. Home of Pod Save America and other political shows.",
+    "category": "shows",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "volksverpetzer",
+    "name": "Volksverpetzer",
+    "url": "https://volksverpetzer.de/",
+    "blurb": "German site that checks viral claims and writes about the far right and disinformation.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "disinformation",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "democracy-docket",
+    "name": "Democracy Docket",
+    "url": "https://www.democracydocket.com/",
+    "blurb": "Newsroom on voting rights and election cases, founded by Marc Elias.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mother-jones",
+    "name": "Mother Jones",
+    "url": "https://www.motherjones.com/",
+    "blurb": "Independent magazine and newsroom for investigative reporting.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "snopes",
+    "name": "Snopes",
+    "url": "https://www.snopes.com/",
+    "blurb": "Fact-checking site for rumors, images, and viral claims.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mimikama",
+    "name": "Mimikama",
+    "url": "https://www.mimikama.org/",
+    "blurb": "Austrian fact-checking desk for chain letters, fakes, and viral claims.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "disinformation",
+      "europe"
+    ],
+    "region": "Austria",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "netzpolitik",
+    "name": "netzpolitik.org",
+    "url": "https://netzpolitik.org/",
+    "blurb": "German newsroom for digital rights, surveillance, and technology policy.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "tagesschau-faktenfinder",
+    "name": "tagesschau Faktenfinder",
+    "url": "https://www.tagesschau.de/faktenfinder",
+    "blurb": "Fact-checking desk of tagesschau, the ARD news program.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "frag-den-staat",
+    "name": "FragDenStaat",
+    "url": "https://fragdenstaat.de/",
+    "blurb": "German organization for freedom-of-information requests and public records.",
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "campact",
+    "name": "Campact",
+    "url": "https://www.campact.de/",
+    "blurb": "German campaign organization. Petitions and organizing on democracy and civil rights.",
+    "category": "organizations",
+    "tags": [
+      "organizing",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "crew",
+    "name": "CREW",
+    "url": "https://www.citizensforethics.org/",
+    "blurb": "Citizens for Responsibility and Ethics in Washington. A watchdog on government ethics.",
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "watchdog",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "american-oversight",
+    "name": "American Oversight",
+    "url": "https://americanoversight.org/",
+    "blurb": "Nonprofit that uses public-records law to investigate government.",
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "watchdog",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "endstation-rechts",
+    "name": "Endstation Rechts",
+    "url": "https://www.endstation-rechts.de/",
+    "blurb": "Documents far-right activity in Germany, with a focus on Mecklenburg-Vorpommern.",
+    "category": "organizations",
+    "tags": [
+      "extremism",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "right-wing-watch",
+    "name": "Right Wing Watch",
+    "url": "https://www.peoplefor.org/rightwingwatch",
+    "blurb": "A People For the American Way project that monitors far-right figures and groups.",
+    "category": "organizations",
+    "tags": [
+      "watchdog",
+      "extremism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"

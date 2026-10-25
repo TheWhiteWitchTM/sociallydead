@@ -5,7 +5,10 @@
     "handle": "TheWhiteWitchTM",
     "url": "https://x.com/TheWhiteWitchTM",
     "blurb": "Keeps this directory. Politics and social events, facts first.",
-    "tags": ["host"],
+    "category": "people",
+    "tags": [
+      "host"
+    ],
     "language": "en",
     "added": "2026-10-25",
     "featured": true,
@@ -17,7 +20,11 @@
     "handle": "atrupar",
     "url": "https://x.com/atrupar",
     "blurb": "Independent journalist. Clips of political figures, alongside the Public Notice newsletter.",
-    "tags": ["journalism", "united-states"],
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25",
@@ -29,7 +36,11 @@
     "handle": "ACLU",
     "url": "https://x.com/ACLU",
     "blurb": "Official account of the American Civil Liberties Union.",
-    "tags": ["legal", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -40,7 +51,12 @@
     "handle": "ADL",
     "url": "https://x.com/ADL",
     "blurb": "Official account. Antisemitism, extremism, and hate-movement research.",
-    "tags": ["watchdog", "antisemitism", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "watchdog",
+      "antisemitism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -51,7 +67,11 @@
     "handle": "AmadeuAntonio",
     "url": "https://x.com/AmadeuAntonio",
     "blurb": "Official account of the German foundation against right-wing extremism, racism, and antisemitism.",
-    "tags": ["extremism", "germany"],
+    "category": "organizations",
+    "tags": [
+      "extremism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -62,7 +82,12 @@
     "handle": "bellingcat",
     "url": "https://x.com/bellingcat",
     "blurb": "Official account of the open-source investigative collective.",
-    "tags": ["journalism", "research", "international"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "research",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -73,7 +98,11 @@
     "handle": "BrennanCenter",
     "url": "https://x.com/BrennanCenter",
     "blurb": "Official account. Democracy, voting, and the rule of law.",
-    "tags": ["legal", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -84,7 +113,11 @@
     "handle": "briantylercohen",
     "url": "https://x.com/briantylercohen",
     "blurb": "Journalist and host of No Lie. Interviews and daily reporting on U.S. politics.",
-    "tags": ["journalism", "united-states"],
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -95,7 +128,11 @@
     "handle": "eji_org",
     "url": "https://x.com/eji_org",
     "blurb": "Official account. Racial injustice, punishment, and public memory.",
-    "tags": ["legal", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -106,7 +143,11 @@
     "handle": "HC_Richardson",
     "url": "https://x.com/HC_Richardson",
     "blurb": "Historian. Author of the daily newsletter Letters from an American.",
-    "tags": ["journalism", "united-states"],
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -117,7 +158,12 @@
     "handle": "hopenothate",
     "url": "https://x.com/hopenothate",
     "blurb": "Official account of the UK campaign against the far right.",
-    "tags": ["organizing", "extremism", "united-kingdom"],
+    "category": "organizations",
+    "tags": [
+      "organizing",
+      "extremism",
+      "united-kingdom"
+    ],
     "region": "United Kingdom",
     "language": "en",
     "added": "2026-10-25"
@@ -128,7 +174,11 @@
     "handle": "hrw",
     "url": "https://x.com/hrw",
     "blurb": "Official account. Human rights investigations worldwide.",
-    "tags": ["journalism", "international"],
+    "category": "organizations",
+    "tags": [
+      "journalism",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -139,7 +189,11 @@
     "handle": "IndivisibleTeam",
     "url": "https://x.com/IndivisibleTeam",
     "blurb": "Official account of the volunteer organizing network.",
-    "tags": ["organizing", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "organizing",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -150,7 +204,12 @@
     "handle": "ISDglobal",
     "url": "https://x.com/ISDglobal",
     "blurb": "Official account. Research on extremism, disinformation, and authoritarianism.",
-    "tags": ["research", "extremism", "international"],
+    "category": "organizations",
+    "tags": [
+      "research",
+      "extremism",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -161,7 +220,11 @@
     "handle": "MeidasTouch",
     "url": "https://x.com/MeidasTouch",
     "blurb": "Official account of the MeidasTouch news network.",
-    "tags": ["journalism", "united-states"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -172,7 +235,11 @@
     "handle": "propublica",
     "url": "https://x.com/propublica",
     "blurb": "Official account of the investigative newsroom.",
-    "tags": ["journalism", "united-states"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -183,7 +250,12 @@
     "handle": "splcenter",
     "url": "https://x.com/splcenter",
     "blurb": "Official account. The center has said it no longer posts actively on X.",
-    "tags": ["watchdog", "extremism", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "watchdog",
+      "extremism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -194,7 +266,11 @@
     "handle": "RonFilipkowski",
     "url": "https://x.com/RonFilipkowski",
     "blurb": "Editor-in-chief of MeidasTouch. Former federal prosecutor who tracks the right in public.",
-    "tags": ["journalism", "united-states"],
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -205,7 +281,242 @@
     "handle": "BulwarkOnline",
     "url": "https://x.com/BulwarkOnline",
     "blurb": "Official account. Political reporting from conservatives who oppose Trump.",
-    "tags": ["journalism", "united-states"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "desi-lydic",
+    "name": "Desi Lydic",
+    "handle": "DesiLydic",
+    "url": "https://x.com/DesiLydic",
+    "blurb": "Correspondent and rotating host on The Daily Show.",
+    "category": "people",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mehdi-hasan",
+    "name": "Mehdi Hasan",
+    "handle": "mehdirhasan",
+    "url": "https://x.com/mehdirhasan",
+    "blurb": "Journalist. Editor-in-chief of Zeteo.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "judd-legum",
+    "name": "Judd Legum",
+    "handle": "JuddLegum",
+    "url": "https://x.com/JuddLegum",
+    "blurb": "Journalist. He writes Popular Information.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "timothy-snyder",
+    "name": "Timothy Snyder",
+    "handle": "TimothyDSnyder",
+    "url": "https://x.com/TimothyDSnyder",
+    "blurb": "Historian of tyranny and democracy.",
+    "category": "people",
+    "tags": [
+      "research",
+      "international"
+    ],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "ruth-ben-ghiat",
+    "name": "Ruth Ben-Ghiat",
+    "handle": "ruthbenghiat",
+    "url": "https://x.com/ruthbenghiat",
+    "blurb": "Historian of authoritarianism. She writes Lucid.",
+    "category": "people",
+    "tags": [
+      "research",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "allison-gill",
+    "name": "Allison Gill",
+    "handle": "MuellerSheWrote",
+    "url": "https://x.com/MuellerSheWrote",
+    "blurb": "Writes Mueller, She Wrote.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "late-night-seth-meyers",
+    "name": "Late Night with Seth Meyers",
+    "handle": "LateNightSeth",
+    "url": "https://x.com/LateNightSeth",
+    "blurb": "Official account of the NBC late-night show.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "last-week-tonight",
+    "name": "Last Week Tonight",
+    "handle": "LastWeekTonight",
+    "url": "https://x.com/LastWeekTonight",
+    "blurb": "Official account. Weekly show hosted by John Oliver.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "the-daily-show",
+    "name": "The Daily Show",
+    "handle": "TheDailyShow",
+    "url": "https://x.com/TheDailyShow",
+    "blurb": "Official account. Jon Stewart and the correspondents.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "zdf-magazin-royale",
+    "name": "Jan Böhmermann",
+    "handle": "janboehm",
+    "url": "https://x.com/janboehm",
+    "blurb": "Host of ZDF Magazin Royale.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "crooked-media",
+    "name": "Crooked Media",
+    "handle": "CrookedMedia",
+    "url": "https://x.com/CrookedMedia",
+    "blurb": "Official account of the podcast network.",
+    "category": "shows",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "volksverpetzer",
+    "name": "Volksverpetzer",
+    "handle": "Volksverpetzer",
+    "url": "https://x.com/Volksverpetzer",
+    "blurb": "Official account. Fact-checks and reporting on the far right.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "snopes",
+    "name": "Snopes",
+    "handle": "snopes",
+    "url": "https://x.com/snopes",
+    "blurb": "Official account of the fact-checking site.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "netzpolitik",
+    "name": "netzpolitik.org",
+    "handle": "netzpolitik_org",
+    "url": "https://x.com/netzpolitik_org",
+    "blurb": "Official account of the digital-rights newsroom.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "crew",
+    "name": "CREW",
+    "handle": "CREWcrew",
+    "url": "https://x.com/CREWcrew",
+    "blurb": "Official account. Government ethics and accountability.",
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "watchdog",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"

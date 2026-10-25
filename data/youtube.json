@@ -5,7 +5,10 @@
     "handle": "TheWhiteWitchTM",
     "url": "https://www.youtube.com/@TheWhiteWitchTM",
     "blurb": "Keeps this directory. Politics and social events, facts first.",
-    "tags": ["host"],
+    "category": "people",
+    "tags": [
+      "host"
+    ],
     "language": "en",
     "added": "2026-10-25",
     "featured": true,
@@ -17,7 +20,11 @@
     "handle": "briantylercohen",
     "url": "https://www.youtube.com/@briantylercohen",
     "blurb": "Journalist and host of No Lie. Interviews and daily reporting on U.S. politics.",
-    "tags": ["journalism", "united-states"],
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -28,7 +35,11 @@
     "handle": "ACLU",
     "url": "https://www.youtube.com/@ACLU",
     "blurb": "Official channel. Cases, explainers, and civil liberties reporting.",
-    "tags": ["legal", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -39,7 +50,11 @@
     "handle": "AmadeuAntonioStiftung",
     "url": "https://www.youtube.com/@AmadeuAntonioStiftung",
     "blurb": "Official channel of the foundation against right-wing extremism, racism, and antisemitism.",
-    "tags": ["extremism", "germany"],
+    "category": "organizations",
+    "tags": [
+      "extremism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -50,7 +65,12 @@
     "handle": "bellingcatofficial",
     "url": "https://www.youtube.com/@bellingcatofficial",
     "blurb": "Official channel. Investigations and open-source method walkthroughs.",
-    "tags": ["journalism", "research", "international"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "research",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -61,7 +81,11 @@
     "handle": "BrennanCenter",
     "url": "https://www.youtube.com/@BrennanCenter",
     "blurb": "Official channel on voting, democracy, and the rule of law.",
-    "tags": ["legal", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -72,7 +96,11 @@
     "handle": "correctiv_org",
     "url": "https://www.youtube.com/@correctiv_org",
     "blurb": "Official channel of the German investigative newsroom.",
-    "tags": ["journalism", "germany"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "germany"
+    ],
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
@@ -83,7 +111,11 @@
     "handle": "heathercoxrichardson",
     "url": "https://www.youtube.com/@heathercoxrichardson",
     "blurb": "Historian. Letters from an American, read and discussed on her channel.",
-    "tags": ["journalism", "united-states"],
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -94,7 +126,12 @@
     "handle": "hopenothate",
     "url": "https://www.youtube.com/@hopenothate",
     "blurb": "Official channel. Reporting and campaigns against the far right in the United Kingdom.",
-    "tags": ["organizing", "extremism", "united-kingdom"],
+    "category": "organizations",
+    "tags": [
+      "organizing",
+      "extremism",
+      "united-kingdom"
+    ],
     "region": "United Kingdom",
     "language": "en",
     "added": "2026-10-25"
@@ -105,7 +142,11 @@
     "handle": "humanrightswatch",
     "url": "https://www.youtube.com/@humanrightswatch",
     "blurb": "Official channel. Investigations and reporting on human rights abuses.",
-    "tags": ["journalism", "international"],
+    "category": "organizations",
+    "tags": [
+      "journalism",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -116,7 +157,12 @@
     "handle": "ISDglobal",
     "url": "https://www.youtube.com/@ISDglobal",
     "blurb": "Official channel on extremism, disinformation, and authoritarianism.",
-    "tags": ["research", "extremism", "international"],
+    "category": "organizations",
+    "tags": [
+      "research",
+      "extremism",
+      "international"
+    ],
     "region": "International",
     "language": "en",
     "added": "2026-10-25"
@@ -127,7 +173,11 @@
     "handle": "MeidasTouch",
     "url": "https://www.youtube.com/@MeidasTouch",
     "blurb": "Independent news network. Politics, law, and breaking news.",
-    "tags": ["journalism", "united-states"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -138,7 +188,11 @@
     "handle": "propublica",
     "url": "https://www.youtube.com/@propublica",
     "blurb": "Official channel of the investigative newsroom.",
-    "tags": ["journalism", "united-states"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -149,7 +203,12 @@
     "handle": "splcenter",
     "url": "https://www.youtube.com/@splcenter",
     "blurb": "Official channel. Hatewatch, explainers, and reporting on extremist groups.",
-    "tags": ["watchdog", "extremism", "united-states"],
+    "category": "organizations",
+    "tags": [
+      "watchdog",
+      "extremism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
@@ -160,9 +219,336 @@
     "handle": "thebulwark",
     "url": "https://www.youtube.com/@thebulwark",
     "blurb": "Political reporting and analysis from conservatives who oppose Trump.",
-    "tags": ["journalism", "united-states"],
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
     "region": "United States",
     "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "jordan-klepper",
+    "name": "Jordan Klepper",
+    "handle": "JordanKlepper",
+    "url": "https://www.youtube.com/@JordanKlepper",
+    "blurb": "Correspondent and rotating host on The Daily Show.",
+    "category": "people",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mehdi-hasan",
+    "name": "Mehdi Hasan",
+    "handle": "zeteo",
+    "url": "https://www.youtube.com/@zeteo",
+    "blurb": "Journalist. Editor-in-chief of Zeteo.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "judd-legum",
+    "name": "Judd Legum",
+    "handle": "popularinformation",
+    "url": "https://www.youtube.com/@popularinformation",
+    "blurb": "Journalist. Popular Information, on video.",
+    "category": "people",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "jimmy-kimmel-live",
+    "name": "Jimmy Kimmel Live",
+    "handle": "JimmyKimmelLive",
+    "url": "https://www.youtube.com/@JimmyKimmelLive",
+    "blurb": "Official channel. Weeknight late-night talk show hosted by Jimmy Kimmel.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "late-night-seth-meyers",
+    "name": "Late Night with Seth Meyers",
+    "handle": "LateNightSeth",
+    "url": "https://www.youtube.com/@LateNightSeth",
+    "blurb": "Official channel. Weeknight late-night talk show hosted by Seth Meyers.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "last-week-tonight",
+    "name": "Last Week Tonight",
+    "handle": "LastWeekTonight",
+    "url": "https://www.youtube.com/@LastWeekTonight",
+    "blurb": "Official channel. Weekly late-night show on HBO, hosted by John Oliver.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "the-daily-show",
+    "name": "The Daily Show",
+    "handle": "TheDailyShow",
+    "url": "https://www.youtube.com/@TheDailyShow",
+    "blurb": "Official channel. Jon Stewart hosts Mondays. Correspondents rotate through the week.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "zdf-magazin-royale",
+    "name": "ZDF Magazin Royale",
+    "handle": "zdfmagazinroyale",
+    "url": "https://www.youtube.com/@zdfmagazinroyale",
+    "blurb": "Official channel. Late-night satire with Jan Böhmermann.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "heute-show",
+    "name": "heute-show",
+    "handle": "heuteshow",
+    "url": "https://www.youtube.com/@heuteshow",
+    "blurb": "Official channel. Weekly political satire hosted by Oliver Welke.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "extra-3",
+    "name": "extra 3",
+    "handle": "extra3",
+    "url": "https://www.youtube.com/@extra3",
+    "blurb": "Official channel. Satirical news magazine from NDR.",
+    "category": "shows",
+    "tags": [
+      "satire",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "crooked-media",
+    "name": "Crooked Media",
+    "handle": "CrookedMedia",
+    "url": "https://www.youtube.com/@CrookedMedia",
+    "blurb": "Official channel of the podcast network.",
+    "category": "shows",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "volksverpetzer",
+    "name": "Volksverpetzer",
+    "handle": "volksverpetzer",
+    "url": "https://www.youtube.com/@volksverpetzer",
+    "blurb": "Official channel. Fact-checks and reporting on the far right.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "democracy-docket",
+    "name": "Democracy Docket",
+    "handle": "democracydocket",
+    "url": "https://www.youtube.com/@democracydocket",
+    "blurb": "Official channel on voting rights and election cases.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "legal",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mother-jones",
+    "name": "Mother Jones",
+    "handle": "motherjones",
+    "url": "https://www.youtube.com/@motherjones",
+    "blurb": "Official channel of the investigative magazine.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "snopes",
+    "name": "Snopes",
+    "handle": "snopes",
+    "url": "https://www.youtube.com/@snopes",
+    "blurb": "Official channel of the fact-checking site.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "mimikama",
+    "name": "Mimikama",
+    "handle": "mimikama",
+    "url": "https://www.youtube.com/@mimikama",
+    "blurb": "Official channel of the Austrian fact-checking desk.",
+    "category": "news",
+    "tags": [
+      "fact-check",
+      "europe"
+    ],
+    "region": "Austria",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "netzpolitik",
+    "name": "netzpolitik.org",
+    "handle": "netzpolitik",
+    "url": "https://www.youtube.com/@netzpolitik",
+    "blurb": "Official channel on digital rights and technology policy.",
+    "category": "news",
+    "tags": [
+      "journalism",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "campact",
+    "name": "Campact",
+    "handle": "campact",
+    "url": "https://www.youtube.com/@campact",
+    "blurb": "Official channel of the German campaign organization.",
+    "category": "organizations",
+    "tags": [
+      "organizing",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "crew",
+    "name": "CREW",
+    "handle": "citizensforethics",
+    "url": "https://www.youtube.com/@citizensforethics",
+    "blurb": "Official channel. Government ethics and accountability.",
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "watchdog",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "american-oversight",
+    "name": "American Oversight",
+    "handle": "americanoversight",
+    "url": "https://www.youtube.com/@americanoversight",
+    "blurb": "Official channel. Public-records investigations of government.",
+    "category": "organizations",
+    "tags": [
+      "legal",
+      "watchdog",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "endstation-rechts",
+    "name": "Endstation Rechts",
+    "handle": "endstationrechts",
+    "url": "https://www.youtube.com/@endstationrechts",
+    "blurb": "Official channel. Reporting on the far right in Germany.",
+    "category": "organizations",
+    "tags": [
+      "extremism",
+      "germany"
+    ],
+    "region": "Germany",
+    "language": "de",
     "added": "2026-10-25"
   }
 ]
