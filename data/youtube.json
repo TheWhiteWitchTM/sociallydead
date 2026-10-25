@@ -318,7 +318,8 @@
     ],
     "region": "United States",
     "language": "en",
-    "added": "2026-10-25"
+    "added": "2026-10-25",
+    "featured": true
   },
   {
     "id": "the-daily-show",
@@ -550,5 +551,22 @@
     "region": "Germany",
     "language": "de",
     "added": "2026-10-25"
+  },
+  {
+    "id": "late-show-stephen-colbert",
+    "name": "The Late Show with Stephen Colbert",
+    "handle": "ColbertLateShow",
+    "url": "https://www.youtube.com/@ColbertLateShow",
+    "blurb": "Official channel. Late-night talk show hosted by Stephen Colbert. The last episode aired 21 May 2026.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25",
+    "featured": true
   }
 ]

@@ -1,6 +1,6 @@
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { OG_IMAGE, SITE_ORIGIN, SITE_URL } from "@/lib/site";
+import { SITE_ORIGIN, SITE_URL, shareMeta } from "@/lib/site";
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import Script from "next/script";
@@ -61,28 +61,11 @@ export const metadata: Metadata = {
     "fact check",
     "watchdog",
   ],
-  openGraph: {
+  ...shareMeta({
     title: "SociallyDead — Directory of the resistance",
     description,
     url: SITE_URL,
-    siteName: "SociallyDead",
-    type: "website",
-    images: [
-      {
-        url: OG_IMAGE,
-        width: 1200,
-        height: 630,
-        alt: "SociallyDead. Directory of the resistance.",
-        type: "image/jpeg",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "SociallyDead — Directory of the resistance",
-    description,
-    images: [{ url: OG_IMAGE, alt: "SociallyDead. Directory of the resistance." }],
-  },
+  }),
   robots: { index: true, follow: true },
   alternates: {
     canonical: SITE_URL,

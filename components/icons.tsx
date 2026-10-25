@@ -78,6 +78,90 @@ export function XIcon() {
   );
 }
 
+export function StarIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M12 3.4 14.55 8.7 20.3 9.4 16.05 13.35 17.15 19.1 12 16.3 6.85 19.1 7.95 13.35 3.7 9.4 9.45 8.7z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function PeopleIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="9" cy="8.1" r="2.35" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="15.6" cy="8.7" r="1.85" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M4.6 18.6c.55-2.7 2.35-4.15 4.4-4.15s3.85 1.45 4.4 4.15"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+      <path
+        d="M13.15 14.7c1.15-.45 2.25-.5 3.2-.1 1.45.6 2.35 1.9 2.75 3.7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function MicIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="9" y="3.2" width="6" height="10.2" rx="3" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <path
+        d="M7.2 11.2a4.8 4.8 0 0 0 9.6 0M12 16v3.4M9.1 19.6h5.8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function NewsIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M5 6.2h9.2v11.2H7.1A2.1 2.1 0 0 1 5 15.3z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.2 8.1H19v8.4a2.1 2.1 0 0 1-2.1 2.1H8.2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path d="M7.3 9.2h4.5M7.3 12h4.5M7.3 14.6h2.8" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function OrgIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 10.1 12 5.2l8 4.9" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      <path d="M6.3 10.2V17M9.9 10.2V17M14.1 10.2V17M17.7 10.2V17" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M4.4 17.3h15.2M5.2 19.4h13.6" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 export function SkyIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">

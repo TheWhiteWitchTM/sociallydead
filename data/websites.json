@@ -491,7 +491,8 @@
     ],
     "region": "United States",
     "language": "en",
-    "added": "2026-10-25"
+    "added": "2026-10-25",
+    "featured": true
   },
   {
     "id": "late-night-seth-meyers",
@@ -505,7 +506,8 @@
     ],
     "region": "United States",
     "language": "en",
-    "added": "2026-10-25"
+    "added": "2026-10-25",
+    "featured": true
   },
   {
     "id": "the-daily-show",
@@ -520,7 +522,8 @@
     ],
     "region": "United States",
     "language": "en",
-    "added": "2026-10-25"
+    "added": "2026-10-25",
+    "featured": true
   },
   {
     "id": "zdf-magazin-royale",
@@ -535,7 +538,8 @@
     ],
     "region": "Germany",
     "language": "de",
-    "added": "2026-10-25"
+    "added": "2026-10-25",
+    "featured": true
   },
   {
     "id": "heute-show",
@@ -550,7 +554,8 @@
     ],
     "region": "Germany",
     "language": "de",
-    "added": "2026-10-25"
+    "added": "2026-10-25",
+    "featured": true
   },
   {
     "id": "extra-3",

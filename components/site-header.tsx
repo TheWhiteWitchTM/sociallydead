@@ -256,15 +256,17 @@ export function SiteHeader() {
             </label>
           </li>
         </ul>
-        <a
-          className="contribute"
-          href="https://www.paypal.com/ncp/payment/4P85EQRES3RGU"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Contribute
-        </a>
-        <ThemeToggle />
+        <div className="nav-actions">
+          <a
+            className="contribute"
+            href="https://www.paypal.com/ncp/payment/4P85EQRES3RGU"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Contribute
+          </a>
+          <ThemeToggle />
+        </div>
       </nav>
     </header>
   );

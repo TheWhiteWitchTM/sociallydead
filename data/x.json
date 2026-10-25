@@ -520,5 +520,36 @@
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
+  },
+  {
+    "id": "jimmy-kimmel-live",
+    "name": "Jimmy Kimmel Live",
+    "handle": "JimmyKimmelLive",
+    "url": "https://x.com/JimmyKimmelLive",
+    "blurb": "Official account. Weeknight late-night talk show hosted by Jimmy Kimmel.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "late-show-stephen-colbert",
+    "name": "The Late Show with Stephen Colbert",
+    "handle": "colbertlateshow",
+    "url": "https://x.com/colbertlateshow",
+    "blurb": "Official account. Late-night talk show hosted by Stephen Colbert. The last episode aired 21 May 2026.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
   }
 ]

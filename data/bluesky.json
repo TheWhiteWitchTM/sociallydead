@@ -548,5 +548,67 @@
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
+  },
+  {
+    "id": "jimmy-kimmel-live",
+    "name": "Jimmy Kimmel Live",
+    "handle": "jimmykimmellive.bsky.social",
+    "url": "https://bsky.app/profile/jimmykimmellive.bsky.social",
+    "blurb": "Official account. Weeknight late-night talk show hosted by Jimmy Kimmel.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "late-night-seth-meyers",
+    "name": "Late Night with Seth Meyers",
+    "handle": "latenightseth.bsky.social",
+    "url": "https://bsky.app/profile/latenightseth.bsky.social",
+    "blurb": "Official account. Weeknight late-night talk show hosted by Seth Meyers.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "last-week-tonight",
+    "name": "Last Week Tonight",
+    "handle": "lastweektonight.com",
+    "url": "https://bsky.app/profile/lastweektonight.com",
+    "blurb": "Official account. Weekly late-night show on HBO, hosted by John Oliver.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "late-show-stephen-colbert",
+    "name": "The Late Show with Stephen Colbert",
+    "handle": "colbertlateshow.bsky.social",
+    "url": "https://bsky.app/profile/colbertlateshow.bsky.social",
+    "blurb": "Official account. Late-night talk show hosted by Stephen Colbert. The last episode aired 21 May 2026.",
+    "category": "shows",
+    "tags": [
+      "late-night",
+      "satire",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
   }
 ]

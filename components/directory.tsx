@@ -1,6 +1,6 @@
 "use client";
 
-import { GlobeIcon, PlayIcon, SearchIcon, SkyIcon, XIcon } from "@/components/icons";
+import { GlobeIcon, MicIcon, NewsIcon, OrgIcon, PeopleIcon, PlayIcon, SearchIcon, SkyIcon, StarIcon, XIcon } from "@/components/icons";
 import { asset } from "@/lib/asset";
 import { CATEGORIES, labelTag, SHELF_BLURB, SHELF_LABEL, sortTags, type Shelf } from "@/lib/categories";
 import {
@@ -26,6 +26,12 @@ const KIND_LABEL: Record<Kind, string> = {
 };
 
 const KIND_ORDER: Kind[] = ["featured", "all", ...CATALOGS];
+const SHELF_ICON = {
+  people: PeopleIcon,
+  shows: MicIcon,
+  news: NewsIcon,
+  organizations: OrgIcon,
+} as const;
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 function indexLetter(name: string): string {
@@ -394,12 +400,16 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
               All
               <span className="count">{shelfCounts.all}</span>
             </Link>
-            {CATEGORIES.map((item) => (
-              <Link key={item} href={shelfHref(item)} aria-current={shelf === item ? "page" : undefined}>
-                {SHELF_LABEL[item]}
-                <span className="count">{shelfCounts[item]}</span>
-              </Link>
-            ))}
+            {CATEGORIES.map((item) => {
+              const Icon = SHELF_ICON[item];
+              return (
+                <Link key={item} href={shelfHref(item)} aria-current={shelf === item ? "page" : undefined}>
+                  <Icon />
+                  {SHELF_LABEL[item]}
+                  <span className="count">{shelfCounts[item]}</span>
+                </Link>
+              );
+            })}
           </div>
         </div>
         <div className="filter-line">
@@ -409,6 +419,7 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
           <div className="catalogs" role="toolbar" aria-labelledby="where-label">
             {KIND_ORDER.map((item) => (
               <button key={item} type="button" aria-pressed={kind === item} onClick={() => setKind(item)}>
+                {item === "featured" ? <StarIcon /> : null}
                 {KIND_LABEL[item]}
                 <span className="count">{counts[item]}</span>
               </button>
@@ -475,7 +486,11 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
         <>
           {kind !== "featured" && featured.length > 0 ? (
             <div className="featured-block">
-              <h3 className="featured-label">Featured</h3>
+              <h3 className="featured-label">
+                <span className="section-mark">
+                  <StarIcon /> Featured
+                </span>
+              </h3>
               <ul className="listing-grid">
                 {featured.map((group) => (
                   <li key={`featured-${group.id}`}>
@@ -490,10 +505,15 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
             ? CATEGORIES.map((item) => {
                 const rows = rest.filter((group) => group.category === item);
                 if (rows.length === 0) return null;
+                const Icon = SHELF_ICON[item];
                 return (
                   <section key={item} className="shelf-block" aria-labelledby={`shelf-${item}`}>
                     <div className="shelf-heading">
-                      <h3 id={`shelf-${item}`}>{SHELF_LABEL[item]}</h3>
+                      <h3 id={`shelf-${item}`}>
+                        <span className="section-mark">
+                          <Icon /> {SHELF_LABEL[item]}
+                        </span>
+                      </h3>
                       <Link href={shelfHref(item)}>Open {SHELF_LABEL[item]}</Link>
                     </div>
                     <Listing groups={rows} kind={kind} />

@@ -1,5 +1,5 @@
 import { asset } from "@/lib/asset";
-import { SITE_ORIGIN } from "@/lib/site";
+import { SITE_ORIGIN, shareMeta } from "@/lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -14,28 +14,14 @@ export const metadata: Metadata = {
   description,
   keywords: ["Woozle effect", "circular reporting", "X", "misinformation", "citation", "SociallyDead"],
   alternates: { canonical: pageUrl },
-  openGraph: {
+  ...shareMeta({
     title: "The Woozle effect — they cited each other. That was the source.",
     description,
     url: pageUrl,
-    siteName: "SociallyDead",
+    image: pageImage,
+    imageAlt: "The Woozle Effect. They cited each other. That was the source. A circle of footprints around a red ember.",
     type: "article",
-    images: [
-      {
-        url: pageImage,
-        width: 1200,
-        height: 630,
-        alt: "The Woozle Effect. They cited each other. That was the source. A circle of footprints around a red ember.",
-        type: "image/jpeg",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "The Woozle effect — they cited each other. That was the source.",
-    description,
-    images: [pageImage],
-  },
+  }),
 };
 
 export default function WoozlePage() {

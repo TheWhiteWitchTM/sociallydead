@@ -1,6 +1,6 @@
 import { ShelfPage } from "@/components/shelf-page";
 import { CATEGORIES, isShelf, SHELF_BLURB, SHELF_LABEL, type Shelf } from "@/lib/categories";
-import { OG_IMAGE, SITE_ORIGIN } from "@/lib/site";
+import { SITE_ORIGIN, shareMeta } from "@/lib/site";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -22,12 +22,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: label,
     description,
     alternates: { canonical: url },
-    openGraph: {
+    ...shareMeta({
       title: `${label} — SociallyDead`,
       description,
       url,
-      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "SociallyDead. Directory of the resistance.", type: "image/jpeg" }],
-    },
+    }),
   };
 }
 
