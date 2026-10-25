@@ -1,3 +1,4 @@
+import { UkraineSupport } from "@/components/ukraine-support";
 import { asset } from "@/lib/asset";
 
 export function SiteFooter() {
@@ -28,9 +29,7 @@ export function SiteFooter() {
         <span aria-hidden="true">•</span>
         <a href={asset("/rss.xml")}>📡 RSS</a>
         <span aria-hidden="true">•</span>
-        <span className="footer-cheer">
-          <span className="ua-blue">🇺🇦 Ukraine is my friend.</span> <span className="ua-gold">Slava Ukraini!</span>
-        </span>
+        <UkraineSupport />
       </div>
       <p className="footer-note">SociallyDead · visits counted with Google Analytics (G-13S6Z9KCX9) · GPL-2.0</p>
     </footer>

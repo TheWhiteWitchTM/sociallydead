@@ -11,7 +11,8 @@ import {
   requestDirectoryFilter,
   type DirectoryKind,
 } from "@/lib/directory-filter";
-import { CATEGORIES, SHELF_LABEL, type Shelf } from "@/lib/categories";
+import { CATEGORIES, SHELF_LABEL } from "@/lib/categories";
+import { UKRAINE_LABEL, type DirectoryShelf } from "@/lib/ukraine";
 import { CATALOG_LABEL, CATALOGS, type Catalog } from "@/lib/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -22,9 +23,13 @@ const DESKS: { kind: DirectoryKind; title: string }[] = [
   ...CATALOGS.map((kind) => ({ kind, title: CATALOG_LABEL[kind as Catalog] })),
 ];
 
-const SHELVES: { shelf: Shelf | "all"; title: string; href: string }[] = [
+const SHELVES: { shelf: DirectoryShelf; title: string; href: string }[] = [
   { shelf: "all", title: "All shelves", href: "/" },
-  ...CATEGORIES.map((shelf) => ({ shelf, title: SHELF_LABEL[shelf], href: `/${shelf}/` })),
+  ...CATEGORIES.flatMap((shelf): { shelf: DirectoryShelf; title: string; href: string }[] => {
+    const item = { shelf, title: SHELF_LABEL[shelf], href: `/${shelf}/` };
+    if (shelf !== "people") return [item];
+    return [item, { shelf: "ukraine", title: UKRAINE_LABEL, href: "/ukraine/" }];
+  }),
 ];
 
 function here(pathname: string, href: string) {
@@ -33,8 +38,9 @@ function here(pathname: string, href: string) {
   return current === target;
 }
 
-function shelfFromPath(pathname: string): Shelf | "all" {
+function shelfFromPath(pathname: string): DirectoryShelf {
   const current = pathname.replace(/\/$/, "") || "/";
+  if (current === "/ukraine" || current.endsWith("/ukraine")) return "ukraine";
   for (const shelf of CATEGORIES) {
     if (current === `/${shelf}` || current.endsWith(`/${shelf}`)) return shelf;
   }

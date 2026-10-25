@@ -1,10 +1,11 @@
 import { Directory } from "@/components/directory";
 import { Hero } from "@/components/hero";
 import thumbFiles from "@/data/thumbs.json";
-import { SHELF_BLURB, SHELF_LABEL, SHELF_NOUN, type Shelf } from "@/lib/categories";
+import { SHELF_BLURB, SHELF_LABEL, SHELF_NOUN } from "@/lib/categories";
 import { loadDirectory } from "@/lib/directory";
 import { groupDirectory, type OrgGroup } from "@/lib/groups";
 import { SITE_ORIGIN, SITE_URL } from "@/lib/site";
+import { UKRAINE_BLURB, UKRAINE_LABEL, UKRAINE_NOUN, supportsUkraine, type DirectoryShelf } from "@/lib/ukraine";
 
 const thumbs = thumbFiles as Record<string, string>;
 
@@ -19,15 +20,27 @@ export function loadGroups(): OrgGroup[] {
   return withThumbs(groupDirectory(loadDirectory()));
 }
 
-export function ShelfPage({ shelf }: { shelf: Shelf | "all" }) {
+function shelfName(shelf: DirectoryShelf): string {
+  if (shelf === "all") return "SociallyDead";
+  if (shelf === "ukraine") return `${UKRAINE_LABEL} — SociallyDead`;
+  return `${SHELF_LABEL[shelf]} — SociallyDead`;
+}
+
+function shelfDescription(shelf: DirectoryShelf): string {
+  if (shelf === "all") {
+    return "A directory of people, shows, news desks, and organizations pushing back on MAGA, the AfD, and the far right.";
+  }
+  if (shelf === "ukraine") return UKRAINE_BLURB;
+  return SHELF_BLURB[shelf];
+}
+
+export function ShelfPage({ shelf }: { shelf: DirectoryShelf }) {
   const groups = loadGroups();
-  const visible = shelf === "all" ? groups : groups.filter((group) => group.category === shelf);
+  const visible =
+    shelf === "all" ? groups : shelf === "ukraine" ? groups.filter(supportsUkraine) : groups.filter((group) => group.category === shelf);
   const pageUrl = shelf === "all" ? SITE_URL : `${SITE_ORIGIN}/${shelf}/`;
-  const name = shelf === "all" ? "SociallyDead" : `${SHELF_LABEL[shelf]} — SociallyDead`;
-  const description =
-    shelf === "all"
-      ? "A directory of people, shows, news desks, and organizations pushing back on MAGA, the AfD, and the far right."
-      : SHELF_BLURB[shelf];
+  const name = shelfName(shelf);
+  const description = shelfDescription(shelf);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -54,7 +67,10 @@ export function ShelfPage({ shelf }: { shelf: Shelf | "all" }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <Hero total={visible.length} noun={shelf === "all" ? "public listings" : SHELF_NOUN[shelf]} />
+      <Hero
+        total={visible.length}
+        noun={shelf === "all" ? "public listings" : shelf === "ukraine" ? UKRAINE_NOUN : SHELF_NOUN[shelf]}
+      />
       <Directory groups={groups} shelf={shelf} />
     </>
   );

@@ -1,8 +1,8 @@
 "use client";
 
-import { GlobeIcon, MicIcon, NewsIcon, OrgIcon, PeopleIcon, PlayIcon, SearchIcon, SkyIcon, StarIcon, XIcon } from "@/components/icons";
+import { GlobeIcon, MicIcon, NewsIcon, OrgIcon, PeopleIcon, PlayIcon, SearchIcon, SkyIcon, StarIcon, UkraineFlagIcon, XIcon } from "@/components/icons";
 import { asset } from "@/lib/asset";
-import { CATEGORIES, labelTag, SHELF_BLURB, SHELF_LABEL, sortTags, type Shelf } from "@/lib/categories";
+import { CATEGORIES, labelTag, SHELF_BLURB, SHELF_LABEL, sortTags } from "@/lib/categories";
 import {
   DIRECTORY_FILTER,
   DIRECTORY_KIND,
@@ -13,8 +13,9 @@ import {
 } from "@/lib/directory-filter";
 import { type OrgGroup, type Presence } from "@/lib/groups";
 import { CATALOGS, CATALOG_LABEL, type Catalog } from "@/lib/types";
+import { UKRAINE_BLURB, UKRAINE_LABEL, supportsUkraine, type DirectoryShelf } from "@/lib/ukraine";
 import Link from "next/link";
-import { useEffect, useMemo, useRef, useState, type SyntheticEvent } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState, type SyntheticEvent } from "react";
 
 type Kind = DirectoryKind;
 type SortMode = "az" | "new";
@@ -125,7 +126,7 @@ function placePop(event: SyntheticEvent<HTMLElement>) {
   pop.classList.toggle("above", below < 220 && rect.top > 240);
 }
 
-function shelfHref(shelf: Shelf | "all") {
+function shelfHref(shelf: DirectoryShelf) {
   return shelf === "all" ? "/" : `/${shelf}/`;
 }
 
@@ -222,7 +223,7 @@ function Listing({ groups, kind }: { groups: OrgGroup[]; kind: Kind }) {
   );
 }
 
-export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf | "all" }) {
+export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: DirectoryShelf }) {
   const [kind, setKind] = useState<Kind>("all");
   const [query, setQuery] = useState("");
   const [tag, setTag] = useState<string | null>(null);
@@ -303,10 +304,13 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
     window.dispatchEvent(new CustomEvent(DIRECTORY_QUERY, { detail: query }));
   }, [query]);
 
-  const onShelf = useMemo(
-    () => (shelf === "all" ? groups : groups.filter((group) => group.category === shelf)),
-    [groups, shelf],
-  );
+  const onShelf = useMemo(() => {
+    if (shelf === "all") return groups;
+    if (shelf === "ukraine") return groups.filter(supportsUkraine);
+    return groups.filter((group) => group.category === shelf);
+  }, [groups, shelf]);
+
+  const ukraineCount = useMemo(() => groups.filter(supportsUkraine).length, [groups]);
 
   const shelfCounts = useMemo(() => {
     const result = { all: groups.length, people: 0, shows: 0, news: 0, organizations: 0 };
@@ -356,6 +360,7 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
   const filtering = Boolean(query.trim() || tag || letter || kind !== "all");
   const featured = matched.filter((group) => group.featured);
   const rest = matched.filter((group) => !group.featured);
+  const ukraineRows = matched.filter(supportsUkraine);
   const sectioned = shelf === "all" && !query.trim() && !tag && !letter && kind !== "featured";
 
   function clearFilters() {
@@ -369,9 +374,13 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
     <section id="directory" className="mx-auto max-w-[1180px] px-5 pt-2 pb-8">
       <h2 className="sr-only">Directory</h2>
       <div className="rule mb-5" aria-hidden="true">
-        <span>{shelf === "all" ? "the desks" : SHELF_LABEL[shelf].toLowerCase()}</span>
+        <span className={shelf === "ukraine" ? "with-flag" : undefined}>
+          {shelf === "ukraine" ? <UkraineFlagIcon className="ua-flag" /> : null}
+          {shelf === "all" ? "the desks" : shelf === "ukraine" ? UKRAINE_LABEL : SHELF_LABEL[shelf].toLowerCase()}
+        </span>
       </div>
-      {shelf !== "all" ? <p className="shelf-intro">{SHELF_BLURB[shelf]}</p> : null}
+      {shelf === "ukraine" ? <p className="shelf-intro">{UKRAINE_BLURB}</p> : null}
+      {shelf !== "all" && shelf !== "ukraine" ? <p className="shelf-intro">{SHELF_BLURB[shelf]}</p> : null}
       <div className="toolbar">
         <label className="search-wrap">
           <span className="sr-only">Search the directory</span>
@@ -402,12 +411,23 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
             </Link>
             {CATEGORIES.map((item) => {
               const Icon = SHELF_ICON[item];
-              return (
+              const link = (
                 <Link key={item} href={shelfHref(item)} aria-current={shelf === item ? "page" : undefined}>
                   <Icon />
                   {SHELF_LABEL[item]}
                   <span className="count">{shelfCounts[item]}</span>
                 </Link>
+              );
+              if (item !== "people") return link;
+              return (
+                <Fragment key={item}>
+                  {link}
+                  <Link href={shelfHref("ukraine")} aria-current={shelf === "ukraine" ? "page" : undefined}>
+                    <UkraineFlagIcon className="ua-flag" />
+                    {UKRAINE_LABEL}
+                    <span className="count">{ukraineCount}</span>
+                  </Link>
+                </Fragment>
               );
             })}
           </div>
@@ -471,7 +491,7 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
 
       <p className="result-line" aria-live="polite">
         {matched.length} {matched.length === 1 ? "listing" : "listings"}
-        {shelf !== "all" ? ` in ${SHELF_LABEL[shelf]}` : ""}
+        {shelf === "ukraine" ? ` in ${UKRAINE_LABEL}` : shelf !== "all" ? ` in ${SHELF_LABEL[shelf]}` : ""}
         {tag ? ` tagged ${labelTag(tag)}` : ""}
         {letter ? ` under ${letter}` : ""}
         {query.trim() ? ` matching “${query.trim()}”` : ""}
@@ -501,9 +521,22 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Shelf 
             </div>
           ) : null}
           {kind === "featured" ? <Listing groups={matched} kind={kind} /> : null}
+          {kind !== "featured" && sectioned && ukraineRows.length > 0 ? (
+            <section className="shelf-block" aria-labelledby="shelf-ukraine">
+              <div className="shelf-heading">
+                <h3 id="shelf-ukraine">
+                  <span className="section-mark">
+                    <UkraineFlagIcon className="ua-flag" /> {UKRAINE_LABEL}
+                  </span>
+                </h3>
+                <Link href={shelfHref("ukraine")}>Open {UKRAINE_LABEL}</Link>
+              </div>
+              <Listing groups={ukraineRows} kind={kind} />
+            </section>
+          ) : null}
           {kind !== "featured" && sectioned
             ? CATEGORIES.map((item) => {
-                const rows = rest.filter((group) => group.category === item);
+                const rows = rest.filter((group) => group.category === item && !supportsUkraine(group));
                 if (rows.length === 0) return null;
                 const Icon = SHELF_ICON[item];
                 return (

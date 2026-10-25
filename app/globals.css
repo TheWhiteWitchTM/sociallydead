@@ -468,6 +468,17 @@ img { max-width: 100%; display: block; }
   gap: 0.38rem;
 }
 .section-mark svg { width: 14px; height: 14px; flex: none; }
+.catalogs svg.ua-flag,
+.section-mark svg.ua-flag {
+  width: 16px;
+  height: 11px;
+}
+.rule span.with-flag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.rule span.with-flag .ua-flag { width: 22px; height: 15px; }
 .catalogs .count {
   margin-left: 0.4rem;
   font-weight: 650;
@@ -781,8 +792,66 @@ button.chip[aria-pressed="true"] {
 }
 .footer-links a:hover { color: var(--blue-press); border-bottom-color: var(--blue); }
 .footer-links > span[aria-hidden="true"] { color: #444; user-select: none; }
+.footer-cheer { display: inline-flex; }
+.footer-cheer-btn {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  line-height: inherit;
+}
+.footer-cheer-btn:hover .ua-blue,
+.footer-cheer-btn[aria-expanded="true"] .ua-blue { text-decoration: underline; text-underline-offset: 0.15em; }
+.ua-caret { color: var(--text-2); }
 .ua-blue { color: #0057b7; }
 .ua-gold { color: #ffd700; }
+.ua-pop {
+  position: fixed;
+  z-index: 130;
+  width: min(22.5rem, calc(100vw - 1.5rem));
+  max-height: min(70vh, 34rem);
+  overflow: auto;
+  padding: 0.85rem 0.9rem 0.75rem;
+  border: 1.5px solid var(--blue);
+  border-radius: 8px;
+  background: var(--menu);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  text-align: left;
+  color: var(--text);
+}
+.ua-pop-head { display: flex; align-items: center; gap: 0.45rem; }
+.ua-pop-head .ua-flag { width: 20px; height: 14px; flex: none; }
+.ua-pop h2 { margin: 0; font-size: 1rem; font-weight: 800; }
+.ua-pop-close {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 1.35rem;
+  line-height: 1;
+  padding: 0 0.2rem;
+}
+.ua-pop-close:hover { color: var(--text); }
+.ua-pop-lead {
+  margin: 0.45rem 0 0.7rem;
+  color: var(--text-2);
+  font-size: 0.84rem;
+}
+.ua-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+}
+.footer-links .ua-pop a,
+.footer-links .ua-pop a:hover { color: inherit; border-bottom-color: transparent; }
+.ua-link-name { display: block; color: var(--blue); font-weight: 800; }
+.ua-links a:hover .ua-link-name { color: var(--blue-press); }
+.ua-link-detail { display: block; color: var(--text-2); font-size: 0.8rem; line-height: 1.35; }
+.ua-pop-note { margin: 0.7rem 0 0; font-size: 0.8rem; }
+.ua-pop-note a { color: var(--blue); }
+.ua-pop-note a:hover { color: var(--blue-press); }
 .footer-note {
   margin: 0.35rem 0 0;
   color: var(--text-2);

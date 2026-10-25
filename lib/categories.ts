@@ -25,6 +25,7 @@ export const SHELF_NOUN: Record<Shelf, string> = {
 
 const TAG_LABEL: Record<string, string> = {
   antisemitism: "Antisemitism",
+  ukraine: "Ukraine",
   disinformation: "Disinformation",
   europe: "Europe",
   extremism: "Extremism",
@@ -44,6 +45,7 @@ const TAG_LABEL: Record<string, string> = {
 };
 
 const TAG_FIRST = [
+  "ukraine",
   "late-night",
   "satire",
   "journalism",

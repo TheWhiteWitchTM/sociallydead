@@ -62,6 +62,7 @@ const newest = items.reduce((max, item) => ((item.added ?? "") > max ? item.adde
 const pages = [
   ["/", newest],
   ["/woozle-effect/", "2026-10-25"],
+  ["/ukraine/", newest],
   ["/rss.xml", newest],
   ...shelves.map(([path]) => [`/${path}/`, newest]),
 ];

@@ -152,6 +152,16 @@ export function NewsIcon() {
   );
 }
 
+export function UkraineFlagIcon({ className }: IconProps = {}) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="3.2" y="6.2" width="17.6" height="6.2" fill="#0057B7" />
+      <rect x="3.2" y="12" width="17.6" height="5.8" fill="#FFD700" />
+      <rect x="3.2" y="6.2" width="17.6" height="11.6" fill="none" stroke="currentColor" strokeWidth="1.3" />
+    </svg>
+  );
+}
+
 export function OrgIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
