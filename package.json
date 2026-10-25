@@ -1,0 +1,29 @@
+{
+  "name": "sociallydead",
+  "private": true,
+  "license": "GPL-2.0-only",
+  "description": "Directory of the resistance. Websites, YouTube, X, and Bluesky.",
+  "scripts": {
+    "dev": "BASE_PATH= next dev",
+    "prebuild": "node tools/edit-directory.mjs validate",
+    "build": "next build",
+    "directory": "node tools/edit-directory.mjs",
+    "check": "node tools/edit-directory.mjs validate && tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
+  }
+}

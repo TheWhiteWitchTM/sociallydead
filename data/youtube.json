@@ -1,0 +1,112 @@
+[
+  {
+    "id": "aclu",
+    "name": "ACLU",
+    "handle": "ACLU",
+    "url": "https://www.youtube.com/@ACLU",
+    "blurb": "Official channel. Cases, explainers, and civil liberties reporting.",
+    "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "amadeu-antonio",
+    "name": "Amadeu Antonio Stiftung",
+    "handle": "AmadeuAntonioStiftung",
+    "url": "https://www.youtube.com/@AmadeuAntonioStiftung",
+    "blurb": "Official channel of the foundation against right-wing extremism, racism, and antisemitism.",
+    "tags": ["extremism", "germany"],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "bellingcat",
+    "name": "Bellingcat",
+    "handle": "bellingcatofficial",
+    "url": "https://www.youtube.com/@bellingcatofficial",
+    "blurb": "Official channel. Investigations and open-source method walkthroughs.",
+    "tags": ["journalism", "research", "international"],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "brennan-center",
+    "name": "Brennan Center for Justice",
+    "handle": "BrennanCenter",
+    "url": "https://www.youtube.com/@BrennanCenter",
+    "blurb": "Official channel on voting, democracy, and the rule of law.",
+    "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "correctiv",
+    "name": "CORRECTIV",
+    "handle": "correctiv_org",
+    "url": "https://www.youtube.com/@correctiv_org",
+    "blurb": "Official channel of the German investigative newsroom.",
+    "tags": ["journalism", "germany"],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "hope-not-hate",
+    "name": "HOPE not hate",
+    "handle": "hopenothate",
+    "url": "https://www.youtube.com/@hopenothate",
+    "blurb": "Official channel. Reporting and campaigns against the far right in the United Kingdom.",
+    "tags": ["organizing", "extremism", "united-kingdom"],
+    "region": "United Kingdom",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "hrw",
+    "name": "Human Rights Watch",
+    "handle": "humanrightswatch",
+    "url": "https://www.youtube.com/@humanrightswatch",
+    "blurb": "Official channel. Investigations and reporting on human rights abuses.",
+    "tags": ["journalism", "international"],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "isd",
+    "name": "Institute for Strategic Dialogue",
+    "handle": "ISDglobal",
+    "url": "https://www.youtube.com/@ISDglobal",
+    "blurb": "Official channel on extremism, disinformation, and authoritarianism.",
+    "tags": ["research", "extremism", "international"],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "propublica",
+    "name": "ProPublica",
+    "handle": "propublica",
+    "url": "https://www.youtube.com/@propublica",
+    "blurb": "Official channel of the investigative newsroom.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "splc",
+    "name": "Southern Poverty Law Center",
+    "handle": "splcenter",
+    "url": "https://www.youtube.com/@splcenter",
+    "blurb": "Official channel. Hatewatch, explainers, and reporting on extremist groups.",
+    "tags": ["watchdog", "extremism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  }
+]

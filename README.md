@@ -1,44 +1,77 @@
-<div align="center">
+# SociallyDead
 
-  <!-- HERO BANNER -->
-  <img src="banner.jpeg" alt="SociallyDead.me Resistance Directory Banner" width="100%" />
+Directory of the resistance. Websites, YouTube channels, and profiles on X and Bluesky, pushing back on MAGA, the AfD, and the far right.
 
-  <br/><br/>
+The live name is [sociallydead.me](https://sociallydead.me). Until that domain is attached, GitHub Pages serves the test build at `/sociallydead/`.
 
-  [![GitHub Stars](https://img.shields.io/github/stars/TheWhiteWitchTM/sociallydead?style=flat-square&color=0070f3)](https://github.com/TheWhiteWitchTM/sociallydead)
-  [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-0070f3.svg?style=flat-square)](https://github.com/TheWhiteWitchTM/sociallydead)
-  [![Bluesky Profile](https://img.shields.io/badge/Bluesky-sociallydead.me-38a1f3?style=flat-square&logo=bluesky&logoColor=white)](https://bsky.app/profile/thewhitewitchtm.sociallydead.me)
+The heading quotes The Crüxshadows, “Resist”: *what hatred breeds you must resist.*
 
-</div>
+## Develop
 
-***
+```bash
+npm install
+npm run dev
+```
 
-## 🌐 Websites & Independent Media
-*Platforms, watchdog organizations, and independent outlets exposing disinformation and opposing far-right authoritarianism.*
+The dev server is at `http://127.0.0.1:3000`. The theme is dark. The header switches to light, and `?theme=light` does the same.
 
-* **[Example Project / Watchdog](https://example.com)** – Fact-checking far-right rhetoric and tracking extremist networks.
-* **[Independent News Outlet](https://example.com)** – Pro-democracy journalism analyzing populist shifts globally.
+```bash
+npm run build
+```
 
----
+`npm run build` checks the JSON, then writes a static site to `out/`.
 
-## 🦋 Bluesky Resisters
-*Verified voices, journalists, and activists pushing back on Bluesky against MAGA, AfD, and right-wing extremism.*
+## Edit the directory
 
-* **[The White Witch™ (@thewhitewitchtm.sociallydead.me)](https://bsky.app/profile/thewhitewitchtm.sociallydead.me)** – Directory host & vocal activist opposing the far-right.
-* **[Activists & Researchers](https://bsky.app/profile/example.bsky.social)** – Key voices analyzing right-wing movements and defending democratic values.
+The pages render four JSON files:
 
----
+- `data/websites.json`
+- `data/youtube.json`
+- `data/x.json`
+- `data/bluesky.json`
 
-## 🅧 X (Twitter) Resistance
-*Accounts countering misinformation and holding extremists accountable directly on X.*
+Each entry has `id`, `name`, `url`, `blurb`, and `tags`. Optional fields are `handle`, `region`, `language`, `added` (`YYYY-MM-DD`), and `pin`.
 
-* **[Resistance Watcher](https://x.com/example)** – Monitoring extremist organizing and debunking propaganda.
-* **[Fact Check Initiative](https://x.com/example)** – Daily fact-checks targeting right-wing echo chambers.
+```bash
+tools/edit-directory.sh list
+tools/edit-directory.sh add bluesky \
+  --name "Example Desk" \
+  --handle example.bsky.social \
+  --url https://bsky.app/profile/example.bsky.social \
+  --blurb "What this account is." \
+  --tags organizing,united-states \
+  --region "United States" \
+  --language en
+tools/edit-directory.sh edit websites splc --blurb "A shorter line."
+tools/edit-directory.sh remove x some-id --yes
+tools/edit-directory.sh validate
+```
 
-***
+With no arguments, in a terminal, the same tool opens a small menu. `npm run directory -- list` is the same command. Catalog aliases: `web`, `yt`, `twitter`, `bsky`.
 
-### 🤝 How to Contribute
-`sociallydead.me` is open source and community-driven! If you know of an independent website, Bluesky account, or X profile that stands against the far-right, you can:
+A listing is a pointer to a public site or profile. It is not a claim that every post from that account matches this directory. Send additions as a pull request, or open an issue.
 
-1. **Submit a Pull Request** with your suggested additions.
-2. **Open an Issue** on the [GitHub Repository](https://github.com/TheWhiteWitchTM/sociallydead) with details.
+## Theme, type, analytics
+
+Dark is the default, in the same family as LibreSky: near-black ground, `#1d9bf0` blue, `#f5c451` gold, Inter for the UI. The lyric is set in Cormorant Garamond. Light is the other half of that pair.
+
+Visits are counted with the same Google tag as LibreSky, `G-13S6Z9KCX9`.
+
+## GitHub Pages, then the domain
+
+`basepath.txt` is `/sociallydead`, so the test site matches `https://thewhitewitchtm.github.io/sociallydead/`.
+
+In the repository settings, set Pages to **GitHub Actions**. Pushes to `main` run `.github/workflows/pages.yml`.
+
+When `sociallydead.me` is ready:
+
+1. Point the domain at GitHub Pages.
+2. Put `sociallydead.me` in `public/CNAME`.
+3. Empty `basepath.txt` (the file can be blank). A custom domain is served from `/`, and a `/sociallydead` prefix would break every asset.
+4. Push. GitHub redirects the `github.io` URL to the domain after the CNAME is in place.
+
+To preview that root build locally: `BASE_PATH= npm run build`.
+
+## License
+
+GPL-2.0-only. See `LICENSE`.

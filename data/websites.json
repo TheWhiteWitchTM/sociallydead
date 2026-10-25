@@ -1,0 +1,192 @@
+[
+  {
+    "id": "aclu",
+    "name": "American Civil Liberties Union",
+    "url": "https://www.aclu.org/",
+    "blurb": "Legal organization defending civil liberties in the United States.",
+    "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "adl",
+    "name": "Anti-Defamation League",
+    "url": "https://www.adl.org/",
+    "blurb": "Tracks antisemitism and extremism, and publishes research on hate movements.",
+    "tags": ["watchdog", "antisemitism", "extremism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "amadeu-antonio",
+    "name": "Amadeu Antonio Stiftung",
+    "url": "https://www.amadeu-antonio-stiftung.de/",
+    "blurb": "German foundation that supports work against right-wing extremism, racism, and antisemitism.",
+    "tags": ["extremism", "antisemitism", "germany"],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "apabiz",
+    "name": "apabiz",
+    "url": "https://www.apabiz.de/",
+    "blurb": "Berlin research archive on the far right, antisemitism, and right-wing violence.",
+    "tags": ["research", "extremism", "germany"],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "bellingcat",
+    "name": "Bellingcat",
+    "url": "https://www.bellingcat.com/",
+    "blurb": "Open-source investigative collective. The method is published with the findings.",
+    "tags": ["journalism", "research", "international"],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "belltower",
+    "name": "Belltower.News",
+    "url": "https://www.belltower.news/",
+    "blurb": "Journalism on the far right, racism, and antisemitism, published with the Amadeu Antonio Stiftung.",
+    "tags": ["journalism", "extremism", "germany"],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "brennan-center",
+    "name": "Brennan Center for Justice",
+    "url": "https://www.brennancenter.org/",
+    "blurb": "Law and policy institute focused on democracy, voting, and the rule of law.",
+    "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "correctiv",
+    "name": "CORRECTIV",
+    "url": "https://correctiv.org/",
+    "blurb": "German nonprofit newsroom. Investigative reporting, including on the far right.",
+    "tags": ["journalism", "germany"],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "eji",
+    "name": "Equal Justice Initiative",
+    "url": "https://eji.org/",
+    "blurb": "Legal and historical work on racial injustice, excessive punishment, and mass incarceration.",
+    "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "eu-disinfolab",
+    "name": "EU DisinfoLab",
+    "url": "https://www.disinfo.eu/",
+    "blurb": "European nonprofit researching disinformation campaigns and coordinated influence operations.",
+    "tags": ["research", "disinformation", "europe"],
+    "region": "Europe",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "factcheck",
+    "name": "FactCheck.org",
+    "url": "https://www.factcheck.org/",
+    "blurb": "Nonpartisan project of the Annenberg Public Policy Center. It checks claims by politicians and political groups.",
+    "tags": ["fact-check", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "hope-not-hate",
+    "name": "HOPE not hate",
+    "url": "https://hopenothate.org.uk/",
+    "blurb": "The United Kingdom's leading campaign against the far right.",
+    "tags": ["organizing", "extremism", "united-kingdom"],
+    "region": "United Kingdom",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "hrw",
+    "name": "Human Rights Watch",
+    "url": "https://www.hrw.org/",
+    "blurb": "Investigates and reports on human rights abuses worldwide.",
+    "tags": ["journalism", "research", "international"],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "indivisible",
+    "name": "Indivisible",
+    "url": "https://indivisible.org/",
+    "blurb": "Volunteer-led groups organizing locally in the United States.",
+    "tags": ["organizing", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "isd",
+    "name": "Institute for Strategic Dialogue",
+    "url": "https://www.isdglobal.org/",
+    "blurb": "Research institute that detects and exposes extremism, disinformation, and authoritarianism.",
+    "tags": ["research", "extremism", "disinformation", "international"],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "politifact",
+    "name": "PolitiFact",
+    "url": "https://www.politifact.com/",
+    "blurb": "Fact-checking desk that rates political claims. A project of the Poynter Institute.",
+    "tags": ["fact-check", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "propublica",
+    "name": "ProPublica",
+    "url": "https://www.propublica.org/",
+    "blurb": "Independent newsroom for investigative journalism in the public interest.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "protect-democracy",
+    "name": "Protect Democracy",
+    "url": "https://protectdemocracy.org/",
+    "blurb": "Nonpartisan nonprofit working against the decline of American democracy.",
+    "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "splc",
+    "name": "Southern Poverty Law Center",
+    "url": "https://www.splcenter.org/",
+    "blurb": "Tracks hate and extremist groups in the United States and publishes Hatewatch.",
+    "tags": ["watchdog", "extremism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  }
+]

@@ -1,0 +1,156 @@
+[
+  {
+    "id": "aclu",
+    "name": "ACLU",
+    "handle": "aclu.org",
+    "url": "https://bsky.app/profile/aclu.org",
+    "blurb": "Official account of the American Civil Liberties Union.",
+    "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "amadeu-antonio",
+    "name": "Amadeu Antonio Stiftung",
+    "handle": "amadeuantonio.bsky.social",
+    "url": "https://bsky.app/profile/amadeuantonio.bsky.social",
+    "blurb": "Official account. Work against right-wing extremism, racism, and antisemitism in Germany.",
+    "tags": ["extremism", "germany"],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "bellingcat",
+    "name": "Bellingcat",
+    "handle": "bellingcat.com",
+    "url": "https://bsky.app/profile/bellingcat.com",
+    "blurb": "Official account of the open-source investigative collective.",
+    "tags": ["journalism", "research", "international"],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "belltower",
+    "name": "Belltower.News",
+    "handle": "belltower.news",
+    "url": "https://bsky.app/profile/belltower.news",
+    "blurb": "Journalism on the far right, racism, and antisemitism.",
+    "tags": ["journalism", "germany"],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "brennan-center",
+    "name": "Brennan Center",
+    "handle": "brennancenter.org",
+    "url": "https://bsky.app/profile/brennancenter.org",
+    "blurb": "Official account. Democracy, voting, and the rule of law.",
+    "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "correctiv",
+    "name": "CORRECTIV",
+    "handle": "correctiv.org",
+    "url": "https://bsky.app/profile/correctiv.org",
+    "blurb": "Official account of the German investigative newsroom.",
+    "tags": ["journalism", "germany"],
+    "region": "Germany",
+    "language": "de",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "eji",
+    "name": "Equal Justice Initiative",
+    "handle": "eji.org",
+    "url": "https://bsky.app/profile/eji.org",
+    "blurb": "Official account. Racial injustice, punishment, and public memory.",
+    "tags": ["legal", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "factcheck",
+    "name": "FactCheck.org",
+    "handle": "factcheck.org",
+    "url": "https://bsky.app/profile/factcheck.org",
+    "blurb": "Official account of the Annenberg fact-checking project.",
+    "tags": ["fact-check", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "hope-not-hate",
+    "name": "HOPE not hate",
+    "handle": "hopenothate.org.uk",
+    "url": "https://bsky.app/profile/hopenothate.org.uk",
+    "blurb": "Official account of the UK campaign against the far right.",
+    "tags": ["organizing", "extremism", "united-kingdom"],
+    "region": "United Kingdom",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "hrw",
+    "name": "Human Rights Watch",
+    "handle": "hrw.org",
+    "url": "https://bsky.app/profile/hrw.org",
+    "blurb": "Official account. Human rights investigations worldwide.",
+    "tags": ["journalism", "international"],
+    "region": "International",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "indivisible",
+    "name": "Indivisible",
+    "handle": "indivisible.org",
+    "url": "https://bsky.app/profile/indivisible.org",
+    "blurb": "Official account of the volunteer organizing network.",
+    "tags": ["organizing", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "propublica",
+    "name": "ProPublica",
+    "handle": "propublica.org",
+    "url": "https://bsky.app/profile/propublica.org",
+    "blurb": "Official account of the investigative newsroom.",
+    "tags": ["journalism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "splc",
+    "name": "Southern Poverty Law Center",
+    "handle": "splcenter.org",
+    "url": "https://bsky.app/profile/splcenter.org",
+    "blurb": "Official account. Hate and extremist-group tracking in the United States.",
+    "tags": ["watchdog", "extremism", "united-states"],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-10-25"
+  },
+  {
+    "id": "the-white-witch",
+    "name": "The White Witch™",
+    "handle": "thewhitewitchtm.sociallydead.me",
+    "url": "https://bsky.app/profile/thewhitewitchtm.sociallydead.me",
+    "blurb": "Keeps this directory and posts against the far right.",
+    "tags": ["host"],
+    "language": "en",
+    "added": "2026-10-25",
+    "pin": true
+  }
+]
