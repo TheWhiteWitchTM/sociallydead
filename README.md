@@ -81,6 +81,18 @@ When `sociallydead.me` is ready:
 
 To preview that root build locally: `BASE_PATH= npm run build`.
 
+## Friday bot
+
+`tools/directory-bot.sh` runs every Friday at 09:00 Europe/Berlin. Grok reads the public posts, reposts, quotes, replies, and likes of @TheWhiteWitchTM from the past seven days. A like or a repost is a reason to look. An account is added only when the public profile matches this directory. The bot does not feature listings and does not remove them. When it adds any, it commits and pushes to `main`.
+
+The log is `~/.local/share/sociallydead/directory-bot.log`.
+
+```
+0 9 * * 5 /home/andreas/Projects/sociallydead/tools/directory-bot.sh
+```
+
+That line is also in `/home/andreas/BlueSky/crontab`, because reinstalling that file replaces the whole crontab.
+
 ## License
 
 GPL-2.0-only. See `LICENSE`.

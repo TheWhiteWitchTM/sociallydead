@@ -604,5 +604,20 @@
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
+  },
+  {
+    "id": "kate-from-kharkiv",
+    "name": "Kate from Kharkiv",
+    "handle": "BohuslavskaKate",
+    "url": "https://x.com/BohuslavskaKate",
+    "blurb": "From Kharkiv. She reports Russian attacks on Ukrainian cities and calls out war propaganda.",
+    "category": "people",
+    "tags": [
+      "ukraine"
+    ],
+    "region": "Ukraine",
+    "language": "en",
+    "added": "2026-10-26",
+    "featured": true
   }
 ]
