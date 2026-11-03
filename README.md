@@ -83,9 +83,9 @@ To preview that root build locally: `BASE_PATH= npm run build`.
 
 ## Friday bot
 
-`tools/directory-bot.sh` runs every Friday at 09:00 Europe/Berlin. Grok reads the public posts, reposts, quotes, replies, and likes of @TheWhiteWitchTM from the past seven days. A like or a repost is a reason to look. An account is added only when the public profile matches this directory. The bot does not feature listings and does not remove them. When it adds any, it commits and pushes to `main`.
+SociallyDead is on the Grok bots desk. Run starts `tools/directory-bot.sh`. That program is Grok. It reads the public posts, reposts, quotes, replies, and likes of @TheWhiteWitchTM from the past seven days. A like or a repost is a reason to look. An account is added only when the public profile matches this directory. The bot does not feature listings and does not remove them. When it adds any, it commits and pushes to `main`.
 
-The log is `~/.local/share/sociallydead/directory-bot.log`.
+The same program runs every Friday at 09:00 Europe/Berlin. It is a heavy pass, so it waits when the shared week is being saved and FauxNews files instead. A held Friday does not call the model. The log is `~/.local/share/sociallydead/directory-bot.log`.
 
 ```
 0 9 * * 5 /home/andreas/Projects/sociallydead/tools/directory-bot.sh

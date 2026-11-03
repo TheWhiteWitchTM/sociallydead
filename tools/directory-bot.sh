@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # SociallyDead Friday directory bot. GPL-2.0-only. See LICENSE.
-# Reads the X feed and pushes listings that match. Cron runs this on Friday.
+# Reads the X feed and pushes listings that match.
+# The Grok bots desk lists this program. Cron runs it on Friday.
+# A slow week holds the pass so FauxNews can file. A held pass does not call the model.
 set -euo pipefail
 
 root="$(CDPATH= cd -- "$(dirname "$0")/.." && pwd)"
@@ -31,6 +33,21 @@ prompt="$(sed -e "s/__SINCE__/${since}/g" -e "s/__TODAY__/${today}/g" "${root}/t
 
 if [[ "${1:-}" == "--print" ]]; then
   printf '%s\n' "$prompt"
+  exit 0
+fi
+
+# Heavy pass. It waits when the week is being saved, so FauxNews can file.
+status_dir="${DESK_STATUS_DIR:-${HOME}/.local/state/thewhitewitch/desk/status}"
+write_status() {
+  mkdir -p "$status_dir"
+  local tmp="${status_dir}/sociallydead.txt.tmp"
+  printf '%s\n' "$1" > "$tmp"
+  mv "$tmp" "${status_dir}/sociallydead.txt"
+}
+reason="$(python3 -c 'import sys; sys.path.insert(0, "/home/andreas/Projects/bots"); import credits; print(credits.allow("heavy", "directory"), end="")')" || reason="Credits did not answer. Model jobs are held."
+if [[ -n "$reason" ]]; then
+  printf '%s held: %s\n' "$(date -Is)" "$reason" >> "$log"
+  write_status "Held so FauxNews can file. ${reason}"
   exit 0
 fi
 
