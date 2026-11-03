@@ -14,9 +14,8 @@ function basePath(): string {
 
 const base = basePath();
 
-// sociallydead.me currently points at a paused host, so link previews that
-// fetch the banner from that domain get text instead of the image. While the
-// pages build is served under the project path, use that origin.
+// sociallydead.me is served from /. A project path in basepath.txt is only for
+// the github.io preview. That prefix 404s every asset on the custom domain.
 export const SITE_ORIGIN = base ? `https://thewhitewitchtm.github.io${base}` : "https://sociallydead.me";
 
 export const SITE_URL = `${SITE_ORIGIN}/`;

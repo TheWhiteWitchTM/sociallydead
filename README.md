@@ -2,7 +2,7 @@
 
 Directory of the resistance. Websites, YouTube channels, and profiles on X and Bluesky, pushing back on MAGA, the AfD, and the far right.
 
-The live name is [sociallydead.me](https://sociallydead.me). Until that domain is attached, GitHub Pages serves the test build at `/sociallydead/`.
+The live site is [sociallydead.me](https://sociallydead.me).
 
 The heading quotes The Crüxshadows, “Resist”: *what hatred breeds you must resist.*
 
@@ -62,24 +62,17 @@ Dark is the default, in the same family as The White Witch site: near-black grou
 
 Visits are counted with the same Google tag as LibreSky, `G-13S6Z9KCX9`.
 
-## GitHub Pages, then the domain
+## GitHub Pages
 
-`basepath.txt` is `/sociallydead`, so the test site matches `https://thewhitewitchtm.github.io/sociallydead/`.
+`basepath.txt` is blank, so assets and pages are rooted at `/` on [sociallydead.me](https://sociallydead.me). `public/CNAME` holds `sociallydead.me`. Next copies that file into `out/`, and that is the folder GitHub Pages deploys. A `/sociallydead` prefix on this domain breaks every stylesheet and script.
 
 Pushes to `main` run `.github/workflows/pages.yml`, which builds `out/` and deploys it.
 
 The repository Pages source is still **Deploy from a branch**. GitHub then also runs Jekyll and publishes this README, which replaces the built site. `_config.yml` is invalid on purpose so that Jekyll build stops before it can deploy. In the repository settings, set Pages to **GitHub Actions**. After that, delete `_config.yml`.
 
-Link previews use the origin that actually serves the files. With `/sociallydead` in `basepath.txt`, that is `https://thewhitewitchtm.github.io/sociallydead/`. `sociallydead.me` still answers from a paused host, so a card that points there shows the alt text and no banner.
+Link previews use `https://sociallydead.me`.
 
-When `sociallydead.me` is ready:
-
-1. Point the domain at GitHub Pages.
-2. Put `sociallydead.me` in `public/CNAME`.
-3. Empty `basepath.txt` (the file can be blank). A custom domain is served from `/`, and a `/sociallydead` prefix would break every asset.
-4. Push. GitHub redirects the `github.io` URL to the domain after the CNAME is in place.
-
-To preview that root build locally: `BASE_PATH= npm run build`.
+To build the old project-path preview, put `/sociallydead` in `basepath.txt` and run `npm run build`. Leave `basepath.txt` blank before pushing to `main`.
 
 ## Friday bot
 

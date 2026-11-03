@@ -2,18 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>SociallyDead</title>
-    <link>https://thewhitewitchtm.github.io/sociallydead/</link>
-    <atom:link href="https://thewhitewitchtm.github.io/sociallydead/rss.xml" rel="self" type="application/rss+xml"/>
+    <link>https://sociallydead.me/</link>
+    <atom:link href="https://sociallydead.me/rss.xml" rel="self" type="application/rss+xml"/>
     <description>New listings in the SociallyDead directory. People, shows, news, and organizations pushing back on MAGA, the AfD, and the far right.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 25 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 12:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Kate from Kharkiv</title>
+    <link>https://x.com/BohuslavskaKate</link>
+    <guid isPermaLink="false">kate-from-kharkiv</guid>
+    <pubDate>Mon, 26 Oct 2026 12:00:00 GMT</pubDate>
+    <category>People</category>
+    <description>From Kharkiv. She reports Russian attacks on Ukrainian cities and calls out war propaganda. Listed on SociallyDead. https://sociallydead.me/people/</description>
+  </item>
   <item>
     <title>Aaron Rupar</title>
     <link>https://www.publicnotice.co/</link>
     <guid isPermaLink="false">aaron-rupar</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Independent journalist. He publishes Public Notice and posts clips of political figures. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Independent journalist. He publishes Public Notice and posts clips of political figures. Listed on SociallyDead. https://sociallydead.me/people/</description>
+  </item>
+  <item>
+    <title>Adam Kinzinger</title>
+    <link>https://www.adamkinzinger.com/</link>
+    <guid isPermaLink="false">adam-kinzinger</guid>
+    <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
+    <category>People</category>
+    <description>Former Republican congressman. He voted to impeach Trump, and he argues for aid to Ukraine. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Allison Gill</title>
@@ -21,7 +37,7 @@
     <guid isPermaLink="false">allison-gill</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Writes the Mueller, She Wrote newsletter on the law and accountability. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Writes the Mueller, She Wrote newsletter on the law and accountability. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Amadeu Antonio Stiftung</title>
@@ -29,7 +45,7 @@
     <guid isPermaLink="false">amadeu-antonio</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>German foundation that supports work against right-wing extremism, racism, and antisemitism. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>German foundation that supports work against right-wing extremism, racism, and antisemitism. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>American Civil Liberties Union</title>
@@ -37,7 +53,7 @@
     <guid isPermaLink="false">aclu</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Legal organization defending civil liberties in the United States. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Legal organization defending civil liberties in the United States. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>American Oversight</title>
@@ -45,7 +61,7 @@
     <guid isPermaLink="false">american-oversight</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Nonprofit that uses public-records law to investigate government. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Nonprofit that uses public-records law to investigate government. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Anti-Defamation League</title>
@@ -53,7 +69,7 @@
     <guid isPermaLink="false">adl</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Tracks antisemitism and extremism, and publishes research on hate movements. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Tracks antisemitism and extremism, and publishes research on hate movements. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>apabiz</title>
@@ -61,7 +77,7 @@
     <guid isPermaLink="false">apabiz</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Berlin research archive on the far right, antisemitism, and right-wing violence. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Berlin research archive on the far right, antisemitism, and right-wing violence. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Bellingcat</title>
@@ -69,7 +85,7 @@
     <guid isPermaLink="false">bellingcat</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Open-source investigative collective. The method is published with the findings. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Open-source investigative collective. The method is published with the findings. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>Belltower.News</title>
@@ -77,7 +93,15 @@
     <guid isPermaLink="false">belltower</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Journalism on the far right, racism, and antisemitism, published with the Amadeu Antonio Stiftung. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Journalism on the far right, racism, and antisemitism, published with the Amadeu Antonio Stiftung. Listed on SociallyDead. https://sociallydead.me/news/</description>
+  </item>
+  <item>
+    <title>Bill Kristol</title>
+    <link>https://conversationswithbillkristol.org/</link>
+    <guid isPermaLink="false">bill-kristol</guid>
+    <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
+    <category>People</category>
+    <description>Editor at large of The Bulwark. He argues for military aid to Ukraine. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Brennan Center for Justice</title>
@@ -85,7 +109,7 @@
     <guid isPermaLink="false">brennan-center</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Law and policy institute focused on democracy, voting, and the rule of law. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Law and policy institute focused on democracy, voting, and the rule of law. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Brian Tyler Cohen</title>
@@ -93,7 +117,7 @@
     <guid isPermaLink="false">brian-tyler-cohen</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Journalist and host of No Lie. Interviews and daily reporting on U.S. politics. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Journalist and host of No Lie. Interviews and daily reporting on U.S. politics. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Campact</title>
@@ -101,7 +125,7 @@
     <guid isPermaLink="false">campact</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>German campaign organization. Petitions and organizing on democracy and civil rights. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>German campaign organization. Petitions and organizing on democracy and civil rights. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>CORRECTIV</title>
@@ -109,7 +133,7 @@
     <guid isPermaLink="false">correctiv</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>German nonprofit newsroom. Investigative reporting, including on the far right. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>German nonprofit newsroom. Investigative reporting, including on the far right. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>CREW</title>
@@ -117,7 +141,7 @@
     <guid isPermaLink="false">crew</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Citizens for Responsibility and Ethics in Washington. A watchdog on government ethics. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Citizens for Responsibility and Ethics in Washington. A watchdog on government ethics. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Crooked Media</title>
@@ -125,7 +149,7 @@
     <guid isPermaLink="false">crooked-media</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Podcast network. Home of Pod Save America and other political shows. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Podcast network. Home of Pod Save America and other political shows. Listed on SociallyDead. https://sociallydead.me/shows/</description>
   </item>
   <item>
     <title>Democracy Docket</title>
@@ -133,7 +157,7 @@
     <guid isPermaLink="false">democracy-docket</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Newsroom on voting rights and election cases, founded by Marc Elias. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Newsroom on voting rights and election cases, founded by Marc Elias. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>Desi Lydic</title>
@@ -141,7 +165,7 @@
     <guid isPermaLink="false">desi-lydic</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Correspondent and rotating host on The Daily Show. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Correspondent and rotating host on The Daily Show. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Die Anstalt</title>
@@ -149,7 +173,7 @@
     <guid isPermaLink="false">die-anstalt</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Political cabaret on ZDF with Max Uthoff, Claus von Wagner, and Maike Kühl. Each episode publishes a fact-check. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Political cabaret on ZDF with Max Uthoff, Claus von Wagner, and Maike Kühl. Each episode publishes a fact-check. Listed on SociallyDead. https://sociallydead.me/shows/</description>
   </item>
   <item>
     <title>Endstation Rechts</title>
@@ -157,7 +181,7 @@
     <guid isPermaLink="false">endstation-rechts</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Documents far-right activity in Germany, with a focus on Mecklenburg-Vorpommern. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Documents far-right activity in Germany, with a focus on Mecklenburg-Vorpommern. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Equal Justice Initiative</title>
@@ -165,7 +189,7 @@
     <guid isPermaLink="false">eji</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Legal and historical work on racial injustice, excessive punishment, and mass incarceration. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Legal and historical work on racial injustice, excessive punishment, and mass incarceration. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>EU DisinfoLab</title>
@@ -173,7 +197,7 @@
     <guid isPermaLink="false">eu-disinfolab</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>European nonprofit researching disinformation campaigns and coordinated influence operations. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>European nonprofit researching disinformation campaigns and coordinated influence operations. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>extra 3</title>
@@ -181,7 +205,7 @@
     <guid isPermaLink="false">extra-3</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Satirical news magazine from NDR, hosted by Christian Ehring. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Satirical news magazine from NDR, hosted by Christian Ehring. Listed on SociallyDead. https://sociallydead.me/shows/</description>
   </item>
   <item>
     <title>FactCheck.org</title>
@@ -189,7 +213,7 @@
     <guid isPermaLink="false">factcheck</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Nonpartisan project of the Annenberg Public Policy Center. It checks claims by politicians and political groups. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Nonpartisan project of the Annenberg Public Policy Center. It checks claims by politicians and political groups. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>FragDenStaat</title>
@@ -197,7 +221,7 @@
     <guid isPermaLink="false">frag-den-staat</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>German organization for freedom-of-information requests and public records. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>German organization for freedom-of-information requests and public records. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Heather Cox Richardson</title>
@@ -205,7 +229,7 @@
     <guid isPermaLink="false">heather-cox-richardson</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Historian. Letters from an American is her daily letter on U.S. politics. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Historian. Letters from an American is her daily letter on U.S. politics. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>heute-show</title>
@@ -213,7 +237,7 @@
     <guid isPermaLink="false">heute-show</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Weekly political satire on ZDF, hosted by Oliver Welke. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Weekly political satire on ZDF, hosted by Oliver Welke. Listed on SociallyDead. https://sociallydead.me/shows/</description>
   </item>
   <item>
     <title>HOPE not hate</title>
@@ -221,7 +245,7 @@
     <guid isPermaLink="false">hope-not-hate</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>The United Kingdom's leading campaign against the far right. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>The United Kingdom's leading campaign against the far right. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Human Rights Watch</title>
@@ -229,7 +253,7 @@
     <guid isPermaLink="false">hrw</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Investigates and reports on human rights abuses worldwide. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Investigates and reports on human rights abuses worldwide. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Indivisible</title>
@@ -237,7 +261,7 @@
     <guid isPermaLink="false">indivisible</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Volunteer-led groups organizing locally in the United States. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Volunteer-led groups organizing locally in the United States. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Institute for Strategic Dialogue</title>
@@ -245,7 +269,7 @@
     <guid isPermaLink="false">isd</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Research institute that detects and exposes extremism, disinformation, and authoritarianism. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Research institute that detects and exposes extremism, disinformation, and authoritarianism. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Jay Kuo</title>
@@ -253,7 +277,7 @@
     <guid isPermaLink="false">jay-kuo</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Writes The Status Kuo, a newsletter on U.S. law and politics. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Writes The Status Kuo, a newsletter on U.S. law and politics. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Jenke von Wilmsdorff</title>
@@ -261,7 +285,7 @@
     <guid isPermaLink="false">jenke-von-wilmsdorff</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>German reporter. Host of JENKE. on ProSieben, and of the live talk that follows the films. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>German reporter. Host of JENKE. on ProSieben, and of the live talk that follows the films. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Jimmy Kimmel Live</title>
@@ -269,7 +293,7 @@
     <guid isPermaLink="false">jimmy-kimmel-live</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Weeknight late-night talk show on ABC, hosted by Jimmy Kimmel. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Weeknight late-night talk show on ABC, hosted by Jimmy Kimmel. Listed on SociallyDead. https://sociallydead.me/shows/</description>
   </item>
   <item>
     <title>Jordan Klepper</title>
@@ -277,7 +301,7 @@
     <guid isPermaLink="false">jordan-klepper</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Correspondent and rotating host on The Daily Show. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Correspondent and rotating host on The Daily Show. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Joyce Vance</title>
@@ -285,7 +309,7 @@
     <guid isPermaLink="false">joyce-vance</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Former U.S. Attorney. Civil Discourse is her newsletter on law and democracy. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Former U.S. Attorney. Civil Discourse is her newsletter on law and democracy. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Judd Legum</title>
@@ -293,7 +317,7 @@
     <guid isPermaLink="false">judd-legum</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Journalist. He writes Popular Information, an accountability newsletter. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Journalist. He writes Popular Information, an accountability newsletter. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Last Week Tonight</title>
@@ -301,7 +325,7 @@
     <guid isPermaLink="false">last-week-tonight</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Official channel. Weekly late-night show on HBO, hosted by John Oliver. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Official channel. Weekly late-night show on HBO, hosted by John Oliver. Listed on SociallyDead. https://sociallydead.me/shows/</description>
   </item>
   <item>
     <title>Late Night with Seth Meyers</title>
@@ -309,7 +333,15 @@
     <guid isPermaLink="false">late-night-seth-meyers</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Weeknight late-night talk show on NBC, hosted by Seth Meyers. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Weeknight late-night talk show on NBC, hosted by Seth Meyers. Listed on SociallyDead. https://sociallydead.me/shows/</description>
+  </item>
+  <item>
+    <title>Malcolm Nance</title>
+    <link>https://malcolmnance.substack.com/</link>
+    <guid isPermaLink="false">malcolm-nance</guid>
+    <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
+    <category>People</category>
+    <description>Former naval intelligence officer and author. He served in Ukraine's International Legion. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Mehdi Hasan</title>
@@ -317,7 +349,7 @@
     <guid isPermaLink="false">mehdi-hasan</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Journalist. Editor-in-chief of Zeteo, covering politics and the news. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Journalist. Editor-in-chief of Zeteo, covering politics and the news. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>MeidasTouch</title>
@@ -325,7 +357,7 @@
     <guid isPermaLink="false">meidas-touch</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Independent news network covering U.S. politics and the law. Ron Filipkowski is editor-in-chief. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Independent news network covering U.S. politics and the law. Ron Filipkowski is editor-in-chief. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>Mimikama</title>
@@ -333,7 +365,7 @@
     <guid isPermaLink="false">mimikama</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Austrian fact-checking desk for chain letters, fakes, and viral claims. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Austrian fact-checking desk for chain letters, fakes, and viral claims. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>Mother Jones</title>
@@ -341,7 +373,7 @@
     <guid isPermaLink="false">mother-jones</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Independent magazine and newsroom for investigative reporting. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Independent magazine and newsroom for investigative reporting. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>netzpolitik.org</title>
@@ -349,7 +381,7 @@
     <guid isPermaLink="false">netzpolitik</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>German newsroom for digital rights, surveillance, and technology policy. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>German newsroom for digital rights, surveillance, and technology policy. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>PolitiFact</title>
@@ -357,7 +389,7 @@
     <guid isPermaLink="false">politifact</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Fact-checking desk that rates political claims. A project of the Poynter Institute. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Fact-checking desk that rates political claims. A project of the Poynter Institute. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>ProPublica</title>
@@ -365,7 +397,7 @@
     <guid isPermaLink="false">propublica</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Independent newsroom for investigative journalism in the public interest. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Independent newsroom for investigative journalism in the public interest. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>Protect Democracy</title>
@@ -373,7 +405,7 @@
     <guid isPermaLink="false">protect-democracy</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Nonpartisan nonprofit working against the decline of American democracy. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Nonpartisan nonprofit working against the decline of American democracy. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Right Wing Watch</title>
@@ -381,7 +413,7 @@
     <guid isPermaLink="false">right-wing-watch</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>A People For the American Way project that monitors far-right figures and groups. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>A People For the American Way project that monitors far-right figures and groups. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>Ron Filipkowski</title>
@@ -389,7 +421,7 @@
     <guid isPermaLink="false">ron-filipkowski</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Editor-in-chief of MeidasTouch. Former federal prosecutor who tracks the right in public. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Editor-in-chief of MeidasTouch. Former federal prosecutor who tracks the right in public. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Ruth Ben-Ghiat</title>
@@ -397,7 +429,7 @@
     <guid isPermaLink="false">ruth-ben-ghiat</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Historian of authoritarianism. She writes the Lucid newsletter. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Historian of authoritarianism. She writes the Lucid newsletter. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Snopes</title>
@@ -405,7 +437,7 @@
     <guid isPermaLink="false">snopes</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Fact-checking site for rumors, images, and viral claims. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Fact-checking site for rumors, images, and viral claims. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>Southern Poverty Law Center</title>
@@ -413,7 +445,7 @@
     <guid isPermaLink="false">splc</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Organizations</category>
-    <description>Tracks hate and extremist groups in the United States and publishes Hatewatch. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/organizations/</description>
+    <description>Tracks hate and extremist groups in the United States and publishes Hatewatch. Listed on SociallyDead. https://sociallydead.me/organizations/</description>
   </item>
   <item>
     <title>tagesschau Faktenfinder</title>
@@ -421,7 +453,7 @@
     <guid isPermaLink="false">tagesschau-faktenfinder</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Fact-checking desk of tagesschau, the ARD news program. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Fact-checking desk of tagesschau, the ARD news program. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>The Bulwark</title>
@@ -429,7 +461,7 @@
     <guid isPermaLink="false">the-bulwark</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>Political reporting and analysis from conservatives who oppose Trump. Based in Washington. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>Political reporting and analysis from conservatives who oppose Trump. Based in Washington. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>The Daily Show</title>
@@ -437,7 +469,7 @@
     <guid isPermaLink="false">the-daily-show</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Weeknight satirical news on Comedy Central. Jon Stewart hosts Mondays. Ronny Chieng, Josh Johnson, Jordan Klepper, Michael Kosta, and Desi Lydic rotate Tuesday through Thursday. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Weeknight satirical news on Comedy Central. Jon Stewart hosts Mondays. Ronny Chieng, Josh Johnson, Jordan Klepper, Michael Kosta, and Desi Lydic rotate Tuesday through Thursday. Listed on SociallyDead. https://sociallydead.me/shows/</description>
   </item>
   <item>
     <title>The Late Show with Stephen Colbert</title>
@@ -445,7 +477,7 @@
     <guid isPermaLink="false">late-show-stephen-colbert</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Official channel. Late-night talk show hosted by Stephen Colbert. The last episode aired 21 May 2026. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Official channel. Late-night talk show hosted by Stephen Colbert. The last episode aired 21 May 2026. Listed on SociallyDead. https://sociallydead.me/shows/</description>
   </item>
   <item>
     <title>The White Witch™</title>
@@ -453,7 +485,7 @@
     <guid isPermaLink="false">the-white-witch</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Keeps this directory. Politics and social events, facts first. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Keeps this directory. Politics and social events, facts first. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Timothy Snyder</title>
@@ -461,7 +493,7 @@
     <guid isPermaLink="false">timothy-snyder</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>People</category>
-    <description>Historian of tyranny, democracy, and Ukraine. Author of On Tyranny. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/people/</description>
+    <description>Historian of tyranny, democracy, and Ukraine. Author of On Tyranny. Listed on SociallyDead. https://sociallydead.me/people/</description>
   </item>
   <item>
     <title>Volksverpetzer</title>
@@ -469,7 +501,7 @@
     <guid isPermaLink="false">volksverpetzer</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>News</category>
-    <description>German site that checks viral claims and writes about the far right and disinformation. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/news/</description>
+    <description>German site that checks viral claims and writes about the far right and disinformation. Listed on SociallyDead. https://sociallydead.me/news/</description>
   </item>
   <item>
     <title>ZDF Magazin Royale</title>
@@ -477,7 +509,7 @@
     <guid isPermaLink="false">zdf-magazin-royale</guid>
     <pubDate>Sun, 25 Oct 2026 12:00:00 GMT</pubDate>
     <category>Shows</category>
-    <description>Late-night satire on ZDF, hosted by Jan Böhmermann. The last episode is set for 18 December 2026. Listed on SociallyDead. https://thewhitewitchtm.github.io/sociallydead/shows/</description>
+    <description>Late-night satire on ZDF, hosted by Jan Böhmermann. The last episode is set for 18 December 2026. Listed on SociallyDead. https://sociallydead.me/shows/</description>
   </item>
   </channel>
 </rss>

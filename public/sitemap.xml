@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://thewhitewitchtm.github.io/sociallydead/</loc>
+    <loc>https://sociallydead.me/</loc>
+    <lastmod>2026-10-26</lastmod>
+  </url>
+  <url>
+    <loc>https://sociallydead.me/woozle-effect/</loc>
     <lastmod>2026-10-25</lastmod>
   </url>
   <url>
-    <loc>https://thewhitewitchtm.github.io/sociallydead/woozle-effect/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://sociallydead.me/ukraine/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://thewhitewitchtm.github.io/sociallydead/ukraine/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://sociallydead.me/rss.xml</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://thewhitewitchtm.github.io/sociallydead/rss.xml</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://sociallydead.me/people/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://thewhitewitchtm.github.io/sociallydead/people/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://sociallydead.me/shows/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://thewhitewitchtm.github.io/sociallydead/shows/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://sociallydead.me/news/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
   <url>
-    <loc>https://thewhitewitchtm.github.io/sociallydead/news/</loc>
-    <lastmod>2026-10-25</lastmod>
-  </url>
-  <url>
-    <loc>https://thewhitewitchtm.github.io/sociallydead/organizations/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <loc>https://sociallydead.me/organizations/</loc>
+    <lastmod>2026-10-26</lastmod>
   </url>
 </urlset>
