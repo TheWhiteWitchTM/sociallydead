@@ -248,7 +248,7 @@ export function SiteHeader() {
             </Link>
           </li>
           <li>
-            <a href="https://thewhitewitchtm.github.io/LibreSky/" target="_blank" rel="noopener noreferrer">
+            <a href="https://libresky.sociallydead.me/" target="_blank" rel="noopener noreferrer">
               LibreSky
             </a>
           </li>

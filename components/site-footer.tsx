@@ -5,7 +5,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer" id="colophon">
       <div className="footer-links">
-        <a href="mailto:thewhitewitchtm@google.com">✉️ E-Mail</a>
+        <a href="mailto:thewhitewitchtm@sociallydead.me">✉️ E-Mail</a>
         <span aria-hidden="true">•</span>
         <a href="https://youtube.com/@TheWhiteWitchTM" target="_blank" rel="noopener noreferrer">
           🎥 YouTube
@@ -19,7 +19,7 @@ export function SiteFooter() {
           🦋 Bluesky
         </a>
         <span aria-hidden="true">•</span>
-        <a href="https://thewhitewitchtm.github.io/LibreSky/" target="_blank" rel="noopener noreferrer">
+        <a href="https://libresky.sociallydead.me/" target="_blank" rel="noopener noreferrer">
           🌤️ LibreSky
         </a>
         <span aria-hidden="true">•</span>
