@@ -272,7 +272,7 @@ export function SiteHeader() {
         <div className="nav-actions">
           <a
             className="contribute"
-            href="https://www.paypal.com/ncp/payment/4P85EQRES3RGU"
+            href="https://www.paypal.com/ncp/payment/BVY3E2H2E2VWA"
             target="_blank"
             rel="noopener noreferrer"
           >
