@@ -162,6 +162,25 @@ export function UkraineFlagIcon({ className }: IconProps = {}) {
   );
 }
 
+export function MonkeyIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="6.2" cy="11.4" r="2.15" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="17.8" cy="11.4" r="2.15" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="12" cy="12.3" r="5.15" fill="none" stroke="currentColor" strokeWidth="1.6" />
+      <circle cx="10.15" cy="11.7" r="0.7" fill="currentColor" />
+      <circle cx="13.85" cy="11.7" r="0.7" fill="currentColor" />
+      <path
+        d="M10.3 14.35c.5.65 1.05.95 1.7.95s1.2-.3 1.7-.95"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function OrgIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">

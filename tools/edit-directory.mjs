@@ -24,7 +24,7 @@ const ALIASES = {
   bsky: "bluesky",
   bluesky: "bluesky",
 };
-const CATEGORIES = ["people", "shows", "news", "organizations"];
+const CATEGORIES = ["people", "shows", "news", "organizations", "propaganda-monkeys"];
 const ORDER = ["id", "name", "handle", "url", "blurb", "category", "tags", "region", "language", "added", "featured", "pin"];
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DAY = /^\d{4}-\d{2}-\d{2}$/;
@@ -296,7 +296,7 @@ Options
   --url         https URL
   --handle      Profile handle, without @
   --blurb       One or two sentences, 500 characters at most
-  --category    people, shows, news, or organizations
+  --category    people, shows, news, organizations, or propaganda-monkeys
   --tags        Comma-separated tags. Replaces the whole list
   --region      Place name
   --language    Language code, such as en or de
@@ -441,7 +441,7 @@ GPL-2.0-only. There is no warranty. See LICENSE.
         const url = await ask(rl, "URL");
         const handle = await ask(rl, "Handle");
         const blurb = await ask(rl, "Blurb");
-        const category = await ask(rl, "Category (people, shows, news, organizations)");
+        const category = await ask(rl, "Category (people, shows, news, organizations, propaganda-monkeys)");
         const tags = await ask(rl, "Tags, comma separated");
         const region = await ask(rl, "Region");
         const language = await ask(rl, "Language");

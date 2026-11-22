@@ -25,7 +25,7 @@ const themeBoot = `(function(){try{var q=new URLSearchParams(location.search).ge
 const bannerBoot = `(function(){try{if(sessionStorage.getItem("sd-banner")==="collapsed")document.documentElement.classList.add("banner-collapsed");if(location.hash==="#directory")document.documentElement.classList.add("mast-off");}catch(e){}})();`;
 
 const description =
-  "A directory of people, shows, news desks, and organizations pushing back on MAGA, the AfD, and the far right. Websites, YouTube, X, and Bluesky.";
+  "A directory of people, shows, news desks, and organizations pushing back on MAGA, the AfD, and the far right. The Propaganda Monkeys shelf tracks the accounts that push it. Websites, YouTube, X, and Bluesky.";
 
 const websiteLd = {
   "@context": "https://schema.org",
@@ -61,6 +61,7 @@ export const metadata: Metadata = {
     "late night",
     "fact check",
     "watchdog",
+    "propaganda",
   ],
   ...shareMeta({
     title: "SociallyDead — Directory of the resistance",

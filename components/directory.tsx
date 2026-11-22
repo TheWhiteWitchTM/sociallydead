@@ -1,8 +1,8 @@
 "use client";
 
-import { GlobeIcon, MicIcon, NewsIcon, OrgIcon, PeopleIcon, PlayIcon, SearchIcon, SkyIcon, StarIcon, UkraineFlagIcon, XIcon } from "@/components/icons";
+import { GlobeIcon, MicIcon, MonkeyIcon, NewsIcon, OrgIcon, PeopleIcon, PlayIcon, SearchIcon, SkyIcon, StarIcon, UkraineFlagIcon, XIcon } from "@/components/icons";
 import { asset } from "@/lib/asset";
-import { CATEGORIES, labelTag, SHELF_BLURB, SHELF_LABEL, sortTags } from "@/lib/categories";
+import { CATEGORIES, labelTag, SHELF_BLURB, SHELF_LABEL, sortTags, type Shelf } from "@/lib/categories";
 import {
   DIRECTORY_FILTER,
   DIRECTORY_KIND,
@@ -27,12 +27,13 @@ const KIND_LABEL: Record<Kind, string> = {
 };
 
 const KIND_ORDER: Kind[] = ["featured", "all", ...CATALOGS];
-const SHELF_ICON = {
+const SHELF_ICON: Record<Shelf, typeof PeopleIcon> = {
   people: PeopleIcon,
   shows: MicIcon,
   news: NewsIcon,
   organizations: OrgIcon,
-} as const;
+  "propaganda-monkeys": MonkeyIcon,
+};
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
 function indexLetter(name: string): string {
@@ -313,7 +314,8 @@ export function Directory({ groups, shelf }: { groups: OrgGroup[]; shelf: Direct
   const ukraineCount = useMemo(() => groups.filter(supportsUkraine).length, [groups]);
 
   const shelfCounts = useMemo(() => {
-    const result = { all: groups.length, people: 0, shows: 0, news: 0, organizations: 0 };
+    const result = { all: groups.length } as { all: number } & Record<Shelf, number>;
+    for (const shelf of CATEGORIES) result[shelf] = 0;
     for (const group of groups) result[group.category] += 1;
     return result;
   }, [groups]);

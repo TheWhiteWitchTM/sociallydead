@@ -4,9 +4,57 @@
     <title>SociallyDead</title>
     <link>https://sociallydead.me/</link>
     <atom:link href="https://sociallydead.me/rss.xml" rel="self" type="application/rss+xml"/>
-    <description>New listings in the SociallyDead directory. People, shows, news, and organizations pushing back on MAGA, the AfD, and the far right.</description>
+    <description>New listings in the SociallyDead directory. People, shows, news, organizations, and the Propaganda Monkeys shelf.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 26 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 12:00:00 GMT</lastBuildDate>
+  <item>
+    <title>Benny Johnson</title>
+    <link>https://x.com/bennyjohnson</link>
+    <guid isPermaLink="false">benny-johnson</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Propaganda Monkeys</category>
+    <description>MAGA commentator and digital-media entrepreneur. His X bio describes that work. Listed on SociallyDead. https://sociallydead.me/propaganda-monkeys/</description>
+  </item>
+  <item>
+    <title>Brendon Leslie</title>
+    <link>https://x.com/BrendonLeslie</link>
+    <guid isPermaLink="false">brendon-leslie</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Propaganda Monkeys</category>
+    <description>Founder of Florida's Voice and Right Line News. He posts MAGA commentary from Florida. Listed on SociallyDead. https://sociallydead.me/propaganda-monkeys/</description>
+  </item>
+  <item>
+    <title>Catturd</title>
+    <link>https://x.com/catturd2</link>
+    <guid isPermaLink="false">catturd</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Propaganda Monkeys</category>
+    <description>MAGA commentator on X. Phillip Buchanan posts as Catturd. Trump has amplified the account. Listed on SociallyDead. https://sociallydead.me/propaganda-monkeys/</description>
+  </item>
+  <item>
+    <title>Eric Daugherty</title>
+    <link>https://x.com/EricLDaugh</link>
+    <guid isPermaLink="false">eric-daugherty</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Propaganda Monkeys</category>
+    <description>Chief content officer at Florida's Voice and Right Line News. He posts MAGA political alerts. Listed on SociallyDead. https://sociallydead.me/propaganda-monkeys/</description>
+  </item>
+  <item>
+    <title>Gunther Eagleman</title>
+    <link>https://x.com/GuntherEagleman</link>
+    <guid isPermaLink="false">gunther-eagleman</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>Propaganda Monkeys</category>
+    <description>Political commentator. David J. Freeman posts MAGA commentary and satire as Gunther Eagleman. Listed on SociallyDead. https://sociallydead.me/propaganda-monkeys/</description>
+  </item>
+  <item>
+    <title>Mira</title>
+    <link>https://miratechtm.sociallydead.me/</link>
+    <guid isPermaLink="false">mira</guid>
+    <pubDate>Sun, 22 Nov 2026 12:00:00 GMT</pubDate>
+    <category>People</category>
+    <description>Independent freelancer in TypeScript, C/C++, and AI. She teaches on Mira's World, and the Friday pass reads her public posts. Listed on SociallyDead. https://sociallydead.me/people/</description>
+  </item>
   <item>
     <title>Kate from Kharkiv</title>
     <link>https://x.com/BohuslavskaKate</link>

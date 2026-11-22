@@ -28,7 +28,7 @@ function shelfName(shelf: DirectoryShelf): string {
 
 function shelfDescription(shelf: DirectoryShelf): string {
   if (shelf === "all") {
-    return "A directory of people, shows, news desks, and organizations pushing back on MAGA, the AfD, and the far right.";
+    return "A directory of people, shows, news desks, and organizations pushing back on MAGA, the AfD, and the far right. The Propaganda Monkeys shelf tracks the accounts that push it.";
   }
   if (shelf === "ukraine") return UKRAINE_BLURB;
   return SHELF_BLURB[shelf];

@@ -30,9 +30,9 @@ The pages render four JSON files:
 - `data/x.json`
 - `data/bluesky.json`
 
-Each entry has `id`, `name`, `url`, `blurb`, `category`, and `tags`. `category` is one of `people`, `shows`, `news`, or `organizations`. The same id uses the same category in every catalog. Optional fields are `handle`, `region`, `language`, `added` (`YYYY-MM-DD`), `featured`, and `pin`. `featured` lifts a listing into the featured row.
+Each entry has `id`, `name`, `url`, `blurb`, `category`, and `tags`. `category` is one of `people`, `shows`, `news`, `organizations`, or `propaganda-monkeys`. The same id uses the same category in every catalog. Optional fields are `handle`, `region`, `language`, `added` (`YYYY-MM-DD`), `featured`, and `pin`. `featured` lifts a listing into the featured row.
 
-The shelves are real pages: `/people/`, `/shows/`, `/news/`, and `/organizations/`. Tags, letters, and the platform desks filter inside a shelf. Search matches names, handles, blurbs, and tags.
+The shelves are real pages: `/people/`, `/shows/`, `/news/`, `/organizations/`, and `/propaganda-monkeys/`. Propaganda Monkeys tracks public MAGA propaganda accounts. Tags, letters, and the platform desks filter inside a shelf. Search matches names, handles, blurbs, and tags.
 
 `npm run build` also writes `public/rss.xml`, `public/sitemap.xml`, and `public/robots.txt`. The feed lists every desk. The share image is `public/og.jpg`, a baseline JPEG at 1200×630, because the wide banner and a progressive JPEG were coming through as alt text.
 
@@ -76,12 +76,14 @@ To build the old project-path preview, put `/sociallydead` in `basepath.txt` and
 
 ## Friday bot
 
-SociallyDead is on the Grok bots desk. Run starts `tools/directory-bot.sh`. That program is Grok. It reads the public posts, reposts, quotes, replies, and likes of @TheWhiteWitchTM from the past seven days. A like or a repost is a reason to look. An account is added only when the public profile matches this directory. The bot does not feature listings and does not remove them. When it adds any, it commits and pushes to `main`.
+SociallyDead is on the Grok bots desk. Run starts `tools/directory-bot.sh`. That program is Grok. It reads the public posts, reposts, quotes, replies, and likes of @TheWhiteWitchTM and @miratechtm from the past seven days. @miratechtm teaches the directory. A like or a repost is a reason to look. An account is added only when the public profile matches this directory. The bot does not feature listings and does not remove them. When it adds any, it commits and pushes to `main`.
 
-The same program runs every Friday at 09:00 Europe/Berlin. It is a heavy pass, so it waits when the shared week is being saved and FauxNews files instead. A held Friday does not call the model. The log is `~/.local/share/sociallydead/directory-bot.log`.
+`tools/propaganda-bot.sh` is the second Friday pass. It adds public MAGA propaganda accounts to the Propaganda Monkeys shelf. It does not call someone paid unless a named public report says so, and then the blurb names the report. It does not feature listings and does not remove them. The log is `~/.local/share/sociallydead/propaganda-bot.log`.
+
+Both programs run every Friday. The directory pass starts at 09:00 Europe/Berlin, and the propaganda pass starts when that pass exits. Each one is a heavy pass, so it waits when the shared week is being saved and FauxNews files instead. A held Friday does not call the model. The directory log is `~/.local/share/sociallydead/directory-bot.log`.
 
 ```
-0 9 * * 5 /home/andreas/Projects/sociallydead/tools/directory-bot.sh
+0 9 * * 5 /home/whitewitch/Projects/sociallydead/tools/directory-bot.sh; /home/whitewitch/Projects/sociallydead/tools/propaganda-bot.sh
 ```
 
 That line is also in `/home/andreas/BlueSky/crontab`, because reinstalling that file replaces the whole crontab.

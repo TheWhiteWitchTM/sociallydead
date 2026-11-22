@@ -2,7 +2,7 @@ import bluesky from "@/data/bluesky.json";
 import websites from "@/data/websites.json";
 import x from "@/data/x.json";
 import youtube from "@/data/youtube.json";
-import { isShelf } from "@/lib/categories";
+import { CATEGORIES, isShelf } from "@/lib/categories";
 import { CATALOGS, type Catalog, type DirectoryData, type Entry } from "@/lib/types";
 
 function text(value: unknown): string {
@@ -48,7 +48,7 @@ export function parseCatalog(raw: unknown, catalog: string): Entry[] {
     }
     const category = text(record.category);
     if (!isShelf(category)) {
-      throw new Error(`${catalog} ${id}: category must be people, shows, news, or organizations`);
+      throw new Error(`${catalog} ${id}: category must be one of ${CATEGORIES.join(", ")}`);
     }
 
     const entry: Entry = {

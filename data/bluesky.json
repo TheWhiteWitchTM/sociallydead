@@ -662,5 +662,20 @@
     "region": "United States",
     "language": "en",
     "added": "2026-10-25"
+  },
+  {
+    "id": "mira",
+    "name": "Mira",
+    "handle": "miratechtm.sociallydead.me",
+    "url": "https://bsky.app/profile/miratechtm.sociallydead.me",
+    "blurb": "Independent freelancer in TypeScript, C/C++, and AI. She teaches on Mira's World, and the Friday pass reads her public posts.",
+    "category": "people",
+    "tags": [
+      "teach"
+    ],
+    "region": "Germany",
+    "language": "en",
+    "added": "2026-11-22",
+    "featured": true
   }
 ]

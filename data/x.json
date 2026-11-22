@@ -619,5 +619,100 @@
     "language": "en",
     "added": "2026-10-26",
     "featured": true
+  },
+  {
+    "id": "mira",
+    "name": "Mira",
+    "handle": "miratechtm",
+    "url": "https://x.com/miratechtm",
+    "blurb": "Independent freelancer in TypeScript, C/C++, and AI. She teaches on Mira's World, and the Friday pass reads her public posts.",
+    "category": "people",
+    "tags": [
+      "teach"
+    ],
+    "region": "Germany",
+    "language": "en",
+    "added": "2026-11-22",
+    "featured": true
+  },
+  {
+    "id": "catturd",
+    "name": "Catturd",
+    "handle": "catturd2",
+    "url": "https://x.com/catturd2",
+    "blurb": "MAGA commentator on X. Phillip Buchanan posts as Catturd. Trump has amplified the account.",
+    "category": "propaganda-monkeys",
+    "tags": [
+      "maga",
+      "propaganda",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-11-22"
+  },
+  {
+    "id": "eric-daugherty",
+    "name": "Eric Daugherty",
+    "handle": "EricLDaugh",
+    "url": "https://x.com/EricLDaugh",
+    "blurb": "Chief content officer at Florida's Voice and Right Line News. He posts MAGA political alerts.",
+    "category": "propaganda-monkeys",
+    "tags": [
+      "maga",
+      "propaganda",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-11-22"
+  },
+  {
+    "id": "gunther-eagleman",
+    "name": "Gunther Eagleman",
+    "handle": "GuntherEagleman",
+    "url": "https://x.com/GuntherEagleman",
+    "blurb": "Political commentator. David J. Freeman posts MAGA commentary and satire as Gunther Eagleman.",
+    "category": "propaganda-monkeys",
+    "tags": [
+      "maga",
+      "propaganda",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-11-22"
+  },
+  {
+    "id": "brendon-leslie",
+    "name": "Brendon Leslie",
+    "handle": "BrendonLeslie",
+    "url": "https://x.com/BrendonLeslie",
+    "blurb": "Founder of Florida's Voice and Right Line News. He posts MAGA commentary from Florida.",
+    "category": "propaganda-monkeys",
+    "tags": [
+      "maga",
+      "propaganda",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-11-22"
+  },
+  {
+    "id": "benny-johnson",
+    "name": "Benny Johnson",
+    "handle": "bennyjohnson",
+    "url": "https://x.com/bennyjohnson",
+    "blurb": "MAGA commentator and digital-media entrepreneur. His X bio describes that work.",
+    "category": "propaganda-monkeys",
+    "tags": [
+      "maga",
+      "propaganda",
+      "united-states"
+    ],
+    "region": "United States",
+    "language": "en",
+    "added": "2026-11-22"
   }
 ]

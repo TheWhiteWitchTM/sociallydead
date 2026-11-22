@@ -18,7 +18,7 @@ export function Hero({ total, noun = "public listings" }: { total: number; noun?
           </p>
           <p className="lede">
             People, shows, news, and organizations. Websites, YouTube, X, and Bluesky, pushing back on MAGA, the AfD,
-            and the far right.
+            and the far right. Propaganda Monkeys tracks the accounts that push it.
           </p>
           <p className="tally">
             {total} {noun}

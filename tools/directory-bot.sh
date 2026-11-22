@@ -44,7 +44,7 @@ write_status() {
   printf '%s\n' "$1" > "$tmp"
   mv "$tmp" "${status_dir}/sociallydead.txt"
 }
-reason="$(python3 -c 'import sys; sys.path.insert(0, "/home/andreas/Projects/bots"); import credits; print(credits.allow("heavy", "directory"), end="")')" || reason="Credits did not answer. Model jobs are held."
+reason="$(python3 -c 'import sys; sys.path.insert(0, "/home/whitewitch/Projects/bots"); import credits; print(credits.allow("heavy", "directory"), end="")')" || reason="Credits did not answer. Model jobs are held."
 if [[ -n "$reason" ]]; then
   printf '%s held: %s\n' "$(date -Is)" "$reason" >> "$log"
   write_status "Held so FauxNews can file. ${reason}"

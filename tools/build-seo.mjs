@@ -13,6 +13,7 @@ const shelves = [
   ["shows", "Shows"],
   ["news", "News"],
   ["organizations", "Organizations"],
+  ["propaganda-monkeys", "Propaganda Monkeys"],
 ];
 
 function basePath() {
@@ -103,7 +104,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <title>SociallyDead</title>
     <link>${origin}/</link>
     <atom:link href="${origin}/rss.xml" rel="self" type="application/rss+xml"/>
-    <description>New listings in the SociallyDead directory. People, shows, news, and organizations pushing back on MAGA, the AfD, and the far right.</description>
+    <description>New listings in the SociallyDead directory. People, shows, news, organizations, and the Propaganda Monkeys shelf.</description>
     <language>en</language>
     <lastBuildDate>${rfc822(newest)}</lastBuildDate>
 ${rssItems}

@@ -1,4 +1,4 @@
-export const CATEGORIES = ["people", "shows", "news", "organizations"] as const;
+export const CATEGORIES = ["people", "shows", "news", "organizations", "propaganda-monkeys"] as const;
 
 export type Shelf = (typeof CATEGORIES)[number];
 
@@ -7,6 +7,7 @@ export const SHELF_LABEL: Record<Shelf, string> = {
   shows: "Shows",
   news: "News",
   organizations: "Organizations",
+  "propaganda-monkeys": "Propaganda Monkeys",
 };
 
 export const SHELF_BLURB: Record<Shelf, string> = {
@@ -14,6 +15,8 @@ export const SHELF_BLURB: Record<Shelf, string> = {
   shows: "Late-night talk, political satire, and programs with a public desk.",
   news: "Newsrooms, newsletters, and fact-checkers.",
   organizations: "Legal groups, watchdogs, researchers, and campaigns.",
+  "propaganda-monkeys":
+    "Public MAGA propaganda accounts. Influencers and troll feeds, including ones reported as paid.",
 };
 
 export const SHELF_NOUN: Record<Shelf, string> = {
@@ -21,6 +24,7 @@ export const SHELF_NOUN: Record<Shelf, string> = {
   shows: "shows",
   news: "news desks",
   organizations: "organizations",
+  "propaganda-monkeys": "propaganda accounts",
 };
 
 const TAG_LABEL: Record<string, string> = {
@@ -34,11 +38,14 @@ const TAG_LABEL: Record<string, string> = {
   host: "Host",
   international: "International",
   journalism: "Journalism",
+  maga: "MAGA",
+  propaganda: "Propaganda",
   "late-night": "Late night",
   legal: "Legal",
   organizing: "Organizing",
   research: "Research",
   satire: "Satire",
+  teach: "Teach",
   "united-kingdom": "United Kingdom",
   "united-states": "United States",
   watchdog: "Watchdog",
