@@ -633,7 +633,8 @@
     "region": "Germany",
     "language": "en",
     "added": "2026-11-22",
-    "featured": true
+    "featured": true,
+    "pin": true
   },
   {
     "id": "catturd",

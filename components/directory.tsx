@@ -61,6 +61,10 @@ function haystack(group: OrgGroup): string {
 function compareGroups(a: OrgGroup, b: OrgGroup, mode: SortMode): number {
   const pin = Number(b.pin) - Number(a.pin);
   if (pin) return pin;
+  if (a.pin && b.pin) {
+    const byAdded = (a.added ?? "").localeCompare(b.added ?? "");
+    if (byAdded) return byAdded;
+  }
   if (mode === "new") {
     const byDate = (b.added ?? "").localeCompare(a.added ?? "");
     if (byDate) return byDate;
